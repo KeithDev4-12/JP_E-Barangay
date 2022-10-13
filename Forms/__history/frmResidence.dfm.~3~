@@ -1,0 +1,16 @@
+object UResidence: TUResidence
+  Left = 0
+  Top = 0
+  Caption = 'Residences Form'
+  ClientHeight = 499
+  ClientWidth = 712
+  Color = clBtnHighlight
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 97
+  TextHeight = 13
+end

@@ -1,0 +1,108 @@
+unit frmMainMenu;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.ExtCtrls, Vcl.StdCtrls,
+  DBGridEhGrouping, ToolCtrlsEh, DBGridEhToolCtrls, DynVarsEh, Vcl.Buttons,
+  Vcl.WinXCtrls, EhLibVCL, GridsEh, DBAxisGridsEh, DBGridEh, dxGDIPlusClasses;
+
+type
+  TUMainMenu = class(TForm)
+    MainMenu1: TMainMenu;
+    File1: TMenuItem;
+    Re1: TMenuItem;
+    User1: TMenuItem;
+    UploadFiles1: TMenuItem;
+    Issuance1: TMenuItem;
+    About1: TMenuItem;
+    Developers1: TMenuItem;
+    N1: TMenuItem;
+    JPLaurel1: TMenuItem;
+    Panel1: TPanel;
+    pnlCenter: TPanel;
+    GroupBox1: TGroupBox;
+    Label1: TLabel;
+    Image1: TImage;
+    Shape1: TShape;
+    Label2: TLabel;
+    Shape2: TShape;
+    GroupBox2: TGroupBox;
+    Label3: TLabel;
+    Image2: TImage;
+    Shape3: TShape;
+    Label4: TLabel;
+    Shape4: TShape;
+    GroupBox3: TGroupBox;
+    Label5: TLabel;
+    Image3: TImage;
+    Shape5: TShape;
+    Label6: TLabel;
+    Shape6: TShape;
+    GroupBox4: TGroupBox;
+    Label7: TLabel;
+    Image4: TImage;
+    Shape7: TShape;
+    Label8: TLabel;
+    Shape8: TShape;
+    GroupBox5: TGroupBox;
+    Label9: TLabel;
+    Image5: TImage;
+    Shape9: TShape;
+    Label10: TLabel;
+    Shape10: TShape;
+    GroupBox6: TGroupBox;
+    Label11: TLabel;
+    Image6: TImage;
+    Shape11: TShape;
+    Label12: TLabel;
+    Shape12: TShape;
+    GroupBox7: TGroupBox;
+    Label13: TLabel;
+    Image7: TImage;
+    Shape13: TShape;
+    Label14: TLabel;
+    Shape14: TShape;
+    GroupBox8: TGroupBox;
+    Label15: TLabel;
+    Image8: TImage;
+    Shape15: TShape;
+    Label16: TLabel;
+    Shape16: TShape;
+    GroupBox9: TGroupBox;
+    Label17: TLabel;
+    Image9: TImage;
+    Shape17: TShape;
+    Label18: TLabel;
+    Shape18: TShape;
+    Panel2: TPanel;
+    DBGridEh1: TDBGridEh;
+    Panel3: TPanel;
+    Label19: TLabel;
+    SearchBox1: TSearchBox;
+    BitBtn1: TBitBtn;
+    Image10: TImage;
+    Image11: TImage;
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  UMainMenu: TUMainMenu;
+
+implementation
+
+{$R *.dfm}
+
+procedure TUMainMenu.FormShow(Sender: TObject);
+begin
+    pnlCenter.Left := ((Screen.DesktopWidth - pnlCenter.Width - Panel2.Width) div 2);
+    pnlCenter.Top := ((Screen.DesktopHeight - pnlCenter.Height - 50) div 2);
+    //ShowMessage(CurrToStr(Screen.DesktopHeight));
+end;
+
+end.
