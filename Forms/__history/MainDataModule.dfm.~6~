@@ -1,0 +1,150 @@
+object DM: TDM
+  OldCreateOrder = False
+  Height = 348
+  Width = 453
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'Server=LOCALHOST'
+      'Port=3311'
+      'Password=ict'
+      'Database=jplaureldb'
+      'ConnectionDef=MYSQL_COOP')
+    Connected = True
+    Left = 16
+    Top = 16
+  end
+  object fdqryResidence: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'SELECT * FROM tblresidence')
+    Left = 128
+    Top = 48
+    object fdqryResidenceID: TFDAutoIncField
+      FieldName = 'ID'
+      Origin = 'ID'
+      ProviderFlags = [pfInWhere, pfInKey]
+    end
+    object fdqryResidenceBarangayIdNo: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'BarangayIdNo'
+      Origin = 'BarangayIdNo'
+      Size = 45
+    end
+    object fdqryResidenceFName: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'FName'
+      Origin = 'FName'
+      Size = 45
+    end
+    object fdqryResidenceMName: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'MName'
+      Origin = 'MName'
+      Size = 4
+    end
+    object fdqryResidenceLName: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'LName'
+      Origin = 'LName'
+      Size = 45
+    end
+    object fdqryResidenceCompleteName: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'CompleteName'
+      Origin = 'CompleteName'
+      Size = 99
+    end
+    object fdqryResidenceDOB: TDateField
+      AutoGenerateValue = arDefault
+      FieldName = 'DOB'
+      Origin = 'DOB'
+    end
+    object fdqryResidenceGender: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'Gender'
+      Origin = 'Gender'
+      Size = 45
+    end
+    object fdqryResidenceAddress: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'Address'
+      Origin = 'Address'
+      Size = 200
+    end
+    object fdqryResidencePurok: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'Purok'
+      Origin = 'Purok'
+      Size = 45
+    end
+    object fdqryResidenceHeight: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'Height'
+      Origin = 'Height'
+      Size = 45
+    end
+    object fdqryResidenceWeight: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'Weight'
+      Origin = 'Weight'
+      Size = 45
+    end
+    object fdqryResidenceBloodType: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'BloodType'
+      Origin = 'BloodType'
+      Size = 45
+    end
+    object fdqryResidenceContactNumber: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'ContactNumber'
+      Origin = 'ContactNumber'
+      Size = 45
+    end
+    object fdqryResidenceTinNo: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'TinNo'
+      Origin = 'TinNo'
+      Size = 45
+    end
+    object fdqryResidenceDateCreated: TDateField
+      AutoGenerateValue = arDefault
+      FieldName = 'DateCreated'
+      Origin = 'DateCreated'
+    end
+    object fdqryResidenceDateModified: TDateField
+      AutoGenerateValue = arDefault
+      FieldName = 'DateModified'
+      Origin = 'DateModified'
+    end
+    object fdqryResidenceEmrgncyName: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'EmrgncyName'
+      Origin = 'EmrgncyName'
+      Size = 99
+    end
+    object fdqryResidenceEmrgncyAddress: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'EmrgncyAddress'
+      Origin = 'EmrgncyAddress'
+      Size = 200
+    end
+    object fdqryResidenceEmrgncyRelationship: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'EmrgncyRelationship'
+      Origin = 'EmrgncyRelationship'
+      Size = 45
+    end
+    object fdqryResidenceEmrgncyContactNumber: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'EmrgncyContactNumber'
+      Origin = 'EmrgncyContactNumber'
+      Size = 45
+    end
+    object fdqryResidencePicture: TBlobField
+      AutoGenerateValue = arDefault
+      FieldName = 'Picture'
+      Origin = 'Picture'
+    end
+  end
+end

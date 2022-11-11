@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.ExtCtrls, Vcl.StdCtrls,
   DBGridEhGrouping, ToolCtrlsEh, DBGridEhToolCtrls, DynVarsEh, Vcl.Buttons,
-  Vcl.WinXCtrls, EhLibVCL, GridsEh, DBAxisGridsEh, DBGridEh, dxGDIPlusClasses;
+  Vcl.WinXCtrls, EhLibVCL, GridsEh, DBAxisGridsEh, DBGridEh, dxGDIPlusClasses,
+  System.ImageList, Vcl.ImgList;
 
 type
   TUMainMenu = class(TForm)
@@ -77,13 +78,37 @@ type
     Label18: TLabel;
     Shape18: TShape;
     Panel2: TPanel;
-    DBGridEh1: TDBGridEh;
     Panel3: TPanel;
-    Label19: TLabel;
-    SearchBox1: TSearchBox;
-    BitBtn1: TBitBtn;
     Image10: TImage;
+    BaraganyID1: TMenuItem;
+    Panel4: TPanel;
+    Panel5: TPanel;
+    Label19: TLabel;
+    Shape19: TShape;
+    Shape20: TShape;
+    Panel6: TPanel;
+    Label20: TLabel;
+    Shape21: TShape;
+    Panel7: TPanel;
+    Label21: TLabel;
+    Panel8: TPanel;
+    Label22: TLabel;
+    Shape23: TShape;
+    Shape24: TShape;
+    Panel9: TPanel;
+    Label23: TLabel;
+    Shape22: TShape;
+    Panel10: TPanel;
+    Label24: TLabel;
+    Shape25: TShape;
+    Shape26: TShape;
+    Label25: TLabel;
+    Image11: TImage;
+    Button1: TButton;
+    ImageList1: TImageList;
+    Label26: TLabel;
     procedure FormShow(Sender: TObject);
+    procedure Panel6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -96,12 +121,18 @@ var
 implementation
 
 {$R *.dfm}
+uses frmResidence;
 
 procedure TUMainMenu.FormShow(Sender: TObject);
 begin
     pnlCenter.Left := ((Screen.DesktopWidth - pnlCenter.Width - Panel2.Width) div 2);
     pnlCenter.Top := ((Screen.DesktopHeight - pnlCenter.Height - 50) div 2);
     //ShowMessage(CurrToStr(Screen.DesktopHeight));
+end;
+
+procedure TUMainMenu.Panel6Click(Sender: TObject);
+begin
+   UResidence.ShowModal();
 end;
 
 end.

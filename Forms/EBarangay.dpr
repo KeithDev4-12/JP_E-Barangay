@@ -4,7 +4,8 @@ uses
   Vcl.Forms,
   frmLogin in 'frmLogin.pas' {ULogin},
   frmMainMenu in 'frmMainMenu.pas' {UMainMenu},
-  frmResidence in 'frmResidence.pas' {UResidence};
+  frmResidence in 'frmResidence.pas' {UResidence},
+  MainDataModule in 'MainDataModule.pas' {DM: TDataModule};
 
 {$R *.res}
 
@@ -14,5 +15,6 @@ begin
   Application.CreateForm(TULogin, ULogin);
   Application.CreateForm(TUMainMenu, UMainMenu);
   Application.CreateForm(TUResidence, UResidence);
+  Application.CreateForm(TDM, DM);
   Application.Run;
 end.
