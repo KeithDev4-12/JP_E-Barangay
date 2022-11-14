@@ -5,7 +5,8 @@ uses
   frmLogin in 'frmLogin.pas' {ULogin},
   frmMainMenu in 'frmMainMenu.pas' {UMainMenu},
   frmResidence in 'frmResidence.pas' {UResidence},
-  MainDataModule in 'MainDataModule.pas' {DM: TDataModule};
+  MainDataModule in 'MainDataModule.pas' {DM: TDataModule},
+  frmAccountProfile in 'frmAccountProfile.pas' {UAccountProfile};
 
 {$R *.res}
 
@@ -16,5 +17,6 @@ begin
   Application.CreateForm(TUMainMenu, UMainMenu);
   Application.CreateForm(TUResidence, UResidence);
   Application.CreateForm(TDM, DM);
+  Application.CreateForm(TUAccountProfile, UAccountProfile);
   Application.Run;
 end.

@@ -25,7 +25,6 @@ object UResidence: TUResidence
     Align = alLeft
     Caption = 'MENUS'
     TabOrder = 0
-    ExplicitHeight = 464
     object Shape2: TShape
       Left = 2
       Top = 324
@@ -48,7 +47,6 @@ object UResidence: TUResidence
       Anchors = [akLeft, akTop, akRight, akBottom]
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitHeight = 299
       object DBGridEh1: TDBGridEh
         Left = 0
         Top = 73
@@ -719,14 +717,13 @@ object UResidence: TUResidence
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitTop = 317
       object SpeedButton2: TSpeedButton
         Left = 129
         Top = 0
         Width = 87
         Height = 145
         Align = alClient
-        Caption = 'POST'
+        Caption = 'Save'
         Flat = True
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -1079,8 +1076,6 @@ object UResidence: TUResidence
     Color = clBtnHighlight
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 491
-    ExplicitHeight = 464
     object Label2: TLabel
       Left = 16
       Top = 31
@@ -1514,7 +1509,6 @@ object UResidence: TUResidence
         Caption = 'Upload Picture'
         TabOrder = 0
         OnClick = BitBtn3Click
-        ExplicitWidth = 152
       end
     end
     object RichEdit1: TRichEdit

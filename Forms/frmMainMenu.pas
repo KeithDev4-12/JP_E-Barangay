@@ -107,8 +107,17 @@ type
     Button1: TButton;
     ImageList1: TImageList;
     Label26: TLabel;
+    Certi1: TMenuItem;
+    BarangayCertificate1: TMenuItem;
+    BarangayClearance1: TMenuItem;
+    BarangayBusinessClearance1: TMenuItem;
+    CertificateOfIn1: TMenuItem;
+    otalNumberOfPopulationReport1: TMenuItem;
     procedure FormShow(Sender: TObject);
     procedure Panel6Click(Sender: TObject);
+    procedure Panel7Click(Sender: TObject);
+    procedure Re1Click(Sender: TObject);
+    procedure User1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -121,7 +130,7 @@ var
 implementation
 
 {$R *.dfm}
-uses frmResidence;
+uses frmResidence, frmAccountProfile;
 
 procedure TUMainMenu.FormShow(Sender: TObject);
 begin
@@ -131,8 +140,47 @@ begin
 end;
 
 procedure TUMainMenu.Panel6Click(Sender: TObject);
+var
+  //FWashingPanels : TFWashingPanels;
+  UResidence : TUResidence;
 begin
-   UResidence.ShowModal();
+  //if Assigned(FSettings) then
+  //  FSettings.Free;
+  try
+
+    Panel8.Visible := False;
+    UResidence := TUResidence.Create(Self);
+    //UResidence.PageControl1.ActivePageIndex := 3;
+    UResidence.ShowModal;
+  finally
+    UResidence.Free;
+  end;
+end;
+
+procedure TUMainMenu.Panel7Click(Sender: TObject);
+var
+  //FWashingPanels : TFWashingPanels;
+  UAccountProfile : TUAccountProfile;
+begin
+  //if Assigned(FSettings) then
+  //  FSettings.Free;
+  try
+    UAccountProfile := TUAccountProfile.Create(Self);
+    //UResidence.PageControl1.ActivePageIndex := 3;
+    UAccountProfile.ShowModal;
+  finally
+    UAccountProfile.Free;
+  end;
+end;
+
+procedure TUMainMenu.Re1Click(Sender: TObject);
+begin
+  Panel6Click(Sender);
+end;
+
+procedure TUMainMenu.User1Click(Sender: TObject);
+begin
+  Panel7Click(Sender);
 end;
 
 end.

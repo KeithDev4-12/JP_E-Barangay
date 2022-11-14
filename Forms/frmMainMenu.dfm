@@ -1060,7 +1060,6 @@ object UMainMenu: TUMainMenu
         Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
-        ExplicitTop = 176
         ExplicitWidth = 132
       end
       object Image11: TImage
@@ -6296,22 +6295,21 @@ object UMainMenu: TUMainMenu
       end
       object Shape20: TShape
         Left = 0
-        Top = 46
-        Width = 225
-        Height = 1
-        Align = alTop
-        Pen.Color = clMedGray
-        ExplicitLeft = -6
-        ExplicitTop = 53
-      end
-      object Shape21: TShape
-        Left = 0
         Top = 92
         Width = 225
         Height = 1
         Align = alTop
         Pen.Color = clMedGray
-        ExplicitTop = 113
+        ExplicitTop = 52
+      end
+      object Shape21: TShape
+        Left = 0
+        Top = 46
+        Width = 225
+        Height = 1
+        Align = alTop
+        Pen.Color = clMedGray
+        ExplicitTop = 39
       end
       object Shape23: TShape
         Left = 0
@@ -6384,6 +6382,7 @@ object UMainMenu: TUMainMenu
         BevelOuter = bvNone
         TabOrder = 1
         OnClick = Panel6Click
+        ExplicitTop = 42
         object Label20: TLabel
           Left = 54
           Top = 15
@@ -6406,12 +6405,13 @@ object UMainMenu: TUMainMenu
         Align = alTop
         BevelOuter = bvNone
         TabOrder = 2
+        OnClick = Panel7Click
         object Label21: TLabel
           Left = 54
           Top = 15
-          Width = 42
+          Width = 100
           Height = 14
-          Caption = 'asdasd'
+          Caption = 'Account Profiles'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
@@ -6431,9 +6431,9 @@ object UMainMenu: TUMainMenu
         object Label22: TLabel
           Left = 54
           Top = 15
-          Width = 119
+          Width = 61
           Height = 14
-          Caption = 'EDIT | UPDAasdasd'
+          Caption = 'Printables'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
@@ -6453,9 +6453,9 @@ object UMainMenu: TUMainMenu
         object Label23: TLabel
           Left = 54
           Top = 15
-          Width = 93
+          Width = 108
           Height = 14
-          Caption = 'ORGANIZATION'
+          Caption = 'Barangay Officials'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
@@ -6475,9 +6475,9 @@ object UMainMenu: TUMainMenu
         object Label24: TLabel
           Left = 54
           Top = 15
-          Width = 32
+          Width = 101
           Height = 14
-          Caption = 'LOGS'
+          Caption = 'History Issuance'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
@@ -6495,9 +6495,11 @@ object UMainMenu: TUMainMenu
       Caption = 'File'
       object Re1: TMenuItem
         Caption = 'Residences'
+        OnClick = Re1Click
       end
       object User1: TMenuItem
         Caption = 'Account Profiles'
+        OnClick = User1Click
       end
       object UploadFiles1: TMenuItem
         Caption = 'Upload Files'
@@ -6507,6 +6509,24 @@ object UMainMenu: TUMainMenu
       Caption = 'Issuance'
       object BaraganyID1: TMenuItem
         Caption = 'Baragany ID'
+      end
+      object Certi1: TMenuItem
+        Caption = 'Certificate Of Apperance'
+      end
+      object BarangayCertificate1: TMenuItem
+        Caption = 'Barangay Certificate'
+      end
+      object BarangayClearance1: TMenuItem
+        Caption = 'Barangay Clearance'
+      end
+      object BarangayBusinessClearance1: TMenuItem
+        Caption = 'Barangay Business Clearance'
+      end
+      object CertificateOfIn1: TMenuItem
+        Caption = 'Certificate Of Indigency'
+      end
+      object otalNumberOfPopulationReport1: TMenuItem
+        Caption = 'Total Number Of Population (Report)'
       end
     end
     object About1: TMenuItem

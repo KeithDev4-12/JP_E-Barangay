@@ -17,6 +17,7 @@ type
     { Private declarations }
   public
     { Public declarations }
+    procedure EnableDataSet(AFDTable: TFDQuery;ABooleanVal:Boolean);
   end;
 
 var
@@ -27,5 +28,15 @@ implementation
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
 {$R *.dfm}
+
+
+
+{ TDM }
+
+procedure TDM.EnableDataSet(AFDTable: TFDQuery; ABooleanVal: Boolean);
+begin
+  AFDTable.UpdateOptions.EnableInsert := ABooleanVal;
+  AFDTable.UpdateOptions.EnableUpdate := ABooleanVal;
+end;
 
 end.
