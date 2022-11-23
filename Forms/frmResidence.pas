@@ -124,6 +124,7 @@ type
     procedure FormShow(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure DSResidenceDataChange(Sender: TObject; Field: TField);
+    procedure SearchBox1Change(Sender: TObject);
   private
     { Private declarations }
   public
@@ -181,38 +182,40 @@ Var
   ImagePath:String;
 begin
 
+  if fdqryResidence.State = dsBrowse then begin
 
-  //LocationPaste := fdqryResidencePicture.AsString;
-  ImagePath := fdqryResidencePicture.AsString;
-  try
+    //LocationPaste := fdqryResidencePicture.AsString;
+    ImagePath := fdqryResidencePicture.AsString;
+    try
 
 
-    if fdqryResidenceGender.AsString = 'Male' then begin
-      RadioButton1.Checked := True;
-    end;
-    if fdqryResidenceGender.AsString = 'Female' then begin
-      RadioButton2.Checked := True;
-    end;
-    if fdqryResidenceGender.AsString = 'Others' then begin
-      RadioButton3.Checked := True;
-    end;
+      if fdqryResidenceGender.AsString = 'Male' then begin
+        RadioButton1.Checked := True;
+      end;
+      if fdqryResidenceGender.AsString = 'Female' then begin
+        RadioButton2.Checked := True;
+      end;
+      if fdqryResidenceGender.AsString = 'Others' then begin
+        RadioButton3.Checked := True;
+      end;
 
-    MaskEdit1.Text := fdqryResidenceTinNo.AsString;
-    MaskEdit2.Text := fdqryResidenceContactNumber.AsString;
-    MaskEdit3.Text := fdqryResidenceEmrgncyContactNumber.AsString;
-    RichEdit1.Text := fdqryResidenceEmrgncyAddress.AsString;
-    Label7.Caption := fdqryResidenceCompleteName.AsString;
+      MaskEdit1.Text := fdqryResidenceTinNo.AsString;
+      MaskEdit2.Text := fdqryResidenceContactNumber.AsString;
+      MaskEdit3.Text := fdqryResidenceEmrgncyContactNumber.AsString;
+      RichEdit1.Text := fdqryResidenceEmrgncyAddress.AsString;
+      Label7.Caption := fdqryResidenceCompleteName.AsString;
 
-    Combobox1.ItemIndex := ComboBox1.Items.IndexOf(fdqryResidenceBloodType.AsString);
-    Combobox2.ItemIndex := Combobox2.Items.IndexOf(fdqryResidenceEmrgncyName.AsString);
-    Combobox3.ItemIndex := Combobox3.Items.IndexOf(fdqryResidenceEmrgncyRelationship.AsString);
-    Image2.Picture.LoadFromFile(ImagePath);
-   except
-    // IO error
-     On E : EInvalidGraphic do begin
-       Image2.Picture.LoadFromFile(gsAppPath +'ImageBRGY\Default.png');
+      Combobox1.ItemIndex := ComboBox1.Items.IndexOf(fdqryResidenceBloodType.AsString);
+      Combobox2.ItemIndex := Combobox2.Items.IndexOf(fdqryResidenceEmrgncyName.AsString);
+      Combobox3.ItemIndex := Combobox3.Items.IndexOf(fdqryResidenceEmrgncyRelationship.AsString);
+      Image2.Picture.LoadFromFile(ImagePath);
+     except
+      // IO error
+       On E : EInvalidGraphic do begin
+         Image2.Picture.LoadFromFile(gsAppPath +'ImageBRGY\Default.png');
+       end;
      end;
-   end;
+  end;
 end;
 
 procedure TUResidence.FormShow(Sender: TObject);
@@ -230,6 +233,11 @@ begin
   end;
 
 
+end;
+
+procedure TUResidence.SearchBox1Change(Sender: TObject);
+begin
+  DBGridEh1.SearchPanel.SearchingText := SearchBox1.Text;
 end;
 
 procedure TUResidence.SpeedButton1Click(Sender: TObject);

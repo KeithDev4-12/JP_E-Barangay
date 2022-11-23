@@ -55,6 +55,9 @@ object UResidence: TUResidence
         Align = alClient
         DataSource = DSResidence
         DynProps = <>
+        SearchPanel.Enabled = True
+        SearchPanel.FilterOnTyping = True
+        SearchPanel.Location = splHorzScrollBarExtraPanelEh
         TabOrder = 0
         Columns = <
           item
@@ -697,7 +700,8 @@ object UResidence: TUResidence
           Width = 201
           Height = 21
           TabOrder = 0
-          Text = 'Search Here'
+          TextHint = 'Search Here'
+          OnChange = SearchBox1Change
         end
         object BitBtn1: TBitBtn
           Left = 79

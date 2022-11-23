@@ -23,9 +23,6 @@ object UAccountProfile: TUAccountProfile
     Align = alLeft
     Caption = 'MENUS'
     TabOrder = 0
-    ExplicitLeft = 8
-    ExplicitTop = 8
-    ExplicitHeight = 474
     object Shape2: TShape
       Left = 2
       Top = 242
@@ -48,7 +45,6 @@ object UAccountProfile: TUAccountProfile
       Anchors = [akLeft, akTop, akRight, akBottom]
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitHeight = 309
       object DBGridEh1: TDBGridEh
         Left = 0
         Top = 73
@@ -58,6 +54,9 @@ object UAccountProfile: TUAccountProfile
         DataSource = DSAccountProfile
         DynProps = <>
         PopupMenu = PopupMenu1
+        SearchPanel.Enabled = True
+        SearchPanel.FilterOnTyping = True
+        SearchPanel.Location = splHorzScrollBarExtraPanelEh
         TabOrder = 0
         Columns = <
           item
@@ -612,8 +611,10 @@ object UAccountProfile: TUAccountProfile
           Top = 20
           Width = 201
           Height = 21
+          Hint = 'Search Here'
           TabOrder = 0
-          Text = 'Search Here'
+          TextHint = 'Search Here'
+          OnChange = SearchBox1Change
         end
         object BitBtn1: TBitBtn
           Left = 79
@@ -633,7 +634,6 @@ object UAccountProfile: TUAccountProfile
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitTop = 327
       object SpeedButton2: TSpeedButton
         Left = 129
         Top = 0
@@ -993,9 +993,6 @@ object UAccountProfile: TUAccountProfile
     Color = clBtnHighlight
     ParentBackground = False
     TabOrder = 1
-    ExplicitLeft = 156
-    ExplicitWidth = 501
-    ExplicitHeight = 474
     object Label2: TLabel
       Left = 16
       Top = 41
@@ -1274,6 +1271,7 @@ object UAccountProfile: TUAccountProfile
     Top = 48
     object fdqryAccountProfileID: TFDAutoIncField
       FieldName = 'ID'
+      ReadOnly = True
     end
     object fdqryAccountProfileFName: TStringField
       FieldName = 'FName'

@@ -92,6 +92,7 @@ type
     procedure SpeedButton3Click(Sender: TObject);
     procedure SpeedButton4Click(Sender: TObject);
     procedure DSAccountProfileDataChange(Sender: TObject; Field: TField);
+    procedure SearchBox1Change(Sender: TObject);
   private
     { Private declarations }
   public
@@ -100,6 +101,7 @@ type
 
 var
   UAccountProfile: TUAccountProfile;
+  SName : String;
 
 implementation
 
@@ -110,26 +112,34 @@ uses MainDataModule;
 procedure TUAccountProfile.DBEdit2Change(Sender: TObject);
 begin
   Label7.Caption := DBEdit4.Text + ', ' + DBEdit2.Text + ' ' + DBEdit3.Text;
+  SName := Label7.Caption;
 end;
 
 procedure TUAccountProfile.DSAccountProfileDataChange(Sender: TObject;
   Field: TField);
 begin
-  Label7.Caption := fdqryAccountProfileFullName.AsString;
-  if fdqryAccountProfileGender.AsString = 'Male' then begin
-    RadioButton1.Checked := True;
+  if fdqryAccountProfile.State = dsBrowse then begin
+    Label7.Caption := fdqryAccountProfileFullName.AsString;
+    Edit1.Text := fdqryAccountProfilePassword.AsString;
+    Edit2.Text := fdqryAccountProfilePassword.AsString;
+    Combobox1.ItemIndex := ComboBox1.Items.IndexOf(fdqryAccountProfileUserStatus.AsString);
+    DateTimePicker1.DateTime :=  fdqryAccountProfileDateCreated.AsDateTime;
+    DateTimePicker2.DateTime := Now();
+     if fdqryAccountProfileGender.AsString = 'Male' then begin
+      RadioButton1.Checked := True;
+    end;
+    if fdqryAccountProfileGender.AsString = 'Female' then begin
+      RadioButton2.Checked := True;
+    end;
+    if fdqryAccountProfileGender.AsString = 'Others' then begin
+      RadioButton3.Checked := True;
+    end;
   end;
-  if fdqryAccountProfileGender.AsString = 'Female' then begin
-    RadioButton2.Checked := True;
-  end;
-  if fdqryAccountProfileGender.AsString = 'Others' then begin
-    RadioButton3.Checked := True;
-  end;
-  Edit1.Text := fdqryAccountProfilePassword.AsString;
-  Edit2.Text := fdqryAccountProfilePassword.AsString;
-  Combobox1.ItemIndex := ComboBox1.Items.IndexOf(fdqryAccountProfileUserStatus.AsString);
-  DateTimePicker1.DateTime :=  fdqryAccountProfileDateCreated.AsDateTime;
-  DateTimePicker2.DateTime := Now();
+end;
+
+procedure TUAccountProfile.SearchBox1Change(Sender: TObject);
+begin
+  DBGridEh1.SearchPanel.SearchingText := SearchBox1.Text;
 end;
 
 procedure TUAccountProfile.SpeedButton1Click(Sender: TObject);
@@ -142,6 +152,7 @@ end;
 
 procedure TUAccountProfile.SpeedButton2Click(Sender: TObject);
 begin
+
   if RadioButton1.Checked then begin
     fdqryAccountProfileGender.AsString := 'Male';
   end;
@@ -158,7 +169,7 @@ begin
    ShowMessage('Password are not matched!!');
     Exit;
   end;
-  fdqryAccountProfileFullName.AsString := Label7.Caption;
+  fdqryAccountProfileFullName.AsString := SName;
   fdqryAccountProfileUserStatus.AsString := Combobox1.Text;
   fdqryAccountProfileDateCreated.AsDateTime := DateTimePicker1.Date;
   fdqryAccountProfileDateModified.AsDateTime := DateTimePicker2.Date;
@@ -181,7 +192,7 @@ end;
 
 procedure TUAccountProfile.SpeedButton4Click(Sender: TObject);
 begin
- With DM do begin
+  With DM do begin
     EnableDataSet(fdqryAccountProfile,False);
     fdqryAccountProfile.Cancel;
     Close;
@@ -193,9 +204,9 @@ begin
   With DM do begin
     EnableDataSet(fdqryAccountProfile,True);
     fdqryAccountProfile.Append;
-    fdqryCount.Close;
-    fdqryCount.Open;
-    DBEdit1.Text := fdqryCountIDC.AsString;
+    //fdqryCount.Close;
+    //fdqryCount.Open;
+    //DBEdit1.Text := fdqryCountIDC.AsString;
     DateTimePicker1.DateTime := Now();
     DateTimePicker2.DateTime := Now();
   end;

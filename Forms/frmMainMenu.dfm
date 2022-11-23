@@ -6382,7 +6382,6 @@ object UMainMenu: TUMainMenu
         BevelOuter = bvNone
         TabOrder = 1
         OnClick = Panel6Click
-        ExplicitTop = 42
         object Label20: TLabel
           Left = 54
           Top = 15
@@ -6450,6 +6449,7 @@ object UMainMenu: TUMainMenu
         Align = alTop
         BevelOuter = bvNone
         TabOrder = 4
+        OnClick = Panel9Click
         object Label23: TLabel
           Left = 54
           Top = 15

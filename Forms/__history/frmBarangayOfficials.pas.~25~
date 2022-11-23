@@ -1,0 +1,206 @@
+unit frmBarangayOfficials;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, DBGridEhGrouping, ToolCtrlsEh,
+  DBGridEhToolCtrls, DynVarsEh, Vcl.Buttons, Vcl.StdCtrls, Vcl.WinXCtrls,
+  dxGDIPlusClasses, Vcl.ExtCtrls, EhLibVCL, GridsEh, DBAxisGridsEh, DBGridEh,
+  Vcl.ComCtrls, DBCtrlsEh, Vcl.Mask, Vcl.DBCtrls, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+  Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.ExtDlgs,IWSystem;
+
+type
+  TUBarangayOfficials = class(TForm)
+    GroupBox1: TGroupBox;
+    Shape2: TShape;
+    Panel1: TPanel;
+    DBGridEh1: TDBGridEh;
+    Panel2: TPanel;
+    Image1: TImage;
+    Label1: TLabel;
+    SearchBox1: TSearchBox;
+    Panel3: TPanel;
+    SpeedButton2: TSpeedButton;
+    Shape4: TShape;
+    Panel4: TPanel;
+    SpeedButton1: TSpeedButton;
+    SpeedButton3: TSpeedButton;
+    SpeedButton4: TSpeedButton;
+    Shape1: TShape;
+    Shape3: TShape;
+    Shape5: TShape;
+    Shape6: TShape;
+    SpeedButton5: TSpeedButton;
+    Shape7: TShape;
+    Panel5: TPanel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label16: TLabel;
+    Shape8: TShape;
+    Label13: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    DBDateTimeEditEh1: TDBDateTimeEditEh;
+    RadioButton1: TRadioButton;
+    RadioButton2: TRadioButton;
+    RadioButton3: TRadioButton;
+    ComboBox1: TComboBox;
+    DateTimePicker1: TDateTimePicker;
+    DateTimePicker2: TDateTimePicker;
+    Label10: TLabel;
+    DBEdit5: TDBEdit;
+    Panel6: TPanel;
+    Image2: TImage;
+    BitBtn2: TBitBtn;
+    DSBarangayOfficials: TDataSource;
+    fdBarangayOfficials: TFDQuery;
+    fdBarangayOfficialsID: TFDAutoIncField;
+    fdBarangayOfficialsFName: TStringField;
+    fdBarangayOfficialsMName: TStringField;
+    fdBarangayOfficialsLName: TStringField;
+    fdBarangayOfficialsName: TStringField;
+    fdBarangayOfficialsPosition: TStringField;
+    fdBarangayOfficialsYear: TStringField;
+    fdBarangayOfficialsDOB: TDateField;
+    fdBarangayOfficialsGender: TStringField;
+    fdBarangayOfficialsPicture: TMemoField;
+    fdBarangayOfficialsDateCreated: TDateField;
+    fdBarangayOfficialsDateModified: TDateField;
+    fdBarangayOfficialsStatus: TStringField;
+    OpenPictureDialog1: TOpenPictureDialog;
+    procedure BitBtn2Click(Sender: TObject);
+    procedure DBEdit2Change(Sender: TObject);
+    procedure SpeedButton5Click(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure SpeedButton3Click(Sender: TObject);
+    procedure SpeedButton4Click(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  UBarangayOfficials: TUBarangayOfficials;
+  LocationPaste,SName :String ;
+
+implementation
+
+{$R *.dfm}
+
+uses MainDataModule;
+
+procedure TUBarangayOfficials.BitBtn2Click(Sender: TObject);
+Var
+  ExtImage : String;
+begin
+  if fdBarangayOfficials.State IN [dsInsert,dsEdit] then begin
+
+  end else begin
+    MessageDlg('Cannot Upload Image, Please Click New Data',mtWarning,[mbClose],0);
+    Exit;
+  end;
+
+  if OpenPictureDialog1.Execute(Self.Handle) then begin
+
+    ExtImage := ExtractFileExt(OpenPictureDialog1.FileName);
+    //Showmessage(OpenPictureDialog1.FileName);
+    //Showmessage(gsAppPath + 'ImageBRGY\'+DBEdit1.Text +ExtImage);
+    LocationPaste := gsAppPath + 'ImageBRGY\'+DBEdit1.Text +ExtImage;
+    CopyFile(PChar(OpenPictureDialog1.FileName), PChar(LocationPaste), False);
+    Image2.Picture.LoadFromFile(LocationPaste);
+  end;
+end;
+
+procedure TUBarangayOfficials.DBEdit2Change(Sender: TObject);
+begin
+  Label7.Caption := DBEdit4.Text + ', ' + DBEdit2.Text + ' ' + DBEdit3.Text;
+  SName := Label7.Caption;
+end;
+
+procedure TUBarangayOfficials.FormShow(Sender: TObject);
+begin
+  fdBarangayOfficials.Close;
+  fdBarangayOfficials.Open;
+end;
+
+procedure TUBarangayOfficials.SpeedButton1Click(Sender: TObject);
+begin
+  With DM do begin
+    EnableDataSet(fdBarangayOfficials,True);
+    fdBarangayOfficials.Edit;
+  end;
+end;
+
+procedure TUBarangayOfficials.SpeedButton2Click(Sender: TObject);
+begin
+  if RadioButton1.Checked then begin
+    fdBarangayOfficialsGender.AsString := 'Male';
+  end;
+  if RadioButton2.Checked then begin
+    fdBarangayOfficialsGender.AsString := 'Female';
+  end;
+  if RadioButton3.Checked then begin
+    fdBarangayOfficialsGender.AsString := 'Others';
+  end;
+
+
+  fdBarangayOfficialsLName.AsString := SName;
+  fdBarangayOfficialsStatus.AsString := Combobox1.Text;
+  fdBarangayOfficialsDateCreated.AsDateTime := DateTimePicker1.Date;
+  fdBarangayOfficialsDateModified.AsDateTime := DateTimePicker2.Date;
+  if fdBarangayOfficials.State = dsInsert then begin
+    MessageDlg('Data has been Inserted!',mtInformation,[mbClose],0);
+    fdBarangayOfficials.Post;
+  end else if fdBarangayOfficials.State = dsEdit then begin
+    MessageDlg('Data has been Updated!',mtInformation,[mbClose],0);
+    fdBarangayOfficials.Post;
+  end;
+end;
+
+procedure TUBarangayOfficials.SpeedButton3Click(Sender: TObject);
+begin
+  With DM do begin
+    EnableDataSet(fdBarangayOfficials,False);
+    fdBarangayOfficials.Cancel;
+  end;
+end;
+
+procedure TUBarangayOfficials.SpeedButton4Click(Sender: TObject);
+begin
+  With DM do begin
+    EnableDataSet(fdBarangayOfficials,False);
+    fdBarangayOfficials.Cancel;
+    Close;
+  end;
+end;
+
+procedure TUBarangayOfficials.SpeedButton5Click(Sender: TObject);
+begin
+  With DM do begin
+    EnableDataSet(fdBarangayOfficials,True);
+    fdBarangayOfficials.Append;
+    //fdqryCount.Close;
+    //fdqryCount.Open;
+    //DBEdit1.Text := fdqryCountIDC.AsString;
+    DateTimePicker1.DateTime := Now();
+    DateTimePicker2.DateTime := Now();
+  end;
+end;
+
+end.

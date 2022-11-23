@@ -118,6 +118,7 @@ type
     procedure Panel7Click(Sender: TObject);
     procedure Re1Click(Sender: TObject);
     procedure User1Click(Sender: TObject);
+    procedure Panel9Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -130,7 +131,7 @@ var
 implementation
 
 {$R *.dfm}
-uses frmResidence, frmAccountProfile;
+uses frmResidence, frmAccountProfile, frmBarangayOfficials;
 
 procedure TUMainMenu.FormShow(Sender: TObject);
 begin
@@ -170,6 +171,22 @@ begin
     UAccountProfile.ShowModal;
   finally
     UAccountProfile.Free;
+  end;
+end;
+
+procedure TUMainMenu.Panel9Click(Sender: TObject);
+var
+  //FWashingPanels : TFWashingPanels;
+  UBarangayOfficials : TUBarangayOfficials;
+begin
+  //if Assigned(FSettings) then
+  //  FSettings.Free;
+  try
+    UBarangayOfficials := TUBarangayOfficials.Create(Self);
+    //UResidence.PageControl1.ActivePageIndex := 3;
+    UBarangayOfficials.ShowModal;
+  finally
+    UBarangayOfficials.Free;
   end;
 end;
 
