@@ -119,6 +119,7 @@ type
     procedure Re1Click(Sender: TObject);
     procedure User1Click(Sender: TObject);
     procedure Panel9Click(Sender: TObject);
+    procedure Panel10Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -131,13 +132,31 @@ var
 implementation
 
 {$R *.dfm}
-uses frmResidence, frmAccountProfile, frmBarangayOfficials;
+uses frmResidence, frmAccountProfile, frmBarangayOfficials, frmHistoryIssuance;
 
 procedure TUMainMenu.FormShow(Sender: TObject);
 begin
     pnlCenter.Left := ((Screen.DesktopWidth - pnlCenter.Width - Panel2.Width) div 2);
     pnlCenter.Top := ((Screen.DesktopHeight - pnlCenter.Height - 50) div 2);
     //ShowMessage(CurrToStr(Screen.DesktopHeight));
+end;
+
+procedure TUMainMenu.Panel10Click(Sender: TObject);
+var
+  //FWashingPanels : TFWashingPanels;
+  UHistoryIssuance : TUHistoryIssuance;
+begin
+  //if Assigned(FSettings) then
+  //  FSettings.Free;
+  try
+
+    //Panel8.Visible := False;
+    UHistoryIssuance := TUHistoryIssuance.Create(Self);
+    //UResidence.PageControl1.ActivePageIndex := 3;
+    UHistoryIssuance.ShowModal;
+  finally
+    UHistoryIssuance.Free;
+  end;
 end;
 
 procedure TUMainMenu.Panel6Click(Sender: TObject);
@@ -149,7 +168,7 @@ begin
   //  FSettings.Free;
   try
 
-    Panel8.Visible := False;
+    //Panel8.Visible := False;
     UResidence := TUResidence.Create(Self);
     //UResidence.PageControl1.ActivePageIndex := 3;
     UResidence.ShowModal;

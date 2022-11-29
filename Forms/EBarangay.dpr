@@ -7,7 +7,9 @@ uses
   frmResidence in 'frmResidence.pas' {UResidence},
   MainDataModule in 'MainDataModule.pas' {DM: TDataModule},
   frmAccountProfile in 'frmAccountProfile.pas' {UAccountProfile},
-  frmBarangayOfficials in 'frmBarangayOfficials.pas' {UBarangayOfficials};
+  frmBarangayOfficials in 'frmBarangayOfficials.pas' {UBarangayOfficials},
+  frmHistoryIssuance in 'frmHistoryIssuance.pas' {UHistoryIssuance},
+  frmReport in 'frmReport.pas' {UReport};
 
 {$R *.res}
 
@@ -20,5 +22,7 @@ begin
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TUAccountProfile, UAccountProfile);
   Application.CreateForm(TUBarangayOfficials, UBarangayOfficials);
+  Application.CreateForm(TUHistoryIssuance, UHistoryIssuance);
+  Application.CreateForm(TUReport, UReport);
   Application.Run;
 end.

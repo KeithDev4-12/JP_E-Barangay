@@ -23,9 +23,6 @@ object UBarangayOfficials: TUBarangayOfficials
     Align = alLeft
     Caption = 'MENUS'
     TabOrder = 0
-    ExplicitLeft = 8
-    ExplicitTop = 8
-    ExplicitHeight = 392
     object Shape2: TShape
       Left = 2
       Top = 358
@@ -48,7 +45,6 @@ object UBarangayOfficials: TUBarangayOfficials
       Anchors = [akLeft, akTop, akRight, akBottom]
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitHeight = 227
       object DBGridEh1: TDBGridEh
         Left = 0
         Top = 49
@@ -643,7 +639,6 @@ object UBarangayOfficials: TUBarangayOfficials
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitTop = 245
       object SpeedButton2: TSpeedButton
         Left = 129
         Top = 0
@@ -1003,9 +998,6 @@ object UBarangayOfficials: TUBarangayOfficials
     Color = clBtnHighlight
     ParentBackground = False
     TabOrder = 1
-    ExplicitLeft = 217
-    ExplicitWidth = 431
-    ExplicitHeight = 484
     object Label2: TLabel
       Left = 16
       Top = 198
@@ -1044,7 +1036,7 @@ object UBarangayOfficials: TUBarangayOfficials
     object Label7: TLabel
       Left = 105
       Top = 300
-      Width = 251
+      Width = 208
       Height = 16
       Caption = 'Last Name,First Name Middle Name '
       Font.Charset = DEFAULT_CHARSET
@@ -1298,6 +1290,7 @@ object UBarangayOfficials: TUBarangayOfficials
       FieldName = 'ID'
       Origin = 'ID'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object fdBarangayOfficialsFName: TStringField
       AutoGenerateValue = arDefault

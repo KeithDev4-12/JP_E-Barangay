@@ -159,7 +159,6 @@ begin
         RadioButton3.Checked := True;
       end;
 
-
       Label7.Caption := fdBarangayOfficialsName.AsString;
       DateTimePicker1.DateTime := fdBarangayOfficialsDateCreated.AsDateTime;
       DateTimePicker2.DateTime := fdBarangayOfficialsDateModified.AsDateTime;
