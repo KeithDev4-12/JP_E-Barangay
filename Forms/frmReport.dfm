@@ -15,8 +15,8 @@ object UReport: TUReport
   PixelsPerInch = 97
   TextHeight = 13
   object QRBrgyCertificate: TQuickRep
-    Left = -480
-    Top = 70
+    Left = -9
+    Top = 38
     Width = 825
     Height = 1067
     ShowingPreview = False
@@ -23696,7 +23696,7 @@ object UReport: TUReport
     end
     object QRBand3: TQRBand
       Left = 24
-      Top = 483
+      Top = 465
       Width = 776
       Height = 441
       Frame.DrawTop = True
@@ -34954,7 +34954,7 @@ object UReport: TUReport
     end
     object QRBand4: TQRBand
       Left = 24
-      Top = 465
+      Top = 906
       Width = 776
       Height = 18
       AlignToBottom = False

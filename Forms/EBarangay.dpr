@@ -9,7 +9,8 @@ uses
   frmAccountProfile in 'frmAccountProfile.pas' {UAccountProfile},
   frmBarangayOfficials in 'frmBarangayOfficials.pas' {UBarangayOfficials},
   frmHistoryIssuance in 'frmHistoryIssuance.pas' {UHistoryIssuance},
-  frmReport in 'frmReport.pas' {UReport};
+  frmReport in 'frmReport.pas' {UReport},
+  frmPreview in 'frmPreview.pas' {UPreviewData};
 
 {$R *.res}
 
@@ -24,5 +25,6 @@ begin
   Application.CreateForm(TUBarangayOfficials, UBarangayOfficials);
   Application.CreateForm(TUHistoryIssuance, UHistoryIssuance);
   Application.CreateForm(TUReport, UReport);
+  Application.CreateForm(TUPreviewData, UPreviewData);
   Application.Run;
 end.
