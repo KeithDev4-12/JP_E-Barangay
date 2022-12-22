@@ -8,8 +8,8 @@ object DM: TDM
       'Port=3311'
       'Password=ict'
       'Database=jplaureldb'
+      'Pooled=False'
       'ConnectionDef=MYSQL_COOP')
-    Connected = True
     Left = 16
     Top = 16
   end

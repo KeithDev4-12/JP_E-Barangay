@@ -21,10 +21,6 @@ object UPreviewData: TUPreviewData
     Align = alClient
     Caption = 'MENUS'
     TabOrder = 0
-    ExplicitLeft = 8
-    ExplicitTop = 8
-    ExplicitWidth = 220
-    ExplicitHeight = 392
     object Panel1: TPanel
       Left = 2
       Top = 15
@@ -33,8 +29,6 @@ object UPreviewData: TUPreviewData
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitWidth = 216
-      ExplicitHeight = 378
       object DBGridEh1: TDBGridEh
         Left = 0
         Top = 73
@@ -143,7 +137,6 @@ object UPreviewData: TUPreviewData
         Align = alTop
         BevelOuter = bvNone
         TabOrder = 1
-        ExplicitTop = -6
         object Image1: TImage
           Left = -8
           Top = -7
@@ -598,9 +591,15 @@ object UPreviewData: TUPreviewData
         object Label2: TLabel
           Left = 408
           Top = 16
-          Width = 77
-          Height = 13
+          Width = 98
+          Height = 16
           Caption = 'PREVIEW MODE'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
         end
         object SearchBox1: TSearchBox
           Left = 8

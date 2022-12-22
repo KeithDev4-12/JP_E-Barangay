@@ -120,6 +120,7 @@ type
     procedure User1Click(Sender: TObject);
     procedure Panel9Click(Sender: TObject);
     procedure Panel10Click(Sender: TObject);
+    procedure BarangayCertificate1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -132,7 +133,21 @@ var
 implementation
 
 {$R *.dfm}
-uses frmResidence, frmAccountProfile, frmBarangayOfficials, frmHistoryIssuance;
+uses frmResidence, frmAccountProfile, frmBarangayOfficials, frmHistoryIssuance, frmPreview;
+
+procedure TUMainMenu.BarangayCertificate1Click(Sender: TObject);
+var
+  UPreviewData : TUPreviewData;
+begin
+  try
+    UPreviewData := TUPreviewData.Create(Self);
+    UPreviewData.Label2.Caption := 'Barangay Certificate';
+    //UResidence.PageControl1.ActivePageIndex := 3;
+    UPreviewData.ShowModal;
+  finally
+    UPreviewData.Free;
+  end;
+end;
 
 procedure TUMainMenu.FormShow(Sender: TObject);
 begin

@@ -6516,6 +6516,7 @@ object UMainMenu: TUMainMenu
       end
       object BarangayCertificate1: TMenuItem
         Caption = 'Barangay Certificate'
+        OnClick = BarangayCertificate1Click
       end
       object BarangayClearance1: TMenuItem
         Caption = 'Barangay Clearance'
