@@ -93,6 +93,7 @@ type
     procedure SpeedButton4Click(Sender: TObject);
     procedure DSAccountProfileDataChange(Sender: TObject; Field: TField);
     procedure SearchBox1Change(Sender: TObject);
+    procedure DeleteData1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -113,6 +114,11 @@ procedure TUAccountProfile.DBEdit2Change(Sender: TObject);
 begin
   Label7.Caption := DBEdit4.Text + ', ' + DBEdit2.Text + ' ' + DBEdit3.Text;
   SName := Label7.Caption;
+end;
+
+procedure TUAccountProfile.DeleteData1Click(Sender: TObject);
+begin
+  fdqryAccountProfile.Delete;
 end;
 
 procedure TUAccountProfile.DSAccountProfileDataChange(Sender: TObject;

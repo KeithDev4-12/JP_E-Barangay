@@ -131,5 +131,6 @@ var
 implementation
 
 {$R *.dfm}
+Uses frmPreview;
 
 end.

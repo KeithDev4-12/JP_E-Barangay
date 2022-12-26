@@ -577,6 +577,197 @@ object UMainMenu: TUMainMenu
         end
       end
     end
+    object GroupBox10: TGroupBox
+      Left = -1
+      Top = 330
+      Width = 218
+      Height = 248
+      TabOrder = 1
+      Visible = False
+      object Shape27: TShape
+        Left = -6
+        Top = 0
+        Width = 225
+        Height = 1
+        Pen.Color = clMedGray
+      end
+      object Shape29: TShape
+        Left = -7
+        Top = 36
+        Width = 225
+        Height = 1
+        Pen.Color = clMedGray
+      end
+      object Shape28: TShape
+        Left = -7
+        Top = 71
+        Width = 225
+        Height = 1
+        Pen.Color = clMedGray
+      end
+      object Shape30: TShape
+        Left = -7
+        Top = 106
+        Width = 225
+        Height = 1
+        Pen.Color = clMedGray
+      end
+      object Shape31: TShape
+        Left = -7
+        Top = 141
+        Width = 225
+        Height = 1
+        Pen.Color = clMedGray
+      end
+      object Shape32: TShape
+        Left = -7
+        Top = 176
+        Width = 225
+        Height = 1
+        Pen.Color = clMedGray
+      end
+      object Shape33: TShape
+        Left = -7
+        Top = 211
+        Width = 225
+        Height = 1
+        Pen.Color = clMedGray
+      end
+      object Shape34: TShape
+        Left = -7
+        Top = 246
+        Width = 225
+        Height = 1
+        Pen.Color = clMedGray
+      end
+      object Panel11: TPanel
+        Left = -3
+        Top = 1
+        Width = 225
+        Height = 35
+        BevelOuter = bvNone
+        TabOrder = 0
+        object Label27: TLabel
+          Left = 25
+          Top = 10
+          Width = 75
+          Height = 14
+          Caption = 'Barangay ID'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+      end
+      object Panel12: TPanel
+        Left = -7
+        Top = 36
+        Width = 225
+        Height = 35
+        BevelOuter = bvNone
+        TabOrder = 1
+        object Label28: TLabel
+          Left = 29
+          Top = 10
+          Width = 150
+          Height = 14
+          Caption = 'Certificate Of Apperance'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+      end
+      object Panel13: TPanel
+        Left = -7
+        Top = 71
+        Width = 225
+        Height = 35
+        BevelOuter = bvNone
+        TabOrder = 2
+        OnClick = Panel13Click
+        object Label29: TLabel
+          Left = 29
+          Top = 10
+          Width = 124
+          Height = 14
+          Caption = 'Barangay Certificate'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+      end
+      object Panel14: TPanel
+        Left = -7
+        Top = 106
+        Width = 225
+        Height = 35
+        BevelOuter = bvNone
+        TabOrder = 3
+        object Label30: TLabel
+          Left = 29
+          Top = 10
+          Width = 119
+          Height = 14
+          Caption = 'Barangay Clearance'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+      end
+      object Panel15: TPanel
+        Left = -7
+        Top = 141
+        Width = 225
+        Height = 35
+        BevelOuter = bvNone
+        TabOrder = 4
+        object Label31: TLabel
+          Left = 29
+          Top = 10
+          Width = 175
+          Height = 14
+          Caption = 'Barangay Business Clearance'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+      end
+      object Panel16: TPanel
+        Left = -7
+        Top = 176
+        Width = 225
+        Height = 35
+        BevelOuter = bvNone
+        TabOrder = 5
+        object Label32: TLabel
+          Left = 29
+          Top = 10
+          Width = 145
+          Height = 14
+          Caption = 'Certificate Of Indigency'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+      end
+    end
   end
   object Panel2: TPanel
     Left = 0
@@ -6427,12 +6618,13 @@ object UMainMenu: TUMainMenu
         Align = alTop
         BevelOuter = bvNone
         TabOrder = 3
+        OnClick = Panel8Click
         object Label22: TLabel
           Left = 54
           Top = 15
-          Width = 61
+          Width = 59
           Height = 14
-          Caption = 'Printables'
+          Caption = 'Issuances'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
@@ -6507,7 +6699,7 @@ object UMainMenu: TUMainMenu
       end
     end
     object Issuance1: TMenuItem
-      Caption = 'Issuance'
+      Caption = 'Printing Reports'
       object BaraganyID1: TMenuItem
         Caption = 'Baragany ID'
       end
@@ -6547,5 +6739,12 @@ object UMainMenu: TUMainMenu
   object ImageList1: TImageList
     Left = 232
     Top = 160
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 257
+    Top = 248
+    object BarangayID1: TMenuItem
+      Caption = 'Barangay ID'
+    end
   end
 end

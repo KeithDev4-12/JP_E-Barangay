@@ -53,6 +53,7 @@ object UBarangayOfficials: TUBarangayOfficials
         Align = alClient
         DataSource = DSBarangayOfficials
         DynProps = <>
+        PopupMenu = PopupMenu1
         SearchPanel.Enabled = True
         SearchPanel.FilterOnTyping = True
         SearchPanel.Location = splHorzScrollBarExtraPanelEh
@@ -1365,5 +1366,13 @@ object UBarangayOfficials: TUBarangayOfficials
   object OpenPictureDialog1: TOpenPictureDialog
     Left = 444
     Top = 56
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 138
+    Top = 247
+    object DeleteThis1: TMenuItem
+      Caption = 'Delete This'
+      OnClick = DeleteThis1Click
+    end
   end
 end

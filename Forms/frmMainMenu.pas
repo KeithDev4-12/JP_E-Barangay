@@ -113,6 +113,29 @@ type
     BarangayBusinessClearance1: TMenuItem;
     CertificateOfIn1: TMenuItem;
     otalNumberOfPopulationReport1: TMenuItem;
+    PopupMenu1: TPopupMenu;
+    BarangayID1: TMenuItem;
+    GroupBox10: TGroupBox;
+    Panel11: TPanel;
+    Label27: TLabel;
+    Shape27: TShape;
+    Shape29: TShape;
+    Panel12: TPanel;
+    Label28: TLabel;
+    Shape28: TShape;
+    Panel13: TPanel;
+    Label29: TLabel;
+    Shape30: TShape;
+    Panel14: TPanel;
+    Label30: TLabel;
+    Shape31: TShape;
+    Panel15: TPanel;
+    Label31: TLabel;
+    Shape32: TShape;
+    Panel16: TPanel;
+    Label32: TLabel;
+    Shape33: TShape;
+    Shape34: TShape;
     procedure FormShow(Sender: TObject);
     procedure Panel6Click(Sender: TObject);
     procedure Panel7Click(Sender: TObject);
@@ -121,6 +144,8 @@ type
     procedure Panel9Click(Sender: TObject);
     procedure Panel10Click(Sender: TObject);
     procedure BarangayCertificate1Click(Sender: TObject);
+    procedure Panel8Click(Sender: TObject);
+    procedure Panel13Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -133,7 +158,8 @@ var
 implementation
 
 {$R *.dfm}
-uses frmResidence, frmAccountProfile, frmBarangayOfficials, frmHistoryIssuance, frmPreview;
+uses frmResidence, frmAccountProfile, frmBarangayOfficials, frmHistoryIssuance, frmPreview,
+frmBarangayCertificate;
 
 procedure TUMainMenu.BarangayCertificate1Click(Sender: TObject);
 var
@@ -174,6 +200,22 @@ begin
   end;
 end;
 
+procedure TUMainMenu.Panel13Click(Sender: TObject);
+var
+  //FWashingPanels : TFWashingPanels;
+  UBarangayCertificate : TUBarangayCertificate;
+begin
+  //if Assigned(FSettings) then
+  //  FSettings.Free;
+  try
+    UBarangayCertificate := TUBarangayCertificate.Create(Self);
+    //UResidence.PageControl1.ActivePageIndex := 3;
+    UBarangayCertificate.ShowModal;
+  finally
+    UBarangayCertificate.Free;
+  end;
+end;
+
 procedure TUMainMenu.Panel6Click(Sender: TObject);
 var
   //FWashingPanels : TFWashingPanels;
@@ -206,6 +248,16 @@ begin
   finally
     UAccountProfile.Free;
   end;
+end;
+
+procedure TUMainMenu.Panel8Click(Sender: TObject);
+begin
+  if GroupBox10.Visible then begin
+    GroupBox10.Visible := False;
+  end else begin
+    GroupBox10.Visible := True;
+  end;
+
 end;
 
 procedure TUMainMenu.Panel9Click(Sender: TObject);

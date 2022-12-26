@@ -1337,6 +1337,7 @@ object UAccountProfile: TUAccountProfile
     Top = 351
     object DeleteData1: TMenuItem
       Caption = 'Delete Data'
+      OnClick = DeleteData1Click
     end
   end
 end

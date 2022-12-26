@@ -10,7 +10,8 @@ uses
   frmBarangayOfficials in 'frmBarangayOfficials.pas' {UBarangayOfficials},
   frmHistoryIssuance in 'frmHistoryIssuance.pas' {UHistoryIssuance},
   frmReport in 'frmReport.pas' {UReport},
-  frmPreview in 'frmPreview.pas' {UPreviewData};
+  frmPreview in 'frmPreview.pas' {UPreviewData},
+  frmBarangayCertificate in 'frmBarangayCertificate.pas' {UBarangayCertificate};
 
 {$R *.res}
 
@@ -26,5 +27,6 @@ begin
   Application.CreateForm(TUHistoryIssuance, UHistoryIssuance);
   Application.CreateForm(TUReport, UReport);
   Application.CreateForm(TUPreviewData, UPreviewData);
+  Application.CreateForm(TUBarangayCertificate, UBarangayCertificate);
   Application.Run;
 end.

@@ -1,0 +1,135 @@
+unit frmReport;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, QuickRpt,
+  dxGDIPlusClasses, QRCtrls;
+
+type
+  TUReport = class(TForm)
+    QRNewAppearance: TQuickRep;
+    QRBand2: TQRBand;
+    QRLabel4: TQRLabel;
+    QRLabel5: TQRLabel;
+    QRLabel6: TQRLabel;
+    QRLabel7: TQRLabel;
+    QRLabel8: TQRLabel;
+    QRLabel9: TQRLabel;
+    QRLabel10: TQRLabel;
+    Shape1: TShape;
+    Shape2: TShape;
+    Shape3: TShape;
+    Shape4: TShape;
+    Shape5: TShape;
+    QRDBText1: TQRDBText;
+    QRDBText2: TQRDBText;
+    QRDBText3: TQRDBText;
+    QRDBText4: TQRDBText;
+    QRDBText5: TQRDBText;
+    QRDBText6: TQRDBText;
+    QRLabel11: TQRLabel;
+    QRBand3: TQRBand;
+    QRBand4: TQRBand;
+    QRLabel23: TQRLabel;
+    QRLabel24: TQRLabel;
+    QRLabel25: TQRLabel;
+    QRImage5: TQRImage;
+    QRImage6: TQRImage;
+    QRLabel1: TQRLabel;
+    QRLabel2: TQRLabel;
+    QRLabel3: TQRLabel;
+    QRLabel12: TQRLabel;
+    QRLabel13: TQRLabel;
+    QRLabel14: TQRLabel;
+    QRLabel15: TQRLabel;
+    QRDBText7: TQRDBText;
+    QRDBText8: TQRDBText;
+    QRDBText9: TQRDBText;
+    QRDBText10: TQRDBText;
+    QRDBText11: TQRDBText;
+    QRDBText12: TQRDBText;
+    QRLabel16: TQRLabel;
+    QRLabel17: TQRLabel;
+    QRLabel18: TQRLabel;
+    QRLabel19: TQRLabel;
+    QRImage1: TQRImage;
+    QRImage2: TQRImage;
+    Shape6: TShape;
+    Shape7: TShape;
+    Shape8: TShape;
+    Shape9: TShape;
+    Shape10: TShape;
+    QRBrgyCertificate: TQuickRep;
+    QRBand1: TQRBand;
+    QRLabel20: TQRLabel;
+    QRLabel21: TQRLabel;
+    QRLabel22: TQRLabel;
+    QRImage3: TQRImage;
+    QRImage4: TQRImage;
+    QRLabel26: TQRLabel;
+    QRBand5: TQRBand;
+    QRLabel30: TQRLabel;
+    QRShape1: TQRShape;
+    QRLabel27: TQRLabel;
+    QRLabel28: TQRLabel;
+    QRLabel29: TQRLabel;
+    QRDBText13: TQRDBText;
+    QRLabel31: TQRLabel;
+    QRLabel32: TQRLabel;
+    QRDBText14: TQRDBText;
+    QRLabel33: TQRLabel;
+    QRShape2: TQRShape;
+    QRDBText15: TQRDBText;
+    QRLabel34: TQRLabel;
+    QRShape3: TQRShape;
+    QRLabel35: TQRLabel;
+    QRDBText16: TQRDBText;
+    QRLabel36: TQRLabel;
+    QRShape4: TQRShape;
+    QRDBText17: TQRDBText;
+    QRLabel37: TQRLabel;
+    QRLabel38: TQRLabel;
+    QRShape5: TQRShape;
+    QRLabel39: TQRLabel;
+    QRLabel40: TQRLabel;
+    QRLabel41: TQRLabel;
+    QRLabel42: TQRLabel;
+    QRLabel43: TQRLabel;
+    QRDBText18: TQRDBText;
+    QRLabel44: TQRLabel;
+    QRLabel45: TQRLabel;
+    QRDBText19: TQRDBText;
+    QRLabel46: TQRLabel;
+    QRLabel47: TQRLabel;
+    QRLabel48: TQRLabel;
+    QRDBText20: TQRDBText;
+    QRLabel49: TQRLabel;
+    QRDBText21: TQRDBText;
+    QRDBText22: TQRDBText;
+    QRDBText23: TQRDBText;
+    QRDBText24: TQRDBText;
+    QRDBText25: TQRDBText;
+    QRDBText26: TQRDBText;
+    QRDBText27: TQRDBText;
+    QRLabel50: TQRLabel;
+    QRDBText28: TQRDBText;
+    QRDBText29: TQRDBText;
+    QRLabel51: TQRLabel;
+    QRDBText30: TQRDBText;
+    QRLabel52: TQRLabel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  UReport: TUReport;
+
+implementation
+
+{$R *.dfm}
+
+end.

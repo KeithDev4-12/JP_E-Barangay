@@ -10,7 +10,8 @@ uses
   Vcl.ComCtrls, DBCtrlsEh, Vcl.Mask, Vcl.DBCtrls, FireDAC.Stan.Intf,
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
-  Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.ExtDlgs,IWSystem;
+  Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.ExtDlgs,IWSystem,
+  Vcl.Menus;
 
 type
   TUBarangayOfficials = class(TForm)
@@ -83,6 +84,8 @@ type
     OpenPictureDialog1: TOpenPictureDialog;
     Label11: TLabel;
     DBEdit6: TDBEdit;
+    PopupMenu1: TPopupMenu;
+    DeleteThis1: TMenuItem;
     procedure BitBtn2Click(Sender: TObject);
     procedure DBEdit2Change(Sender: TObject);
     procedure SpeedButton5Click(Sender: TObject);
@@ -92,6 +95,7 @@ type
     procedure SpeedButton2Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure DSBarangayOfficialsDataChange(Sender: TObject; Field: TField);
+    procedure DeleteThis1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -134,6 +138,11 @@ procedure TUBarangayOfficials.DBEdit2Change(Sender: TObject);
 begin
   Label7.Caption := DBEdit4.Text + ', ' + DBEdit2.Text + ' ' + DBEdit3.Text;
   SName := Label7.Caption;
+end;
+
+procedure TUBarangayOfficials.DeleteThis1Click(Sender: TObject);
+begin
+  fdBarangayOfficials.Delete;
 end;
 
 procedure TUBarangayOfficials.DSBarangayOfficialsDataChange(Sender: TObject;

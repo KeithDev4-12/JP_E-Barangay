@@ -10,7 +10,7 @@ uses
   Vcl.DBCtrls, DBCtrlsEh, Vcl.ComCtrls, Data.DB, FireDAC.Stan.Intf,
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.ExtDlgs,IWSystem;
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.ExtDlgs,IWSystem, Vcl.Menus;
 
 type
   TUResidence = class(TForm)
@@ -114,6 +114,8 @@ type
     RichEdit1: TRichEdit;
     fdqryCount: TFDQuery;
     fdqryCountIDC: TLargeintField;
+    PopupMenu1: TPopupMenu;
+    DeleteThis1: TMenuItem;
     procedure SpeedButton5Click(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure SpeedButton3Click(Sender: TObject);
@@ -125,6 +127,7 @@ type
     procedure BitBtn2Click(Sender: TObject);
     procedure DSResidenceDataChange(Sender: TObject; Field: TField);
     procedure SearchBox1Change(Sender: TObject);
+    procedure DeleteThis1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -175,6 +178,11 @@ end;
 procedure TUResidence.DBEdit2Change(Sender: TObject);
 begin
   Label7.Caption := DBEdit4.Text + ', ' + DBEdit2.Text + ' ' + DBEdit3.Text;
+end;
+
+procedure TUResidence.DeleteThis1Click(Sender: TObject);
+begin
+  fdqryResidence.Delete;
 end;
 
 procedure TUResidence.DSResidenceDataChange(Sender: TObject; Field: TField);

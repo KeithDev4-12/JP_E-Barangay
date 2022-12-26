@@ -12,14 +12,15 @@ object UReport: TUReport
   Font.Style = []
   OldCreateOrder = False
   Scaled = False
-  PixelsPerInch = 97
+  PixelsPerInch = 96
   TextHeight = 13
   object QRBrgyCertificate: TQuickRep
-    Left = -9
-    Top = 38
-    Width = 825
-    Height = 1067
+    Left = -102
+    Top = 99
+    Width = 816
+    Height = 1056
     ShowingPreview = False
+    DataSet = UPreviewData.fdqryResidence
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -77,14 +78,14 @@ object UReport: TUReport
     object QRBand1: TQRBand
       Left = 24
       Top = 24
-      Width = 776
-      Height = 179
+      Width = 768
+      Height = 177
       AlignToBottom = False
       TransparentBand = False
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        468.721649484536100000
+        468.312500000000000000
         2032.000000000000000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
@@ -92,7 +93,7 @@ object UReport: TUReport
       object QRLabel20: TQRLabel
         Left = 4
         Top = 33
-        Width = 765
+        Width = 757
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -115,8 +116,8 @@ object UReport: TUReport
       end
       object QRLabel21: TQRLabel
         Left = 4
-        Top = 53
-        Width = 765
+        Top = 52
+        Width = 757
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -139,8 +140,8 @@ object UReport: TUReport
       end
       object QRLabel22: TQRLabel
         Left = 4
-        Top = 72
-        Width = 765
+        Top = 71
+        Width = 757
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -164,8 +165,8 @@ object UReport: TUReport
       object QRImage3: TQRImage
         Left = 48
         Top = 16
-        Width = 113
-        Height = 114
+        Width = 112
+        Height = 113
         Size.Values = (
           298.515463917525800000
           125.690721649484500000
@@ -5345,10 +5346,10 @@ object UReport: TUReport
         Stretch = True
       end
       object QRImage4: TQRImage
-        Left = 610
+        Left = 604
         Top = 16
-        Width = 113
-        Height = 114
+        Width = 112
+        Height = 113
         Size.Values = (
           298.515463917525800000
           1597.319587628866000000
@@ -10886,15 +10887,15 @@ object UReport: TUReport
         Stretch = True
       end
       object QRLabel26: TQRLabel
-        Left = 167
-        Top = 144
+        Left = 163
+        Top = 143
         Width = 438
         Height = 30
         Size.Values = (
-          78.556701030927840000
-          437.298969072164900000
-          377.072164948453600000
-          1146.927835051546000000)
+          79.375000000000000000
+          431.270833333333300000
+          378.354166666666700000
+          1158.875000000000000000)
         XLColumn = 0
         XLNumFormat = nfGeneral
         ActiveInPreview = False
@@ -10917,25 +10918,25 @@ object UReport: TUReport
     end
     object QRBand5: TQRBand
       Left = 24
-      Top = 203
-      Width = 776
-      Height = 832
+      Top = 201
+      Width = 768
+      Height = 823
       Frame.DrawBottom = True
       AlignToBottom = False
       TransparentBand = False
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        2178.639175257732000000
+        2177.520833333333000000
         2032.000000000000000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
       BandType = rbDetail
       object QRShape1: TQRShape
         Left = 27
-        Top = 61
-        Width = 284
-        Height = 702
+        Top = 60
+        Width = 281
+        Height = 695
         Size.Values = (
           1838.226804123711000000
           70.701030927835050000
@@ -10950,8 +10951,8 @@ object UReport: TUReport
         VertAdjust = 0
       end
       object QRLabel39: TQRLabel
-        Left = 418
-        Top = 486
+        Left = 414
+        Top = 481
         Width = 9
         Height = 20
         Size.Values = (
@@ -10980,9 +10981,9 @@ object UReport: TUReport
         FontSize = 12
       end
       object QRLabel40: TQRLabel
-        Left = 428
-        Top = 486
-        Width = 55
+        Left = 424
+        Top = 481
+        Width = 54
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -11010,9 +11011,9 @@ object UReport: TUReport
         FontSize = 12
       end
       object QRShape2: TQRShape
-        Left = 320
-        Top = 264
-        Width = 310
+        Left = 317
+        Top = 261
+        Width = 307
         Height = 1
         Size.Values = (
           2.618556701030928000
@@ -11029,7 +11030,7 @@ object UReport: TUReport
       object QRLabel30: TQRLabel
         Left = 4
         Top = 22
-        Width = 765
+        Width = 757
         Height = 41
         Size.Values = (
           107.360824742268000000
@@ -11046,7 +11047,7 @@ object UReport: TUReport
         Color = clWhite
         Font.Charset = DEFAULT_CHARSET
         Font.Color = 1058768
-        Font.Height = -34
+        Font.Height = -33
         Font.Name = 'Arial'
         Font.Style = [fsBold]
         ParentFont = False
@@ -11058,8 +11059,8 @@ object UReport: TUReport
       end
       object QRLabel27: TQRLabel
         Left = 34
-        Top = 79
-        Width = 268
+        Top = 78
+        Width = 265
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -11087,9 +11088,9 @@ object UReport: TUReport
         FontSize = 12
       end
       object QRLabel28: TQRLabel
-        Left = 319
-        Top = 100
-        Width = 453
+        Left = 316
+        Top = 99
+        Width = 448
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -11117,9 +11118,9 @@ object UReport: TUReport
         FontSize = 12
       end
       object QRLabel29: TQRLabel
-        Left = 319
-        Top = 148
-        Width = 194
+        Left = 316
+        Top = 146
+        Width = 192
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -11147,9 +11148,9 @@ object UReport: TUReport
         FontSize = 12
       end
       object QRDBText13: TQRDBText
-        Left = 515
-        Top = 148
-        Width = 246
+        Left = 510
+        Top = 146
+        Width = 243
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -11163,7 +11164,8 @@ object UReport: TUReport
         AlignToBand = False
         AutoSize = False
         Color = clWhite
-        DataField = 'QRDBText13'
+        DataSet = UPreviewData.fdqryResidence
+        DataField = 'CompleteName'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clHotLight
         Font.Height = -16
@@ -11179,8 +11181,8 @@ object UReport: TUReport
         FontSize = 12
       end
       object QRLabel31: TQRLabel
-        Left = 763
-        Top = 148
+        Left = 755
+        Top = 146
         Width = 9
         Height = 20
         Size.Values = (
@@ -11209,10 +11211,10 @@ object UReport: TUReport
         FontSize = 12
       end
       object QRLabel32: TQRLabel
-        Left = 319
-        Top = 166
-        Width = 453
-        Height = 59
+        Left = 316
+        Top = 164
+        Width = 448
+        Height = 58
         Size.Values = (
           154.494845360824700000
           835.319587628866000000
@@ -11242,9 +11244,9 @@ object UReport: TUReport
         FontSize = 12
       end
       object QRDBText14: TQRDBText
-        Left = 319
-        Top = 244
-        Width = 311
+        Left = 316
+        Top = 241
+        Width = 308
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -11258,6 +11260,7 @@ object UReport: TUReport
         AlignToBand = False
         AutoSize = False
         Color = clWhite
+        DataSet = UPreviewData.fdqryResidence
         DataField = 'QRDBText14'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clHotLight
@@ -11274,9 +11277,9 @@ object UReport: TUReport
         FontSize = 12
       end
       object QRLabel33: TQRLabel
-        Left = 319
-        Top = 265
-        Width = 311
+        Left = 316
+        Top = 262
+        Width = 308
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -11304,9 +11307,9 @@ object UReport: TUReport
         FontSize = 12
       end
       object QRDBText15: TQRDBText
-        Left = 319
-        Top = 324
-        Width = 311
+        Left = 316
+        Top = 321
+        Width = 308
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -11336,9 +11339,9 @@ object UReport: TUReport
         FontSize = 12
       end
       object QRLabel34: TQRLabel
-        Left = 319
-        Top = 345
-        Width = 311
+        Left = 316
+        Top = 341
+        Width = 308
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -11366,9 +11369,9 @@ object UReport: TUReport
         FontSize = 12
       end
       object QRShape3: TQRShape
-        Left = 320
-        Top = 344
-        Width = 310
+        Left = 317
+        Top = 340
+        Width = 307
         Height = 1
         Size.Values = (
           2.618556701030928000
@@ -11383,9 +11386,9 @@ object UReport: TUReport
         VertAdjust = 0
       end
       object QRLabel35: TQRLabel
-        Left = 318
-        Top = 401
-        Width = 190
+        Left = 315
+        Top = 397
+        Width = 188
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -11413,9 +11416,9 @@ object UReport: TUReport
         FontSize = 12
       end
       object QRDBText16: TQRDBText
-        Left = 510
-        Top = 401
-        Width = 262
+        Left = 505
+        Top = 397
+        Width = 259
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -11445,9 +11448,9 @@ object UReport: TUReport
         FontSize = 12
       end
       object QRLabel36: TQRLabel
-        Left = 318
-        Top = 465
-        Width = 356
+        Left = 315
+        Top = 460
+        Width = 352
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -11477,8 +11480,8 @@ object UReport: TUReport
         FontSize = 12
       end
       object QRShape4: TQRShape
-        Left = 676
-        Top = 485
+        Left = 669
+        Top = 480
         Width = 43
         Height = 1
         Size.Values = (
@@ -11494,8 +11497,8 @@ object UReport: TUReport
         VertAdjust = 0
       end
       object QRDBText17: TQRDBText
-        Left = 676
-        Top = 465
+        Left = 669
+        Top = 460
         Width = 43
         Height = 20
         Size.Values = (
@@ -11526,9 +11529,9 @@ object UReport: TUReport
         FontSize = 12
       end
       object QRLabel37: TQRLabel
-        Left = 720
-        Top = 465
-        Width = 52
+        Left = 713
+        Top = 460
+        Width = 51
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -11556,9 +11559,9 @@ object UReport: TUReport
         FontSize = 12
       end
       object QRLabel38: TQRLabel
-        Left = 318
-        Top = 486
-        Width = 99
+        Left = 315
+        Top = 481
+        Width = 98
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -11586,9 +11589,9 @@ object UReport: TUReport
         FontSize = 12
       end
       object QRShape5: TQRShape
-        Left = 318
-        Top = 505
-        Width = 165
+        Left = 315
+        Top = 500
+        Width = 163
         Height = 1
         Size.Values = (
           2.618556701030928000
@@ -11603,9 +11606,9 @@ object UReport: TUReport
         VertAdjust = 0
       end
       object QRLabel41: TQRLabel
-        Left = 484
-        Top = 486
-        Width = 288
+        Left = 479
+        Top = 481
+        Width = 285
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -11633,9 +11636,9 @@ object UReport: TUReport
         FontSize = 12
       end
       object QRLabel42: TQRLabel
-        Left = 318
-        Top = 507
-        Width = 454
+        Left = 315
+        Top = 502
+        Width = 449
         Height = 21
         Size.Values = (
           54.989690721649480000
@@ -11665,9 +11668,9 @@ object UReport: TUReport
         FontSize = 12
       end
       object QRLabel43: TQRLabel
-        Left = 428
-        Top = 585
-        Width = 344
+        Left = 424
+        Top = 579
+        Width = 340
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -11695,9 +11698,9 @@ object UReport: TUReport
         FontSize = 12
       end
       object QRDBText18: TQRDBText
-        Left = 319
-        Top = 606
-        Width = 453
+        Left = 316
+        Top = 600
+        Width = 448
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -11727,9 +11730,9 @@ object UReport: TUReport
         FontSize = 12
       end
       object QRLabel44: TQRLabel
-        Left = 319
-        Top = 627
-        Width = 453
+        Left = 316
+        Top = 621
+        Width = 448
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -11757,9 +11760,9 @@ object UReport: TUReport
         FontSize = 12
       end
       object QRLabel45: TQRLabel
-        Left = 319
-        Top = 701
-        Width = 338
+        Left = 316
+        Top = 694
+        Width = 335
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -11787,9 +11790,9 @@ object UReport: TUReport
         FontSize = 12
       end
       object QRDBText19: TQRDBText
-        Left = 319
-        Top = 722
-        Width = 453
+        Left = 316
+        Top = 715
+        Width = 448
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -11819,9 +11822,9 @@ object UReport: TUReport
         FontSize = 12
       end
       object QRLabel46: TQRLabel
-        Left = 319
-        Top = 743
-        Width = 453
+        Left = 316
+        Top = 735
+        Width = 448
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -11849,9 +11852,9 @@ object UReport: TUReport
         FontSize = 12
       end
       object QRLabel47: TQRLabel
-        Left = 320
-        Top = 809
-        Width = 453
+        Left = 317
+        Top = 801
+        Width = 448
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -11880,8 +11883,8 @@ object UReport: TUReport
       end
       object QRLabel48: TQRLabel
         Left = 34
-        Top = 143
-        Width = 268
+        Top = 142
+        Width = 265
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -11910,8 +11913,8 @@ object UReport: TUReport
       end
       object QRDBText20: TQRDBText
         Left = 34
-        Top = 122
-        Width = 268
+        Top = 121
+        Width = 265
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -11942,8 +11945,8 @@ object UReport: TUReport
       end
       object QRLabel49: TQRLabel
         Left = 34
-        Top = 192
-        Width = 268
+        Top = 190
+        Width = 265
         Height = 25
         Size.Values = (
           65.463917525773200000
@@ -11972,8 +11975,8 @@ object UReport: TUReport
       end
       object QRDBText21: TQRDBText
         Left = 34
-        Top = 234
-        Width = 268
+        Top = 232
+        Width = 265
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -12004,8 +12007,8 @@ object UReport: TUReport
       end
       object QRDBText22: TQRDBText
         Left = 34
-        Top = 263
-        Width = 268
+        Top = 260
+        Width = 265
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -12036,8 +12039,8 @@ object UReport: TUReport
       end
       object QRDBText23: TQRDBText
         Left = 34
-        Top = 292
-        Width = 268
+        Top = 289
+        Width = 265
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -12068,8 +12071,8 @@ object UReport: TUReport
       end
       object QRDBText24: TQRDBText
         Left = 34
-        Top = 321
-        Width = 268
+        Top = 318
+        Width = 265
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -12100,8 +12103,8 @@ object UReport: TUReport
       end
       object QRDBText25: TQRDBText
         Left = 34
-        Top = 350
-        Width = 268
+        Top = 346
+        Width = 265
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -12132,8 +12135,8 @@ object UReport: TUReport
       end
       object QRDBText26: TQRDBText
         Left = 34
-        Top = 379
-        Width = 268
+        Top = 375
+        Width = 265
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -12164,8 +12167,8 @@ object UReport: TUReport
       end
       object QRDBText27: TQRDBText
         Left = 34
-        Top = 408
-        Width = 268
+        Top = 404
+        Width = 265
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -12196,8 +12199,8 @@ object UReport: TUReport
       end
       object QRLabel50: TQRLabel
         Left = 34
-        Top = 464
-        Width = 268
+        Top = 459
+        Width = 265
         Height = 25
         Size.Values = (
           65.463917525773200000
@@ -12226,8 +12229,8 @@ object UReport: TUReport
       end
       object QRDBText28: TQRDBText
         Left = 34
-        Top = 504
-        Width = 268
+        Top = 499
+        Width = 265
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -12258,8 +12261,8 @@ object UReport: TUReport
       end
       object QRDBText29: TQRDBText
         Left = 34
-        Top = 585
-        Width = 268
+        Top = 579
+        Width = 265
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -12290,8 +12293,8 @@ object UReport: TUReport
       end
       object QRLabel51: TQRLabel
         Left = 34
-        Top = 606
-        Width = 268
+        Top = 600
+        Width = 265
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -12320,8 +12323,8 @@ object UReport: TUReport
       end
       object QRDBText30: TQRDBText
         Left = 34
-        Top = 677
-        Width = 268
+        Top = 670
+        Width = 265
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -12352,8 +12355,8 @@ object UReport: TUReport
       end
       object QRLabel52: TQRLabel
         Left = 34
-        Top = 698
-        Width = 268
+        Top = 691
+        Width = 265
         Height = 20
         Size.Values = (
           52.371134020618560000
@@ -12385,8 +12388,8 @@ object UReport: TUReport
   object QRNewAppearance: TQuickRep
     Left = -815
     Top = -39
-    Width = 825
-    Height = 1067
+    Width = 816
+    Height = 1056
     ShowingPreview = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -12445,8 +12448,8 @@ object UReport: TUReport
     object QRBand2: TQRBand
       Left = 24
       Top = 24
-      Width = 776
-      Height = 441
+      Width = 768
+      Height = 436
       Frame.DrawTop = True
       Frame.DrawBottom = True
       Frame.DrawLeft = True
@@ -12457,7 +12460,7 @@ object UReport: TUReport
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        1154.783505154639000000
+        1153.583333333333000000
         2032.000000000000000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
@@ -12494,8 +12497,8 @@ object UReport: TUReport
       end
       object QRLabel4: TQRLabel
         Left = 4
-        Top = 149
-        Width = 765
+        Top = 147
+        Width = 757
         Height = 33
         Size.Values = (
           86.412371134020620000
@@ -12524,9 +12527,9 @@ object UReport: TUReport
       end
       object QRLabel5: TQRLabel
         Left = 48
-        Top = 191
-        Width = 675
-        Height = 49
+        Top = 189
+        Width = 668
+        Height = 48
         Size.Values = (
           128.309278350515500000
           125.690721649484500000
@@ -12557,8 +12560,8 @@ object UReport: TUReport
       end
       object QRLabel6: TQRLabel
         Left = 48
-        Top = 255
-        Width = 129
+        Top = 252
+        Width = 128
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -12587,8 +12590,8 @@ object UReport: TUReport
       end
       object QRLabel7: TQRLabel
         Left = 48
-        Top = 273
-        Width = 129
+        Top = 270
+        Width = 128
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -12617,8 +12620,8 @@ object UReport: TUReport
       end
       object QRLabel8: TQRLabel
         Left = 48
-        Top = 291
-        Width = 129
+        Top = 288
+        Width = 128
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -12647,8 +12650,8 @@ object UReport: TUReport
       end
       object QRLabel9: TQRLabel
         Left = 48
-        Top = 309
-        Width = 129
+        Top = 306
+        Width = 128
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -12677,8 +12680,8 @@ object UReport: TUReport
       end
       object QRLabel10: TQRLabel
         Left = 48
-        Top = 327
-        Width = 129
+        Top = 324
+        Width = 128
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -12706,9 +12709,9 @@ object UReport: TUReport
         FontSize = 10
       end
       object QRDBText1: TQRDBText
-        Left = 181
-        Top = 255
-        Width = 542
+        Left = 179
+        Top = 252
+        Width = 536
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -12732,9 +12735,9 @@ object UReport: TUReport
         FontSize = 10
       end
       object QRDBText2: TQRDBText
-        Left = 181
-        Top = 273
-        Width = 542
+        Left = 179
+        Top = 270
+        Width = 536
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -12758,9 +12761,9 @@ object UReport: TUReport
         FontSize = 10
       end
       object QRDBText3: TQRDBText
-        Left = 181
-        Top = 291
-        Width = 542
+        Left = 179
+        Top = 288
+        Width = 536
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -12784,9 +12787,9 @@ object UReport: TUReport
         FontSize = 10
       end
       object QRDBText4: TQRDBText
-        Left = 181
-        Top = 309
-        Width = 542
+        Left = 179
+        Top = 306
+        Width = 536
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -12810,9 +12813,9 @@ object UReport: TUReport
         FontSize = 10
       end
       object QRDBText5: TQRDBText
-        Left = 181
-        Top = 327
-        Width = 542
+        Left = 179
+        Top = 324
+        Width = 536
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -12836,9 +12839,9 @@ object UReport: TUReport
         FontSize = 10
       end
       object QRDBText6: TQRDBText
-        Left = 384
-        Top = 375
-        Width = 322
+        Left = 380
+        Top = 371
+        Width = 319
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -12868,9 +12871,9 @@ object UReport: TUReport
         FontSize = 10
       end
       object QRLabel11: TQRLabel
-        Left = 384
-        Top = 393
-        Width = 322
+        Left = 380
+        Top = 389
+        Width = 319
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -12900,7 +12903,7 @@ object UReport: TUReport
       object QRLabel23: TQRLabel
         Left = 4
         Top = 33
-        Width = 765
+        Width = 757
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -12923,8 +12926,8 @@ object UReport: TUReport
       end
       object QRLabel24: TQRLabel
         Left = 4
-        Top = 53
-        Width = 765
+        Top = 52
+        Width = 757
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -12947,8 +12950,8 @@ object UReport: TUReport
       end
       object QRLabel25: TQRLabel
         Left = 4
-        Top = 72
-        Width = 765
+        Top = 71
+        Width = 757
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -12972,8 +12975,8 @@ object UReport: TUReport
       object QRImage5: TQRImage
         Left = 48
         Top = 16
-        Width = 113
-        Height = 114
+        Width = 112
+        Height = 113
         Size.Values = (
           298.515463917525800000
           125.690721649484500000
@@ -18153,10 +18156,10 @@ object UReport: TUReport
         Stretch = True
       end
       object QRImage6: TQRImage
-        Left = 610
+        Left = 604
         Top = 16
-        Width = 113
-        Height = 114
+        Width = 112
+        Height = 113
         Size.Values = (
           298.515463917525800000
           1597.319587628866000000
@@ -23696,9 +23699,9 @@ object UReport: TUReport
     end
     object QRBand3: TQRBand
       Left = 24
-      Top = 465
-      Width = 776
-      Height = 441
+      Top = 460
+      Width = 768
+      Height = 436
       Frame.DrawTop = True
       Frame.DrawBottom = True
       Frame.DrawLeft = True
@@ -23715,7 +23718,7 @@ object UReport: TUReport
       ForceNewPage = False
       ParentFont = False
       Size.Values = (
-        1154.783505154639000000
+        1153.583333333333000000
         2032.000000000000000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
@@ -23752,8 +23755,8 @@ object UReport: TUReport
       end
       object QRLabel1: TQRLabel
         Left = 4
-        Top = 149
-        Width = 765
+        Top = 147
+        Width = 757
         Height = 33
         Size.Values = (
           86.412371134020620000
@@ -23782,9 +23785,9 @@ object UReport: TUReport
       end
       object QRLabel2: TQRLabel
         Left = 48
-        Top = 191
-        Width = 675
-        Height = 49
+        Top = 189
+        Width = 668
+        Height = 48
         Size.Values = (
           128.309278350515500000
           125.690721649484500000
@@ -23815,8 +23818,8 @@ object UReport: TUReport
       end
       object QRLabel3: TQRLabel
         Left = 48
-        Top = 255
-        Width = 129
+        Top = 252
+        Width = 128
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -23845,8 +23848,8 @@ object UReport: TUReport
       end
       object QRLabel12: TQRLabel
         Left = 48
-        Top = 273
-        Width = 129
+        Top = 270
+        Width = 128
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -23875,8 +23878,8 @@ object UReport: TUReport
       end
       object QRLabel13: TQRLabel
         Left = 48
-        Top = 291
-        Width = 129
+        Top = 288
+        Width = 128
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -23905,8 +23908,8 @@ object UReport: TUReport
       end
       object QRLabel14: TQRLabel
         Left = 48
-        Top = 309
-        Width = 129
+        Top = 306
+        Width = 128
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -23935,8 +23938,8 @@ object UReport: TUReport
       end
       object QRLabel15: TQRLabel
         Left = 48
-        Top = 327
-        Width = 129
+        Top = 324
+        Width = 128
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -23964,9 +23967,9 @@ object UReport: TUReport
         FontSize = 10
       end
       object QRDBText7: TQRDBText
-        Left = 181
-        Top = 255
-        Width = 542
+        Left = 179
+        Top = 252
+        Width = 536
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -23990,9 +23993,9 @@ object UReport: TUReport
         FontSize = 10
       end
       object QRDBText8: TQRDBText
-        Left = 181
-        Top = 273
-        Width = 542
+        Left = 179
+        Top = 270
+        Width = 536
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -24016,9 +24019,9 @@ object UReport: TUReport
         FontSize = 10
       end
       object QRDBText9: TQRDBText
-        Left = 181
-        Top = 291
-        Width = 542
+        Left = 179
+        Top = 288
+        Width = 536
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -24042,9 +24045,9 @@ object UReport: TUReport
         FontSize = 10
       end
       object QRDBText10: TQRDBText
-        Left = 181
-        Top = 309
-        Width = 542
+        Left = 179
+        Top = 306
+        Width = 536
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -24068,9 +24071,9 @@ object UReport: TUReport
         FontSize = 10
       end
       object QRDBText11: TQRDBText
-        Left = 181
-        Top = 327
-        Width = 542
+        Left = 179
+        Top = 324
+        Width = 536
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -24094,9 +24097,9 @@ object UReport: TUReport
         FontSize = 10
       end
       object QRDBText12: TQRDBText
-        Left = 384
-        Top = 375
-        Width = 322
+        Left = 380
+        Top = 371
+        Width = 319
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -24126,9 +24129,9 @@ object UReport: TUReport
         FontSize = 10
       end
       object QRLabel16: TQRLabel
-        Left = 384
-        Top = 393
-        Width = 322
+        Left = 380
+        Top = 389
+        Width = 319
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -24158,7 +24161,7 @@ object UReport: TUReport
       object QRLabel17: TQRLabel
         Left = 4
         Top = 33
-        Width = 765
+        Width = 757
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -24181,8 +24184,8 @@ object UReport: TUReport
       end
       object QRLabel18: TQRLabel
         Left = 4
-        Top = 53
-        Width = 765
+        Top = 52
+        Width = 757
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -24205,8 +24208,8 @@ object UReport: TUReport
       end
       object QRLabel19: TQRLabel
         Left = 4
-        Top = 72
-        Width = 765
+        Top = 71
+        Width = 757
         Height = 17
         Size.Values = (
           44.515463917525770000
@@ -24230,8 +24233,8 @@ object UReport: TUReport
       object QRImage1: TQRImage
         Left = 48
         Top = 16
-        Width = 113
-        Height = 114
+        Width = 112
+        Height = 113
         Size.Values = (
           298.515463917525800000
           125.690721649484500000
@@ -29411,10 +29414,10 @@ object UReport: TUReport
         Stretch = True
       end
       object QRImage2: TQRImage
-        Left = 610
+        Left = 604
         Top = 16
-        Width = 113
-        Height = 114
+        Width = 112
+        Height = 113
         Size.Values = (
           298.515463917525800000
           1597.319587628866000000
@@ -34954,15 +34957,15 @@ object UReport: TUReport
     end
     object QRBand4: TQRBand
       Left = 24
-      Top = 906
-      Width = 776
+      Top = 896
+      Width = 768
       Height = 18
       AlignToBottom = False
       TransparentBand = False
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        47.134020618556700000
+        47.625000000000000000
         2032.000000000000000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False

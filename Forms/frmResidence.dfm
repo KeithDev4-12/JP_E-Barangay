@@ -55,6 +55,7 @@ object UResidence: TUResidence
         Align = alClient
         DataSource = DSResidence
         DynProps = <>
+        PopupMenu = PopupMenu1
         SearchPanel.Enabled = True
         SearchPanel.FilterOnTyping = True
         SearchPanel.Location = splHorzScrollBarExtraPanelEh
@@ -1678,8 +1679,8 @@ object UResidence: TUResidence
     end
   end
   object OpenPictureDialog1: TOpenPictureDialog
-    Left = 444
-    Top = 56
+    Left = 492
+    Top = 24
   end
   object fdqryEmrContact: TFDQuery
     Connection = DM.FDConnection1
@@ -1714,6 +1715,14 @@ object UResidence: TUResidence
       Origin = 'IDC'
       ProviderFlags = []
       ReadOnly = True
+    end
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 138
+    Top = 247
+    object DeleteThis1: TMenuItem
+      Caption = 'Delete This'
+      OnClick = DeleteThis1Click
     end
   end
 end

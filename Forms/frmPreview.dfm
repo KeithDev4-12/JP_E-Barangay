@@ -11,6 +11,7 @@ object UPreviewData: TUPreviewData
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnShow = FormShow
   PixelsPerInch = 97
   TextHeight = 13
   object GroupBox1: TGroupBox
@@ -35,6 +36,7 @@ object UPreviewData: TUPreviewData
         Width = 550
         Height = 352
         Align = alClient
+        DataSource = DS1
         DynProps = <>
         SearchPanel.Enabled = True
         SearchPanel.FilterOnTyping = True
@@ -45,86 +47,66 @@ object UPreviewData: TUPreviewData
             CellButtons = <>
             DynProps = <>
             EditButtons = <>
+            FieldName = 'CompleteName'
+            Footers = <>
+            Width = 250
+          end
+          item
+            CellButtons = <>
+            DynProps = <>
+            EditButtons = <>
+            FieldName = 'BarangayIdNo'
+            Footers = <>
+            Width = 50
+          end
+          item
+            CellButtons = <>
+            DynProps = <>
+            EditButtons = <>
+            FieldName = 'Height'
+            Footers = <>
+            Width = 50
+          end
+          item
+            CellButtons = <>
+            DynProps = <>
+            EditButtons = <>
+            FieldName = 'Weight'
+            Footers = <>
+            Width = 50
+          end
+          item
+            CellButtons = <>
+            DynProps = <>
+            EditButtons = <>
+            FieldName = 'BloodType'
+            Footers = <>
+            Width = 50
+          end
+          item
+            CellButtons = <>
+            DynProps = <>
+            EditButtons = <>
+            FieldName = 'ContactNumber'
+            Footers = <>
+            Width = 150
+          end
+          item
+            CellButtons = <>
+            DynProps = <>
+            EditButtons = <>
+            FieldName = 'Gender'
+            Footers = <>
+            Width = 50
+          end
+          item
+            CellButtons = <>
+            DynProps = <>
+            EditButtons = <>
             FieldName = 'ID'
             Footers = <>
             Visible = False
-          end
-          item
-            CellButtons = <>
-            DynProps = <>
-            EditButtons = <>
-            FieldName = 'FName'
-            Footers = <>
-            Visible = False
-          end
-          item
-            CellButtons = <>
-            DynProps = <>
-            EditButtons = <>
-            FieldName = 'MName'
-            Footers = <>
-            Visible = False
-          end
-          item
-            CellButtons = <>
-            DynProps = <>
-            EditButtons = <>
-            FieldName = 'Lname'
-            Footers = <>
-            Visible = False
-          end
-          item
-            CellButtons = <>
-            DynProps = <>
-            EditButtons = <>
-            FieldName = 'FullName'
-            Footers = <>
-            Width = 181
-          end
-          item
-            CellButtons = <>
-            DynProps = <>
-            EditButtons = <>
-            FieldName = 'DOB'
-            Footers = <>
-          end
-          item
-            CellButtons = <>
-            DynProps = <>
-            EditButtons = <>
-            FieldName = 'UserName'
-            Footers = <>
-          end
-          item
-            CellButtons = <>
-            DynProps = <>
-            EditButtons = <>
-            FieldName = 'Password'
-            Footers = <>
-            Visible = False
-          end
-          item
-            CellButtons = <>
-            DynProps = <>
-            EditButtons = <>
-            FieldName = 'UserStatus'
-            Footers = <>
-          end
-          item
-            CellButtons = <>
-            DynProps = <>
-            EditButtons = <>
-            FieldName = 'DateCreated'
-            Footers = <>
-            Visible = False
-          end
-          item
-            CellButtons = <>
-            DynProps = <>
-            EditButtons = <>
-            FieldName = 'DateModified'
-            Footers = <>
-            Visible = False
+            Width = 50
           end>
         object RowDetailData: TRowDetailPanelControlEh
         end
@@ -630,5 +612,149 @@ object UPreviewData: TUPreviewData
     Caption = 'PREVIEW DATA'
     TabOrder = 1
     OnClick = BitBtn2Click
+  end
+  object fdqryResidence: TFDQuery
+    Active = True
+    Connection = DM.FDConnection1
+    UpdateOptions.AssignedValues = [uvEInsert, uvEUpdate]
+    UpdateOptions.EnableInsert = False
+    UpdateOptions.EnableUpdate = False
+    SQL.Strings = (
+      'SELECT * FROM tblresidence')
+    Left = 368
+    Top = 48
+    object fdqryResidenceID: TFDAutoIncField
+      FieldName = 'ID'
+      Origin = 'ID'
+      ProviderFlags = [pfInWhere, pfInKey]
+    end
+    object fdqryResidenceBarangayIdNo: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'BarangayIdNo'
+      Origin = 'BarangayIdNo'
+      Size = 45
+    end
+    object fdqryResidenceFName: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'FName'
+      Origin = 'FName'
+      Size = 45
+    end
+    object fdqryResidenceMName: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'MName'
+      Origin = 'MName'
+      Size = 45
+    end
+    object fdqryResidenceLName: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'LName'
+      Origin = 'LName'
+      Size = 45
+    end
+    object fdqryResidenceCompleteName: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'CompleteName'
+      Origin = 'CompleteName'
+      Size = 99
+    end
+    object fdqryResidenceDOB: TDateField
+      AutoGenerateValue = arDefault
+      FieldName = 'DOB'
+      Origin = 'DOB'
+    end
+    object fdqryResidenceGender: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'Gender'
+      Origin = 'Gender'
+      Size = 45
+    end
+    object fdqryResidenceAddress: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'Address'
+      Origin = 'Address'
+      Size = 200
+    end
+    object fdqryResidencePurok: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'Purok'
+      Origin = 'Purok'
+      Size = 45
+    end
+    object fdqryResidenceHeight: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'Height'
+      Origin = 'Height'
+      Size = 45
+    end
+    object fdqryResidenceWeight: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'Weight'
+      Origin = 'Weight'
+      Size = 45
+    end
+    object fdqryResidenceBloodType: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'BloodType'
+      Origin = 'BloodType'
+      Size = 45
+    end
+    object fdqryResidenceContactNumber: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'ContactNumber'
+      Origin = 'ContactNumber'
+      Size = 45
+    end
+    object fdqryResidenceTinNo: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'TinNo'
+      Origin = 'TinNo'
+      Size = 45
+    end
+    object fdqryResidenceDateCreated: TDateField
+      AutoGenerateValue = arDefault
+      FieldName = 'DateCreated'
+      Origin = 'DateCreated'
+    end
+    object fdqryResidenceDateModified: TDateField
+      AutoGenerateValue = arDefault
+      FieldName = 'DateModified'
+      Origin = 'DateModified'
+    end
+    object fdqryResidenceEmrgncyName: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'EmrgncyName'
+      Origin = 'EmrgncyName'
+      Size = 99
+    end
+    object fdqryResidenceEmrgncyAddress: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'EmrgncyAddress'
+      Origin = 'EmrgncyAddress'
+      Size = 200
+    end
+    object fdqryResidenceEmrgncyRelationship: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'EmrgncyRelationship'
+      Origin = 'EmrgncyRelationship'
+      Size = 45
+    end
+    object fdqryResidenceEmrgncyContactNumber: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'EmrgncyContactNumber'
+      Origin = 'EmrgncyContactNumber'
+      Size = 45
+    end
+    object fdqryResidencePicture: TMemoField
+      AutoGenerateValue = arDefault
+      FieldName = 'Picture'
+      Origin = 'Picture'
+      BlobType = ftMemo
+    end
+  end
+  object DS1: TDataSource
+    DataSet = fdqryResidence
+    Left = 402
+    Top = 255
   end
 end
