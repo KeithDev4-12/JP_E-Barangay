@@ -21,8 +21,6 @@ object UHistoryIssuance: TUHistoryIssuance
     Align = alLeft
     Caption = 'MENUS'
     TabOrder = 0
-    ExplicitTop = -9
-    ExplicitHeight = 508
     object Shape2: TShape
       Left = 2
       Top = 349
@@ -45,7 +43,6 @@ object UHistoryIssuance: TUHistoryIssuance
       Anchors = [akLeft, akTop, akRight, akBottom]
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitHeight = 343
       object DBGridEh1: TDBGridEh
         Left = 0
         Top = 49
@@ -639,7 +636,6 @@ object UHistoryIssuance: TUHistoryIssuance
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitTop = 361
       object Panel4: TPanel
         Left = 0
         Top = 0
@@ -648,7 +644,6 @@ object UHistoryIssuance: TUHistoryIssuance
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 0
-        ExplicitWidth = 126
         object SpeedButton1: TSpeedButton
           Left = 0
           Top = 34
@@ -921,119 +916,189 @@ object UHistoryIssuance: TUHistoryIssuance
       end
     end
   end
-  object DBGridEh2: TDBGridEh
+  object Panel5: TPanel
     Left = 220
     Top = 0
     Width = 483
     Height = 499
     Align = alClient
-    DynProps = <>
-    SearchPanel.Enabled = True
-    SearchPanel.FilterOnTyping = True
-    SearchPanel.Location = splHorzScrollBarExtraPanelEh
     TabOrder = 1
-    Columns = <
-      item
-        CellButtons = <>
-        DynProps = <>
-        EditButtons = <>
-        FieldName = 'Name'
-        Footers = <>
-        Width = 163
+    ExplicitLeft = 518
+    ExplicitWidth = 499
+    ExplicitHeight = 185
+    object DBGridEh2: TDBGridEh
+      Left = 1
+      Top = 63
+      Width = 481
+      Height = 435
+      Align = alClient
+      DynProps = <>
+      SearchPanel.Enabled = True
+      SearchPanel.FilterOnTyping = True
+      SearchPanel.Location = splHorzScrollBarExtraPanelEh
+      TabOrder = 0
+      Columns = <
+        item
+          CellButtons = <>
+          DynProps = <>
+          EditButtons = <>
+          FieldName = 'Name'
+          Footers = <>
+          Width = 163
+        end
+        item
+          CellButtons = <>
+          DynProps = <>
+          EditButtons = <>
+          FieldName = 'ID'
+          Footers = <>
+          Visible = False
+        end
+        item
+          CellButtons = <>
+          DynProps = <>
+          EditButtons = <>
+          FieldName = 'FName'
+          Footers = <>
+          Visible = False
+        end
+        item
+          CellButtons = <>
+          DynProps = <>
+          EditButtons = <>
+          FieldName = 'MName'
+          Footers = <>
+          Visible = False
+        end
+        item
+          CellButtons = <>
+          DynProps = <>
+          EditButtons = <>
+          FieldName = 'LName'
+          Footers = <>
+          Visible = False
+        end
+        item
+          CellButtons = <>
+          DynProps = <>
+          EditButtons = <>
+          FieldName = 'Position'
+          Footers = <>
+        end
+        item
+          CellButtons = <>
+          DynProps = <>
+          EditButtons = <>
+          FieldName = 'Year'
+          Footers = <>
+        end
+        item
+          CellButtons = <>
+          DynProps = <>
+          EditButtons = <>
+          FieldName = 'DOB'
+          Footers = <>
+        end
+        item
+          CellButtons = <>
+          DynProps = <>
+          EditButtons = <>
+          FieldName = 'Gender'
+          Footers = <>
+        end
+        item
+          CellButtons = <>
+          DynProps = <>
+          EditButtons = <>
+          FieldName = 'Picture'
+          Footers = <>
+          Visible = False
+        end
+        item
+          CellButtons = <>
+          DynProps = <>
+          EditButtons = <>
+          FieldName = 'DateCreated'
+          Footers = <>
+          Visible = False
+        end
+        item
+          CellButtons = <>
+          DynProps = <>
+          EditButtons = <>
+          FieldName = 'DateModified'
+          Footers = <>
+          Visible = False
+        end
+        item
+          CellButtons = <>
+          DynProps = <>
+          EditButtons = <>
+          FieldName = 'Status'
+          Footers = <>
+          Visible = False
+        end>
+      object RowDetailData: TRowDetailPanelControlEh
       end
-      item
-        CellButtons = <>
-        DynProps = <>
-        EditButtons = <>
-        FieldName = 'ID'
-        Footers = <>
-        Visible = False
+    end
+    object GroupBox2: TGroupBox
+      Left = 1
+      Top = 1
+      Width = 481
+      Height = 62
+      Align = alTop
+      Caption = 'List of '
+      TabOrder = 1
+      object RadioButton1: TRadioButton
+        Left = 14
+        Top = 17
+        Width = 113
+        Height = 17
+        Caption = 'Barangay ID'
+        Checked = True
+        TabOrder = 0
+        TabStop = True
       end
-      item
-        CellButtons = <>
-        DynProps = <>
-        EditButtons = <>
-        FieldName = 'FName'
-        Footers = <>
-        Visible = False
+      object RadioButton2: TRadioButton
+        Left = 151
+        Top = 17
+        Width = 113
+        Height = 17
+        Caption = 'Barangay Clearance'
+        TabOrder = 1
       end
-      item
-        CellButtons = <>
-        DynProps = <>
-        EditButtons = <>
-        FieldName = 'MName'
-        Footers = <>
-        Visible = False
+      object RadioButton3: TRadioButton
+        Left = 302
+        Top = 17
+        Width = 129
+        Height = 17
+        Caption = 'Barangay Certificate'
+        TabOrder = 2
       end
-      item
-        CellButtons = <>
-        DynProps = <>
-        EditButtons = <>
-        FieldName = 'LName'
-        Footers = <>
-        Visible = False
+      object RadioButton4: TRadioButton
+        Left = 14
+        Top = 38
+        Width = 155
+        Height = 17
+        Caption = 'Certificate Of Indigency'
+        TabOrder = 3
       end
-      item
-        CellButtons = <>
-        DynProps = <>
-        EditButtons = <>
-        FieldName = 'Position'
-        Footers = <>
+      object RadioButton5: TRadioButton
+        Left = 151
+        Top = 38
+        Width = 155
+        Height = 17
+        Caption = 'Certificate Of Appearance'
+        TabOrder = 4
       end
-      item
-        CellButtons = <>
-        DynProps = <>
-        EditButtons = <>
-        FieldName = 'Year'
-        Footers = <>
+      object RadioButton6: TRadioButton
+        Left = 302
+        Top = 38
+        Width = 166
+        Height = 17
+        Caption = 'Barangay Business Clearance'
+        TabOrder = 5
       end
-      item
-        CellButtons = <>
-        DynProps = <>
-        EditButtons = <>
-        FieldName = 'DOB'
-        Footers = <>
-      end
-      item
-        CellButtons = <>
-        DynProps = <>
-        EditButtons = <>
-        FieldName = 'Gender'
-        Footers = <>
-      end
-      item
-        CellButtons = <>
-        DynProps = <>
-        EditButtons = <>
-        FieldName = 'Picture'
-        Footers = <>
-        Visible = False
-      end
-      item
-        CellButtons = <>
-        DynProps = <>
-        EditButtons = <>
-        FieldName = 'DateCreated'
-        Footers = <>
-        Visible = False
-      end
-      item
-        CellButtons = <>
-        DynProps = <>
-        EditButtons = <>
-        FieldName = 'DateModified'
-        Footers = <>
-        Visible = False
-      end
-      item
-        CellButtons = <>
-        DynProps = <>
-        EditButtons = <>
-        FieldName = 'Status'
-        Footers = <>
-        Visible = False
-      end>
-    object RowDetailData: TRowDetailPanelControlEh
     end
   end
 end

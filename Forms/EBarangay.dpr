@@ -11,7 +11,8 @@ uses
   frmHistoryIssuance in 'frmHistoryIssuance.pas' {UHistoryIssuance},
   frmReport in 'frmReport.pas' {UReport},
   frmPreview in 'frmPreview.pas' {UPreviewData},
-  frmBarangayCertificate in 'frmBarangayCertificate.pas' {UBarangayCertificate};
+  frmBarangayCertificate in 'frmBarangayCertificate.pas' {UBarangayCertificate},
+  frmCertificateOfAppearance in 'frmCertificateOfAppearance.pas' {UCertificateOfAppearance};
 
 {$R *.res}
 
@@ -28,5 +29,6 @@ begin
   Application.CreateForm(TUReport, UReport);
   Application.CreateForm(TUPreviewData, UPreviewData);
   Application.CreateForm(TUBarangayCertificate, UBarangayCertificate);
+  Application.CreateForm(TUCertificateOfAppearance, UCertificateOfAppearance);
   Application.Run;
 end.

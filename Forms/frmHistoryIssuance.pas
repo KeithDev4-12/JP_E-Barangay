@@ -29,7 +29,15 @@ type
     Shape6: TShape;
     SpeedButton5: TSpeedButton;
     Shape7: TShape;
+    Panel5: TPanel;
     DBGridEh2: TDBGridEh;
+    GroupBox2: TGroupBox;
+    RadioButton1: TRadioButton;
+    RadioButton2: TRadioButton;
+    RadioButton3: TRadioButton;
+    RadioButton4: TRadioButton;
+    RadioButton5: TRadioButton;
+    RadioButton6: TRadioButton;
   private
     { Private declarations }
   public

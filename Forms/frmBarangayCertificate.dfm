@@ -23,7 +23,6 @@ object UBarangayCertificate: TUBarangayCertificate
     Caption = 'MENUS'
     Enabled = False
     TabOrder = 0
-    ExplicitHeight = 337
     object Shape2: TShape
       Left = 2
       Top = 216
@@ -46,9 +45,6 @@ object UBarangayCertificate: TUBarangayCertificate
       Anchors = [akLeft, akTop, akRight, akBottom]
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitLeft = 3
-      ExplicitTop = 13
-      ExplicitHeight = 240
       object DBGridEh1: TDBGridEh
         Left = 0
         Top = 25
@@ -633,9 +629,6 @@ object UBarangayCertificate: TUBarangayCertificate
     Enabled = False
     ParentBackground = False
     TabOrder = 1
-    ExplicitLeft = 224
-    ExplicitWidth = 453
-    ExplicitHeight = 265
     object Label2: TLabel
       Left = 16
       Top = 61
@@ -740,8 +733,6 @@ object UBarangayCertificate: TUBarangayCertificate
     Height = 57
     Align = alBottom
     TabOrder = 2
-    ExplicitTop = 450
-    ExplicitWidth = 677
     object Panel4: TPanel
       Left = 1
       Top = 0
@@ -752,9 +743,6 @@ object UBarangayCertificate: TUBarangayCertificate
       BevelOuter = bvNone
       Enabled = False
       TabOrder = 0
-      ExplicitLeft = 0
-      ExplicitTop = 416
-      ExplicitWidth = 453
       object SpeedButton1: TSpeedButton
         Left = 0
         Top = 0
@@ -855,6 +843,7 @@ object UBarangayCertificate: TUBarangayCertificate
           0000000000004FB5EAFF00000000000000000000000000000000000000000000
           0000000000000000000000000000000000000000000000000000}
         ParentFont = False
+        OnClick = SpeedButton2Click
       end
       object Shape1: TShape
         Left = 385
@@ -918,6 +907,7 @@ object UBarangayCertificate: TUBarangayCertificate
           284D3F3F3F7A0000000000000000000000000000000000000000000000000000
           00000000000000000000000000004040407B2828284D00000000}
         ParentFont = False
+        OnClick = SpeedButton3Click
       end
       object Shape3: TShape
         Left = 108
@@ -1001,7 +991,7 @@ object UBarangayCertificate: TUBarangayCertificate
   object Panel6: TPanel
     Left = 97
     Top = 12
-    Width = 361
+    Width = 376
     Height = 249
     BevelKind = bkTile
     BevelOuter = bvNone
@@ -1009,7 +999,7 @@ object UBarangayCertificate: TUBarangayCertificate
     object Label8: TLabel
       Left = 0
       Top = 0
-      Width = 357
+      Width = 372
       Height = 13
       Align = alTop
       Alignment = taCenter
@@ -1017,7 +1007,7 @@ object UBarangayCertificate: TUBarangayCertificate
       ExplicitWidth = 99
     end
     object SpeedButton5: TSpeedButton
-      Left = 230
+      Left = 245
       Top = 193
       Width = 127
       Height = 52
@@ -1125,7 +1115,7 @@ object UBarangayCertificate: TUBarangayCertificate
     object DBGridEh2: TDBGridEh
       Left = 0
       Top = 13
-      Width = 357
+      Width = 372
       Height = 180
       Align = alTop
       DataSource = DSResidence
@@ -1337,8 +1327,8 @@ object UBarangayCertificate: TUBarangayCertificate
     UpdateOptions.EnableUpdate = False
     SQL.Strings = (
       
-        'select * from tblResidence r left join tblbarangayclearance b on' +
-        ' r.BarangayIdNo = b.BrgyID '#10'where r.BarangayIdNo = :ABarangayID')
+        'select * from tblResidence r inner join tblbarangayclearance b o' +
+        'n r.BarangayIdNo = b.BrgyID '#10'where r.BarangayIdNo = :ABarangayID')
     Left = 40
     Top = 128
     ParamData = <
@@ -1352,6 +1342,7 @@ object UBarangayCertificate: TUBarangayCertificate
       FieldName = 'ID'
       Origin = 'ID'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object fdqryHistoryDetailsBarangayIdNo: TStringField
       AutoGenerateValue = arDefault
@@ -1584,6 +1575,7 @@ object UBarangayCertificate: TUBarangayCertificate
       FieldName = 'ID'
       Origin = 'ID'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object fdqryResidenceBarangayIdNo: TStringField
       AutoGenerateValue = arDefault
@@ -1751,6 +1743,7 @@ object UBarangayCertificate: TUBarangayCertificate
       FieldName = 'ID'
       Origin = 'ID'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object fdtblHistoryDetailsBrgyID: TStringField
       AutoGenerateValue = arDefault

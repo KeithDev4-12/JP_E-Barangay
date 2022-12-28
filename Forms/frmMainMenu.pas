@@ -146,6 +146,7 @@ type
     procedure BarangayCertificate1Click(Sender: TObject);
     procedure Panel8Click(Sender: TObject);
     procedure Panel13Click(Sender: TObject);
+    procedure Panel12Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -159,7 +160,7 @@ implementation
 
 {$R *.dfm}
 uses frmResidence, frmAccountProfile, frmBarangayOfficials, frmHistoryIssuance, frmPreview,
-frmBarangayCertificate;
+frmBarangayCertificate, frmCertificateOfAppearance;
 
 procedure TUMainMenu.BarangayCertificate1Click(Sender: TObject);
 var
@@ -197,6 +198,22 @@ begin
     UHistoryIssuance.ShowModal;
   finally
     UHistoryIssuance.Free;
+  end;
+end;
+
+procedure TUMainMenu.Panel12Click(Sender: TObject);
+var
+  //FWashingPanels : TFWashingPanels;
+  UCertificateOfAppearance : TUCertificateOfAppearance;
+begin
+  //if Assigned(FSettings) then
+  //  FSettings.Free;
+  try
+    UCertificateOfAppearance := TUCertificateOfAppearance.Create(Self);
+    //UResidence.PageControl1.ActivePageIndex := 3;
+    UCertificateOfAppearance.ShowModal;
+  finally
+    UCertificateOfAppearance.Free;
   end;
 end;
 
