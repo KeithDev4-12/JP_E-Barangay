@@ -11329,4 +11329,11 @@ object ULogin: TULogin
     TabOrder = 3
     OnClick = Button2Click
   end
+  object qryLogin: TFDQuery
+    Connection = DM.FDConnection1
+    SQL.Strings = (
+      'select * from ')
+    Left = 192
+    Top = 144
+  end
 end

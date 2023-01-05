@@ -5,7 +5,10 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls,
-  dxGDIPlusClasses;
+  dxGDIPlusClasses, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client;
 
 type
   TULogin = class(TForm)
@@ -24,8 +27,10 @@ type
     Image1: TImage;
     Shape3: TShape;
     Shape4: TShape;
+    qryLogin: TFDQuery;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure LogInChecking(AUserName,APassword:String);
   private
     { Private declarations }
   public
@@ -36,7 +41,7 @@ var
   ULogin: TULogin;
 
 implementation
-uses frmMainMenu;
+uses frmMainMenu, MainDataModule;
 
 {$R *.dfm}
 
@@ -56,6 +61,15 @@ begin
 Close;
 
   Application.Terminate;
+end;
+
+procedure TULogin.LogInChecking(AUserName, APassword: String);
+begin
+  qryLogin.Close;
+  qryLogin.ParamByName('').AsString := AUserName;
+  qryLogin.Close;
+
+
 end;
 
 end.
