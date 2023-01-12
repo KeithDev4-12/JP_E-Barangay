@@ -15,8 +15,8 @@ object UReport: TUReport
   PixelsPerInch = 96
   TextHeight = 13
   object QRBrgyCertificate: TQuickRep
-    Left = -102
-    Top = 99
+    Left = -263
+    Top = 60
     Width = 816
     Height = 1056
     ShowingPreview = False

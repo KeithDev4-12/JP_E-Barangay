@@ -127,6 +127,7 @@ type
     procedure SpeedButton5Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure DSHistoryDetailsDataChange(Sender: TObject; Field: TField);
+    procedure SpeedButton6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -227,6 +228,11 @@ begin
     Edit2.Text := fdqryResidenceCompleteName.AsString;
   end;
 
+end;
+
+procedure TUCertificateOfAppearance.SpeedButton6Click(Sender: TObject);
+begin
+  Self.Close
 end;
 
 end.

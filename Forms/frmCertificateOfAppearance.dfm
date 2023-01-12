@@ -23,9 +23,6 @@ object UCertificateOfAppearance: TUCertificateOfAppearance
     Caption = 'MENUS'
     Enabled = False
     TabOrder = 0
-    ExplicitLeft = 8
-    ExplicitTop = 8
-    ExplicitHeight = 218
     object Shape1: TShape
       Left = 2
       Top = 254
@@ -48,7 +45,6 @@ object UCertificateOfAppearance: TUCertificateOfAppearance
       Anchors = [akLeft, akTop, akRight, akBottom]
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitHeight = 201
       object DBGridEh1: TDBGridEh
         Left = 0
         Top = 25
@@ -781,8 +777,6 @@ object UCertificateOfAppearance: TUCertificateOfAppearance
     Enabled = False
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 333
-    ExplicitHeight = 218
     object Label2: TLabel
       Left = 25
       Top = 40
@@ -921,9 +915,6 @@ object UCertificateOfAppearance: TUCertificateOfAppearance
     BevelOuter = bvNone
     Enabled = False
     TabOrder = 2
-    ExplicitLeft = 1
-    ExplicitTop = 0
-    ExplicitWidth = 551
     object SpeedButton1: TSpeedButton
       Left = 0
       Top = 0
@@ -1290,6 +1281,7 @@ object UCertificateOfAppearance: TUCertificateOfAppearance
         284D3F3F3F7A0000000000000000000000000000000000000000000000000000
         00000000000000000000000000004040407B2828284D00000000}
       ParentFont = False
+      OnClick = SpeedButton6Click
       ExplicitLeft = 241
       ExplicitTop = 0
       ExplicitHeight = 52
@@ -1682,6 +1674,7 @@ object UCertificateOfAppearance: TUCertificateOfAppearance
       FieldName = 'ID'
       Origin = 'ID'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object fdqryHistoryDetailsBarangayIdNo: TStringField
       AutoGenerateValue = arDefault
@@ -1885,6 +1878,7 @@ object UCertificateOfAppearance: TUCertificateOfAppearance
       FieldName = 'ID'
       Origin = 'ID'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object fdtblHistoryDetailsBarangayIdNo: TStringField
       AutoGenerateValue = arDefault

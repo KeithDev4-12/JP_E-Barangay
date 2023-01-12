@@ -136,6 +136,8 @@ type
     Label32: TLabel;
     Shape33: TShape;
     Shape34: TShape;
+    Panel17: TPanel;
+    Image12: TImage;
     procedure FormShow(Sender: TObject);
     procedure Panel6Click(Sender: TObject);
     procedure Panel7Click(Sender: TObject);

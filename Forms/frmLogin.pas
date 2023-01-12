@@ -28,6 +28,18 @@ type
     Shape3: TShape;
     Shape4: TShape;
     qryLogin: TFDQuery;
+    qryLoginID: TFDAutoIncField;
+    qryLoginFName: TStringField;
+    qryLoginMName: TStringField;
+    qryLoginLname: TStringField;
+    qryLoginFullName: TStringField;
+    qryLoginDOB: TDateField;
+    qryLoginGender: TStringField;
+    qryLoginUserName: TStringField;
+    qryLoginPassword: TStringField;
+    qryLoginUserStatus: TStringField;
+    qryLoginDateCreated: TDateField;
+    qryLoginDateModified: TDateField;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure LogInChecking(AUserName,APassword:String);
@@ -50,10 +62,19 @@ begin
  If not assigned(UMainMenu) then
  UMainMenu := TUMainMenu.Create(Application);
  //ModConnection.AEmployeeID := 1;
- UMainMenu.Width := 0;
- UMainMenu.Height := 0;
- //FLogin.WindowState := wsMinimized;
- UMainMenu.Show;
+
+ qryLogin.Close;
+ qryLogin.ParamByName('APassword').AsString := Edit2.Text;
+ qryLogin.Open;
+ qryLogin.First;
+ if qryLogin.Locate('UserName',edit1.Text,[]) then begin
+   UMainMenu.Width := 0;
+   UMainMenu.Height := 0;
+   //FLogin.WindowState := wsMinimized;
+   UMainMenu.Show;
+ end else begin
+   MessageDlg('Password Or Username are Not Found!',mtError,[mbClose],0) ;
+ end;
 end;
 
 procedure TULogin.Button2Click(Sender: TObject);

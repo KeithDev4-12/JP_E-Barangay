@@ -11332,8 +11332,85 @@ object ULogin: TULogin
   object qryLogin: TFDQuery
     Connection = DM.FDConnection1
     SQL.Strings = (
-      'select * from ')
+      'select * from '
+      'tbluser'
+      'where password = :APassword')
     Left = 192
     Top = 144
+    ParamData = <
+      item
+        Name = 'APASSWORD'
+        DataType = ftWideString
+        ParamType = ptInput
+        Value = 's'
+      end>
+    object qryLoginID: TFDAutoIncField
+      FieldName = 'ID'
+      Origin = 'ID'
+      ProviderFlags = [pfInWhere, pfInKey]
+    end
+    object qryLoginFName: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'FName'
+      Origin = 'FName'
+      Size = 45
+    end
+    object qryLoginMName: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'MName'
+      Origin = 'MName'
+      Size = 5
+    end
+    object qryLoginLname: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'Lname'
+      Origin = 'Lname'
+      Size = 45
+    end
+    object qryLoginFullName: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'FullName'
+      Origin = 'FullName'
+      Size = 99
+    end
+    object qryLoginDOB: TDateField
+      AutoGenerateValue = arDefault
+      FieldName = 'DOB'
+      Origin = 'DOB'
+    end
+    object qryLoginGender: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'Gender'
+      Origin = 'Gender'
+      Size = 45
+    end
+    object qryLoginUserName: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'UserName'
+      Origin = 'UserName'
+      Size = 45
+    end
+    object qryLoginPassword: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'Password'
+      Origin = 'Password'
+      Size = 45
+    end
+    object qryLoginUserStatus: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'UserStatus'
+      Origin = 'UserStatus'
+      Size = 45
+    end
+    object qryLoginDateCreated: TDateField
+      AutoGenerateValue = arDefault
+      FieldName = 'DateCreated'
+      Origin = 'DateCreated'
+    end
+    object qryLoginDateModified: TDateField
+      AutoGenerateValue = arDefault
+      FieldName = 'DateModified'
+      Origin = 'DateModified'
+    end
   end
 end
