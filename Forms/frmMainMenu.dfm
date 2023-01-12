@@ -33653,8 +33653,8 @@ object UMainMenu: TUMainMenu
       end
     end
     object pnlCenter: TPanel
-      Left = 56
-      Top = 15
+      Left = 280
+      Top = 10
       Width = 695
       Height = 477
       BevelOuter = bvNone
@@ -34209,7 +34209,7 @@ object UMainMenu: TUMainMenu
       Left = -1
       Top = 330
       Width = 218
-      Height = 248
+      Height = 259
       ParentCustomHint = False
       Color = clBtnFace
       DoubleBuffered = False
@@ -34272,9 +34272,9 @@ object UMainMenu: TUMainMenu
         Height = 1
         Pen.Color = clMedGray
       end
-      object Shape34: TShape
+      object Shape36: TShape
         Left = -7
-        Top = 246
+        Top = 247
         Width = 225
         Height = 1
         Pen.Color = clMedGray
@@ -34351,6 +34351,7 @@ object UMainMenu: TUMainMenu
         Height = 35
         BevelOuter = bvNone
         TabOrder = 3
+        OnClick = Panel14Click
         object Label30: TLabel
           Left = 29
           Top = 10
@@ -34399,6 +34400,27 @@ object UMainMenu: TUMainMenu
           Width = 145
           Height = 14
           Caption = 'Certificate Of Indigency'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+      end
+      object Panel19: TPanel
+        Left = -7
+        Top = 212
+        Width = 225
+        Height = 35
+        BevelOuter = bvNone
+        TabOrder = 6
+        object Label35: TLabel
+          Left = 29
+          Top = 10
+          Width = 43
+          Height = 14
+          Caption = 'Blotter'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
@@ -40104,6 +40126,7 @@ object UMainMenu: TUMainMenu
         Style = bsCommandLink
         StylusHotImageIndex = -2
         TabOrder = 0
+        OnClick = Button1Click
       end
     end
     object Panel4: TPanel
@@ -40174,6 +40197,16 @@ object UMainMenu: TUMainMenu
       end
       object Shape25: TShape
         Left = 0
+        Top = 322
+        Width = 225
+        Height = 1
+        Align = alTop
+        Pen.Color = clMedGray
+        ExplicitLeft = -3
+        ExplicitTop = 329
+      end
+      object Shape35: TShape
+        Left = 0
         Top = 276
         Width = 225
         Height = 1
@@ -40190,12 +40223,13 @@ object UMainMenu: TUMainMenu
         Align = alTop
         BevelOuter = bvNone
         TabOrder = 0
+        OnClick = Panel5Click
         object Label19: TLabel
           Left = 54
           Top = 15
-          Width = 35
+          Width = 128
           Height = 14
-          Caption = 'Home'
+          Caption = 'Detailed Information'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
@@ -40319,6 +40353,54 @@ object UMainMenu: TUMainMenu
           ParentFont = False
         end
       end
+      object Panel18: TPanel
+        Left = 0
+        Top = 277
+        Width = 225
+        Height = 45
+        Align = alTop
+        BevelOuter = bvNone
+        TabOrder = 6
+        OnClick = Panel10Click
+        ExplicitLeft = -3
+        ExplicitTop = 343
+        object Label33: TLabel
+          Left = 54
+          Top = 15
+          Width = 91
+          Height = 14
+          Caption = 'For Approval'#39's '
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label34: TLabel
+          Left = 181
+          Top = 15
+          Width = 26
+          Height = 14
+          Caption = '(00)'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+      end
+      object BitBtn1: TBitBtn
+        Left = 0
+        Top = 323
+        Width = 225
+        Height = 30
+        Align = alTop
+        Caption = 'REFRESH APPROVAL DATA'
+        TabOrder = 7
+        OnClick = BitBtn1Click
+      end
     end
   end
   object MainMenu1: TMainMenu
@@ -40336,15 +40418,18 @@ object UMainMenu: TUMainMenu
       end
       object UploadFiles1: TMenuItem
         Caption = 'Upload Files'
+        Visible = False
       end
     end
     object Issuance1: TMenuItem
       Caption = 'Printing Reports'
       object BaraganyID1: TMenuItem
         Caption = 'Baragany ID'
+        OnClick = BaraganyID1Click
       end
       object Certi1: TMenuItem
         Caption = 'Certificate Of Apperance'
+        OnClick = Certi1Click
       end
       object BarangayCertificate1: TMenuItem
         Caption = 'Barangay Certificate'
@@ -40352,15 +40437,23 @@ object UMainMenu: TUMainMenu
       end
       object BarangayClearance1: TMenuItem
         Caption = 'Barangay Clearance'
+        OnClick = BarangayClearance1Click
       end
       object BarangayBusinessClearance1: TMenuItem
         Caption = 'Barangay Business Clearance'
+        OnClick = BarangayBusinessClearance1Click
       end
       object CertificateOfIn1: TMenuItem
         Caption = 'Certificate Of Indigency'
+        OnClick = CertificateOfIn1Click
+      end
+      object Blotter1: TMenuItem
+        Caption = 'Blotter'
+        OnClick = Blotter1Click
       end
       object otalNumberOfPopulationReport1: TMenuItem
         Caption = 'Total Number Of Population (Report)'
+        OnClick = otalNumberOfPopulationReport1Click
       end
     end
     object About1: TMenuItem
@@ -40385,6 +40478,22 @@ object UMainMenu: TUMainMenu
     Top = 248
     object BarangayID1: TMenuItem
       Caption = 'Barangay ID'
+    end
+  end
+  object qryApproval: TFDQuery
+    Connection = DM.FDConnection1
+    SQL.Strings = (
+      
+        'SELECT COUNT(*) as DataCount FROM tblapproval where status <> '#39'A' +
+        'pproved'#39)
+    Left = 104
+    Top = 546
+    object qryApprovalDataCount: TLargeintField
+      AutoGenerateValue = arDefault
+      FieldName = 'DataCount'
+      Origin = 'DataCount'
+      ProviderFlags = []
+      ReadOnly = True
     end
   end
 end

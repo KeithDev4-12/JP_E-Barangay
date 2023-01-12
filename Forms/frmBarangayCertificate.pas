@@ -79,6 +79,9 @@ type
     DeleteThisRecord1: TMenuItem;
     fdtblHistoryDetails: TFDTable;
     Edit1: TEdit;
+    DSTableInsert: TDataSource;
+    Label3: TLabel;
+    Edit2: TEdit;
     fdqryHistoryDetailsID: TFDAutoIncField;
     fdqryHistoryDetailsBarangayIdNo: TStringField;
     fdqryHistoryDetailsFName: TStringField;
@@ -113,7 +116,6 @@ type
     fdqryHistoryDetailsApproved: TStringField;
     fdqryHistoryDetailsAttested: TStringField;
     fdqryHistoryDetailsAnnualIncome: TBCDField;
-    DSTableInsert: TDataSource;
     fdtblHistoryDetailsID: TFDAutoIncField;
     fdtblHistoryDetailsBrgyID: TStringField;
     fdtblHistoryDetailsDateIssued: TDateField;
@@ -124,8 +126,6 @@ type
     fdtblHistoryDetailsApproved: TStringField;
     fdtblHistoryDetailsAttested: TStringField;
     fdtblHistoryDetailsAnnualIncome: TBCDField;
-    Label3: TLabel;
-    Edit2: TEdit;
     procedure FormShow(Sender: TObject);
     procedure SpeedButton6Click(Sender: TObject);
     procedure SpeedButton5Click(Sender: TObject);

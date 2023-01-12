@@ -7,7 +7,10 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.ExtCtrls, Vcl.StdCtrls,
   DBGridEhGrouping, ToolCtrlsEh, DBGridEhToolCtrls, DynVarsEh, Vcl.Buttons,
   Vcl.WinXCtrls, EhLibVCL, GridsEh, DBAxisGridsEh, DBGridEh, dxGDIPlusClasses,
-  System.ImageList, Vcl.ImgList;
+  System.ImageList, Vcl.ImgList, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   TUMainMenu = class(TForm)
@@ -135,9 +138,19 @@ type
     Panel16: TPanel;
     Label32: TLabel;
     Shape33: TShape;
-    Shape34: TShape;
     Panel17: TPanel;
     Image12: TImage;
+    Panel18: TPanel;
+    Label33: TLabel;
+    Shape35: TShape;
+    qryApproval: TFDQuery;
+    qryApprovalDataCount: TLargeintField;
+    Label34: TLabel;
+    BitBtn1: TBitBtn;
+    Shape36: TShape;
+    Panel19: TPanel;
+    Label35: TLabel;
+    Blotter1: TMenuItem;
     procedure FormShow(Sender: TObject);
     procedure Panel6Click(Sender: TObject);
     procedure Panel7Click(Sender: TObject);
@@ -149,6 +162,17 @@ type
     procedure Panel8Click(Sender: TObject);
     procedure Panel13Click(Sender: TObject);
     procedure Panel12Click(Sender: TObject);
+    procedure BitBtn1Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Certi1Click(Sender: TObject);
+    procedure BaraganyID1Click(Sender: TObject);
+    procedure BarangayClearance1Click(Sender: TObject);
+    procedure BarangayBusinessClearance1Click(Sender: TObject);
+    procedure CertificateOfIn1Click(Sender: TObject);
+    procedure Blotter1Click(Sender: TObject);
+    procedure otalNumberOfPopulationReport1Click(Sender: TObject);
+    procedure Panel5Click(Sender: TObject);
+    procedure Panel14Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -162,7 +186,37 @@ implementation
 
 {$R *.dfm}
 uses frmResidence, frmAccountProfile, frmBarangayOfficials, frmHistoryIssuance, frmPreview,
-frmBarangayCertificate, frmCertificateOfAppearance;
+frmBarangayCertificate, frmCertificateOfAppearance, frmBarangayClearance, MainDataModule;
+
+procedure TUMainMenu.BaraganyID1Click(Sender: TObject);
+var
+  UPreviewData : TUPreviewData;
+begin
+  try
+    UPreviewData := TUPreviewData.Create(Self);
+    //Certificate of Appearance
+    UPreviewData.Label2.Caption := 'Barangay Identification';
+    //UResidence.PageControl1.ActivePageIndex := 3;
+    UPreviewData.ShowModal;
+  finally
+    UPreviewData.Free;
+  end;
+end;
+
+procedure TUMainMenu.BarangayBusinessClearance1Click(Sender: TObject);
+var
+  UPreviewData : TUPreviewData;
+begin
+  try
+    UPreviewData := TUPreviewData.Create(Self);
+    //Certificate of Appearance
+    UPreviewData.Label2.Caption := 'Barangay Business Clearance';
+    //UResidence.PageControl1.ActivePageIndex := 3;
+    UPreviewData.ShowModal;
+  finally
+    UPreviewData.Free;
+  end;
+end;
 
 procedure TUMainMenu.BarangayCertificate1Click(Sender: TObject);
 var
@@ -170,7 +224,82 @@ var
 begin
   try
     UPreviewData := TUPreviewData.Create(Self);
+    //Certificate of Appearance
     UPreviewData.Label2.Caption := 'Barangay Certificate';
+    //UResidence.PageControl1.ActivePageIndex := 3;
+    UPreviewData.ShowModal;
+  finally
+    UPreviewData.Free;
+  end;
+end;
+
+procedure TUMainMenu.BarangayClearance1Click(Sender: TObject);
+var
+  UPreviewData : TUPreviewData;
+begin
+  try
+    UPreviewData := TUPreviewData.Create(Self);
+    //Certificate of Appearance
+    UPreviewData.Label2.Caption := 'Barangay Clearance';
+    //UResidence.PageControl1.ActivePageIndex := 3;
+    UPreviewData.ShowModal;
+  finally
+    UPreviewData.Free;
+  end;
+end;
+
+procedure TUMainMenu.BitBtn1Click(Sender: TObject);
+begin
+  qryApproval.Close;
+  qryApproval.Open;
+  if not qryApproval.IsEmpty then begin
+     Label34.Caption := '(' + qryApprovalDataCount.AsString + ')';
+  end;
+end;
+
+procedure TUMainMenu.Blotter1Click(Sender: TObject);
+var
+  UPreviewData : TUPreviewData;
+begin
+  try
+    UPreviewData := TUPreviewData.Create(Self);
+    //Certificate of Appearance
+    UPreviewData.Label2.Caption := 'Blotter Report';
+    //UResidence.PageControl1.ActivePageIndex := 3;
+    UPreviewData.ShowModal;
+  finally
+    UPreviewData.Free;
+  end;
+end;
+
+procedure TUMainMenu.Button1Click(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
+procedure TUMainMenu.Certi1Click(Sender: TObject);
+var
+  UPreviewData : TUPreviewData;
+begin
+  try
+    UPreviewData := TUPreviewData.Create(Self);
+    //
+    UPreviewData.Label2.Caption := 'Certificate of Appearance';
+    //UResidence.PageControl1.ActivePageIndex := 3;
+    UPreviewData.ShowModal;
+  finally
+    UPreviewData.Free;
+  end;
+end;
+
+procedure TUMainMenu.CertificateOfIn1Click(Sender: TObject);
+var
+  UPreviewData : TUPreviewData;
+begin
+  try
+    UPreviewData := TUPreviewData.Create(Self);
+    //Certificate of Appearance
+    UPreviewData.Label2.Caption := 'Certificate of Indigency';
     //UResidence.PageControl1.ActivePageIndex := 3;
     UPreviewData.ShowModal;
   finally
@@ -183,6 +312,11 @@ begin
     pnlCenter.Left := ((Screen.DesktopWidth - pnlCenter.Width - Panel2.Width) div 2);
     pnlCenter.Top := ((Screen.DesktopHeight - pnlCenter.Height - 50) div 2);
     //ShowMessage(CurrToStr(Screen.DesktopHeight));
+end;
+
+procedure TUMainMenu.otalNumberOfPopulationReport1Click(Sender: TObject);
+begin
+  //TotalNumberOfPopulation
 end;
 
 procedure TUMainMenu.Panel10Click(Sender: TObject);
@@ -233,6 +367,35 @@ begin
   finally
     UBarangayCertificate.Free;
   end;
+end;
+
+
+
+procedure TUMainMenu.Panel14Click(Sender: TObject);
+var
+  //FWashingPanels : TFWashingPanels;
+  UBarangayClearance : TUBarangayClearance;
+begin
+  //if Assigned(FSettings) then
+  //  FSettings.Free;
+  try
+    UBarangayClearance := TUBarangayClearance.Create(Self);
+    //UResidence.PageControl1.ActivePageIndex := 3;
+    UBarangayClearance.ShowModal;
+  finally
+    UBarangayClearance.Free;
+  end;
+end;
+
+procedure TUMainMenu.Panel5Click(Sender: TObject);
+begin
+
+  if pnlCenter.Visible then begin
+    pnlCenter.Visible := False;
+  end else begin
+    pnlCenter.Visible := True;
+  end;
+
 end;
 
 procedure TUMainMenu.Panel6Click(Sender: TObject);

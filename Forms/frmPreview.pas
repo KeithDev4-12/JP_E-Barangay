@@ -68,7 +68,48 @@ uses frmReport ;
 Procedure TUPreviewData.BitBtn2Click(Sender: TObject);
 begin
    if Label2.Caption = 'Barangay Certificate' then begin
-     frmReport.UReport.QRBrgyCertificate.Preview;
+     with frmReport.UReport do begin
+       qryReportCertificate.Close;
+       qryReportCertificate.ParamByName('ABarangayIdNo').AsString := fdqryResidenceBarangayIdNo.AsString;
+       qryReportCertificate.Open();
+       qryReportCertificate.First;
+       if qryReportCertificate.IsEmpty then begin
+         MessageDlg('No Record Found!',mtInformation,[mbOK],0);
+         Exit;
+       end else begin
+         QRBrgyCertificate.Preview;
+       end;
+     end;
+   end;
+   //Certificate of Appearance
+   if Label2.Caption = 'Certificate of Appearance' then begin
+     with frmReport.UReport do begin
+       qryReportCertificate.Close;
+       qryReportCertificate.ParamByName('ABarangayIdNo').AsString := fdqryResidenceBarangayIdNo.AsString;
+       qryReportCertificate.Open();
+       qryReportCertificate.First;
+       if qryReportCertificate.IsEmpty then begin
+         MessageDlg('No Record Found!',mtInformation,[mbOK],0);
+         Exit;
+       end else begin
+         QRBrgyCertificate.Preview;
+       end;
+     end;
+   end;
+
+   if Label2.Caption = 'Barangay Clearance' then begin
+     with frmReport.UReport do begin
+       qryReportClearance.Close;
+       qryReportClearance.ParamByName('ABarangayIdNo').AsString := fdqryResidenceBarangayIdNo.AsString;
+       qryReportClearance.Open();
+       qryReportClearance.First;
+       if qryReportClearance.IsEmpty then begin
+         MessageDlg('No Record Found!',mtInformation,[mbOK],0);
+         Exit;
+       end else begin
+         QRBrgyClearance.Preview;
+       end;
+     end;
    end;
 
 end;

@@ -11270,8 +11270,9 @@ object ULogin: TULogin
     Font.Style = []
     ParentFont = False
     PasswordChar = '*'
-    TabOrder = 0
+    TabOrder = 1
     TextHint = '  ********'
+    OnKeyPress = Edit2KeyPress
   end
   object Edit1: TEdit
     Left = 13
@@ -11286,7 +11287,7 @@ object ULogin: TULogin
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 1
+    TabOrder = 0
     TextHint = '  UserName'
   end
   object Button1: TButton

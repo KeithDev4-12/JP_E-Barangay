@@ -57,7 +57,7 @@ object UPreviewData: TUPreviewData
             EditButtons = <>
             FieldName = 'BarangayIdNo'
             Footers = <>
-            Width = 50
+            Width = 49
           end
           item
             CellButtons = <>
@@ -571,10 +571,12 @@ object UPreviewData: TUPreviewData
           Caption = 'Search Residences'
         end
         object Label2: TLabel
-          Left = 408
-          Top = 16
-          Width = 98
+          Left = 296
+          Top = 6
+          Width = 244
           Height = 16
+          Alignment = taCenter
+          AutoSize = False
           Caption = 'PREVIEW MODE'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
@@ -627,6 +629,7 @@ object UPreviewData: TUPreviewData
       FieldName = 'ID'
       Origin = 'ID'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object fdqryResidenceBarangayIdNo: TStringField
       AutoGenerateValue = arDefault

@@ -1,9 +1,10 @@
 object UBarangayCertificate: TUBarangayCertificate
   Left = 0
   Top = 0
+  BorderStyle = bsDialog
   Caption = 'UBarangayCertificate'
-  ClientHeight = 275
-  ClientWidth = 553
+  ClientHeight = 285
+  ClientWidth = 563
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,6 +12,7 @@ object UBarangayCertificate: TUBarangayCertificate
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poOwnerFormCenter
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
@@ -18,14 +20,15 @@ object UBarangayCertificate: TUBarangayCertificate
     Left = 0
     Top = 0
     Width = 220
-    Height = 218
+    Height = 228
     Align = alLeft
     Caption = 'MENUS'
     Enabled = False
     TabOrder = 0
+    ExplicitHeight = 218
     object Shape2: TShape
       Left = 2
-      Top = 216
+      Top = 226
       Width = 216
       Height = 3
       Align = alTop
@@ -40,19 +43,21 @@ object UBarangayCertificate: TUBarangayCertificate
       Left = 2
       Top = 15
       Width = 216
-      Height = 201
+      Height = 211
       Align = alTop
       Anchors = [akLeft, akTop, akRight, akBottom]
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitHeight = 201
       object DBGridEh1: TDBGridEh
         Left = 0
         Top = 25
         Width = 216
-        Height = 176
+        Height = 186
         Align = alClient
         DataSource = DSHistoryDetails
         DynProps = <>
+        PopupMenu = PopupMenu1
         SearchPanel.Enabled = True
         SearchPanel.FilterOnTyping = True
         TabOrder = 0
@@ -621,14 +626,16 @@ object UBarangayCertificate: TUBarangayCertificate
   object Panel5: TPanel
     Left = 220
     Top = 0
-    Width = 333
-    Height = 218
+    Width = 343
+    Height = 228
     Align = alClient
     BevelOuter = bvNone
     Color = clBtnHighlight
     Enabled = False
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 333
+    ExplicitHeight = 218
     object Label2: TLabel
       Left = 16
       Top = 61
@@ -728,21 +735,24 @@ object UBarangayCertificate: TUBarangayCertificate
   end
   object Panel3: TPanel
     Left = 0
-    Top = 218
-    Width = 553
+    Top = 228
+    Width = 563
     Height = 57
     Align = alBottom
     TabOrder = 2
+    ExplicitTop = 218
+    ExplicitWidth = 553
     object Panel4: TPanel
       Left = 1
       Top = 0
-      Width = 551
+      Width = 561
       Height = 56
       Align = alBottom
       BevelKind = bkTile
       BevelOuter = bvNone
       Enabled = False
       TabOrder = 0
+      ExplicitWidth = 551
       object SpeedButton1: TSpeedButton
         Left = 0
         Top = 0
@@ -846,7 +856,7 @@ object UBarangayCertificate: TUBarangayCertificate
         OnClick = SpeedButton2Click
       end
       object Shape1: TShape
-        Left = 385
+        Left = 395
         Top = 0
         Width = 3
         Height = 52
@@ -923,7 +933,7 @@ object UBarangayCertificate: TUBarangayCertificate
         ExplicitHeight = 100
       end
       object SpeedButton4: TSpeedButton
-        Left = 388
+        Left = 398
         Top = 0
         Width = 159
         Height = 52
@@ -1120,6 +1130,7 @@ object UBarangayCertificate: TUBarangayCertificate
       Align = alTop
       DataSource = DSResidence
       DynProps = <>
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
       SearchPanel.Enabled = True
       SearchPanel.FilterOnTyping = True
       TabOrder = 0
@@ -1327,8 +1338,9 @@ object UBarangayCertificate: TUBarangayCertificate
     UpdateOptions.EnableUpdate = False
     SQL.Strings = (
       
-        'select * from tblResidence r inner join tblbarangayclearance b o' +
-        'n r.BarangayIdNo = b.BrgyID '#10'where r.BarangayIdNo = :ABarangayID')
+        'select * from tblResidence r LEFT JOIN tblbarangaycertificate b ' +
+        'on r.BarangayIdNo = b.BrgyID '#10'where r.BarangayIdNo = :ABarangayI' +
+        'D')
     Left = 40
     Top = 128
     ParamData = <
@@ -1342,7 +1354,6 @@ object UBarangayCertificate: TUBarangayCertificate
       FieldName = 'ID'
       Origin = 'ID'
       ProviderFlags = [pfInWhere, pfInKey]
-      ReadOnly = True
     end
     object fdqryHistoryDetailsBarangayIdNo: TStringField
       AutoGenerateValue = arDefault
@@ -1735,15 +1746,14 @@ object UBarangayCertificate: TUBarangayCertificate
   object fdtblHistoryDetails: TFDTable
     IndexFieldNames = 'ID'
     Connection = DM.FDConnection1
-    UpdateOptions.UpdateTableName = 'jplaureldb.tblbarangayclearance'
-    TableName = 'jplaureldb.tblbarangayclearance'
+    UpdateOptions.UpdateTableName = 'tblbarangaycertificate'
+    TableName = 'tblbarangaycertificate'
     Left = 484
     Top = 264
     object fdtblHistoryDetailsID: TFDAutoIncField
       FieldName = 'ID'
       Origin = 'ID'
       ProviderFlags = [pfInWhere, pfInKey]
-      ReadOnly = True
     end
     object fdtblHistoryDetailsBrgyID: TStringField
       AutoGenerateValue = arDefault

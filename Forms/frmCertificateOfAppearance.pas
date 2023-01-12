@@ -10,7 +10,7 @@ uses
   DBGridEh, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client;
+  FireDAC.Comp.Client, Vcl.ComCtrls;
 
 type
   TUCertificateOfAppearance = class(TForm)
@@ -27,11 +27,8 @@ type
     Label5: TLabel;
     Shape2: TShape;
     Label6: TLabel;
-    Label7: TLabel;
     Label3: TLabel;
     DBEdit1: TDBEdit;
-    DBEdit2: TDBEdit;
-    DBEdit3: TDBEdit;
     Edit1: TEdit;
     Edit2: TEdit;
     Panel4: TPanel;
@@ -43,8 +40,6 @@ type
     SpeedButton4: TSpeedButton;
     Shape5: TShape;
     Label8: TLabel;
-    Label9: TLabel;
-    DBEdit4: TDBEdit;
     fdqryResidence: TFDQuery;
     fdqryResidenceID: TFDAutoIncField;
     fdqryResidenceBarangayIdNo: TStringField;
@@ -80,6 +75,8 @@ type
     fdtblHistoryDetails: TFDTable;
     DSTableInsert: TDataSource;
     Edit3: TEdit;
+    DSHistoryDetails: TDataSource;
+    DateTimePicker1: TDateTimePicker;
     fdqryHistoryDetailsID: TFDAutoIncField;
     fdqryHistoryDetailsBarangayIdNo: TStringField;
     fdqryHistoryDetailsFName: TStringField;
@@ -106,19 +103,14 @@ type
     fdqryHistoryDetailsPicture: TMemoField;
     fdqryHistoryDetailsID_1: TIntegerField;
     fdqryHistoryDetailsBarangayIdNo_1: TStringField;
-    fdqryHistoryDetailsDesignation: TStringField;
-    fdqryHistoryDetailsOffice: TStringField;
-    fdqryHistoryDetailsInclusiveDates: TStringField;
+    fdqryHistoryDetailsSubjectOff: TStringField;
+    fdqryHistoryDetailsDateIssued: TDateField;
     fdqryHistoryDetailsPurpose: TStringField;
-    fdqryHistoryDetailsPunongBarangay: TStringField;
     fdtblHistoryDetailsID: TFDAutoIncField;
     fdtblHistoryDetailsBarangayIdNo: TStringField;
-    fdtblHistoryDetailsDesignation: TStringField;
-    fdtblHistoryDetailsOffice: TStringField;
-    fdtblHistoryDetailsInclusiveDates: TStringField;
+    fdtblHistoryDetailsSubjectOff: TStringField;
+    fdtblHistoryDetailsDateIssued: TDateField;
     fdtblHistoryDetailsPurpose: TStringField;
-    fdtblHistoryDetailsPunongBarangay: TStringField;
-    DSHistoryDetails: TDataSource;
     procedure Panel5Click(Sender: TObject);
     procedure SpeedButton4Click(Sender: TObject);
     procedure SpeedButton3Click(Sender: TObject);
@@ -147,7 +139,7 @@ begin
   if fdqryResidence.State IN [dsBrowse] then begin
     fdtblHistoryDetails.Close;
     fdtblHistoryDetails.Open;
-    if fdtblHistoryDetails.Locate('ID',fdqryHistoryDetailsID_1.AsString,[]) then begin
+    if fdtblHistoryDetails.Locate('ID',fdqryHistoryDetailsID_1.AsInteger,[]) then begin
       Edit3.Text := fdtblHistoryDetailsPurpose.AsString;
     end;
   end;
@@ -157,6 +149,7 @@ procedure TUCertificateOfAppearance.FormShow(Sender: TObject);
 begin
   fdqryResidence.Close;
   fdqryResidence.Open;
+  DateTimePicker1.DateTime := Now();
   //fdtblHistoryDetails.Close;
   //fdtblHistoryDetails.Open;
 end;
@@ -190,6 +183,9 @@ begin
   fdtblHistoryDetails.Close;
   fdtblHistoryDetails.Open;
   fdtblHistoryDetails.Edit;
+  //DateTimePicker1.DateTime := fdtblHistoryDetailsDateIssued.AsDateTime;
+  //Edit3.Text := fdtblHistoryDetailsPurpose.AsString;
+  //Edit1.Text := fdtblHistoryDetailsBarangayIdNo.AsString;
 end;
 
 procedure TUCertificateOfAppearance.SpeedButton3Click(Sender: TObject);

@@ -43,6 +43,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure LogInChecking(AUserName,APassword:String);
+    procedure Edit2KeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -82,6 +83,13 @@ begin
 Close;
 
   Application.Terminate;
+end;
+
+procedure TULogin.Edit2KeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key  IN [#13] then begin
+    Button1Click(Sender);
+  end;
 end;
 
 procedure TULogin.LogInChecking(AUserName, APassword: String);
