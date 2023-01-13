@@ -1642,6 +1642,7 @@ object UCertificateOfAppearance: TUCertificateOfAppearance
       FieldName = 'ID'
       Origin = 'ID'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object fdqryHistoryDetailsBarangayIdNo: TStringField
       AutoGenerateValue = arDefault
@@ -1828,6 +1829,7 @@ object UCertificateOfAppearance: TUCertificateOfAppearance
       FieldName = 'ID'
       Origin = 'ID'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object fdtblHistoryDetailsBarangayIdNo: TStringField
       AutoGenerateValue = arDefault

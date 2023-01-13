@@ -25,7 +25,6 @@ object UBarangayCertificate: TUBarangayCertificate
     Caption = 'MENUS'
     Enabled = False
     TabOrder = 0
-    ExplicitHeight = 218
     object Shape2: TShape
       Left = 2
       Top = 226
@@ -48,7 +47,6 @@ object UBarangayCertificate: TUBarangayCertificate
       Anchors = [akLeft, akTop, akRight, akBottom]
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitHeight = 201
       object DBGridEh1: TDBGridEh
         Left = 0
         Top = 25
@@ -634,8 +632,6 @@ object UBarangayCertificate: TUBarangayCertificate
     Enabled = False
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 333
-    ExplicitHeight = 218
     object Label2: TLabel
       Left = 16
       Top = 61
@@ -740,8 +736,6 @@ object UBarangayCertificate: TUBarangayCertificate
     Height = 57
     Align = alBottom
     TabOrder = 2
-    ExplicitTop = 218
-    ExplicitWidth = 553
     object Panel4: TPanel
       Left = 1
       Top = 0
@@ -752,7 +746,6 @@ object UBarangayCertificate: TUBarangayCertificate
       BevelOuter = bvNone
       Enabled = False
       TabOrder = 0
-      ExplicitWidth = 551
       object SpeedButton1: TSpeedButton
         Left = 0
         Top = 0
@@ -1001,7 +994,7 @@ object UBarangayCertificate: TUBarangayCertificate
   object Panel6: TPanel
     Left = 97
     Top = 12
-    Width = 376
+    Width = 368
     Height = 249
     BevelKind = bkTile
     BevelOuter = bvNone
@@ -1009,7 +1002,7 @@ object UBarangayCertificate: TUBarangayCertificate
     object Label8: TLabel
       Left = 0
       Top = 0
-      Width = 372
+      Width = 364
       Height = 13
       Align = alTop
       Alignment = taCenter
@@ -1017,7 +1010,7 @@ object UBarangayCertificate: TUBarangayCertificate
       ExplicitWidth = 99
     end
     object SpeedButton5: TSpeedButton
-      Left = 245
+      Left = 237
       Top = 193
       Width = 127
       Height = 52
@@ -1125,7 +1118,7 @@ object UBarangayCertificate: TUBarangayCertificate
     object DBGridEh2: TDBGridEh
       Left = 0
       Top = 13
-      Width = 372
+      Width = 364
       Height = 180
       Align = alTop
       DataSource = DSResidence
@@ -1354,6 +1347,7 @@ object UBarangayCertificate: TUBarangayCertificate
       FieldName = 'ID'
       Origin = 'ID'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object fdqryHistoryDetailsBarangayIdNo: TStringField
       AutoGenerateValue = arDefault
@@ -1754,6 +1748,7 @@ object UBarangayCertificate: TUBarangayCertificate
       FieldName = 'ID'
       Origin = 'ID'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object fdtblHistoryDetailsBrgyID: TStringField
       AutoGenerateValue = arDefault

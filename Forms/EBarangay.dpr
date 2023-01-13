@@ -13,7 +13,8 @@ uses
   frmPreview in 'frmPreview.pas' {UPreviewData},
   frmBarangayCertificate in 'frmBarangayCertificate.pas' {UBarangayCertificate},
   frmCertificateOfAppearance in 'frmCertificateOfAppearance.pas' {UCertificateOfAppearance},
-  frmBarangayClearance in 'frmBarangayClearance.pas' {UBarangayClearance};
+  frmBarangayClearance in 'frmBarangayClearance.pas' {UBarangayClearance},
+  frmApprovalOfRequest in 'frmApprovalOfRequest.pas' {UApprovalOfRequest};
 
 {$R *.res}
 
@@ -32,5 +33,6 @@ begin
   Application.CreateForm(TUBarangayCertificate, UBarangayCertificate);
   Application.CreateForm(TUCertificateOfAppearance, UCertificateOfAppearance);
   Application.CreateForm(TUBarangayClearance, UBarangayClearance);
+  Application.CreateForm(TUApprovalOfRequest, UApprovalOfRequest);
   Application.Run;
 end.

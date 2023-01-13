@@ -148,6 +148,10 @@
             <Form>UBarangayClearance</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="frmApprovalOfRequest.pas">
+            <Form>UApprovalOfRequest</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

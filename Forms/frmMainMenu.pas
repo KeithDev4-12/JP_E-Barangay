@@ -151,6 +151,7 @@ type
     Panel19: TPanel;
     Label35: TLabel;
     Blotter1: TMenuItem;
+    DataSource1: TDataSource;
     procedure FormShow(Sender: TObject);
     procedure Panel6Click(Sender: TObject);
     procedure Panel7Click(Sender: TObject);
@@ -173,6 +174,8 @@ type
     procedure otalNumberOfPopulationReport1Click(Sender: TObject);
     procedure Panel5Click(Sender: TObject);
     procedure Panel14Click(Sender: TObject);
+    procedure DataSource1DataChange(Sender: TObject; Field: TField);
+    procedure Panel18Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -186,7 +189,7 @@ implementation
 
 {$R *.dfm}
 uses frmResidence, frmAccountProfile, frmBarangayOfficials, frmHistoryIssuance, frmPreview,
-frmBarangayCertificate, frmCertificateOfAppearance, frmBarangayClearance, MainDataModule;
+frmBarangayCertificate, frmCertificateOfAppearance,frmApprovalOfRequest, frmBarangayClearance, MainDataModule;
 
 procedure TUMainMenu.BaraganyID1Click(Sender: TObject);
 var
@@ -252,9 +255,7 @@ procedure TUMainMenu.BitBtn1Click(Sender: TObject);
 begin
   qryApproval.Close;
   qryApproval.Open;
-  if not qryApproval.IsEmpty then begin
-     Label34.Caption := '(' + qryApprovalDataCount.AsString + ')';
-  end;
+  
 end;
 
 procedure TUMainMenu.Blotter1Click(Sender: TObject);
@@ -304,6 +305,13 @@ begin
     UPreviewData.ShowModal;
   finally
     UPreviewData.Free;
+  end;
+end;
+
+procedure TUMainMenu.DataSource1DataChange(Sender: TObject; Field: TField);
+begin
+  if not qryApproval.IsEmpty then begin
+     Label34.Caption := '(' + qryApprovalDataCount.AsString + ')';
   end;
 end;
 
@@ -384,6 +392,24 @@ begin
     UBarangayClearance.ShowModal;
   finally
     UBarangayClearance.Free;
+  end;
+end;
+
+procedure TUMainMenu.Panel18Click(Sender: TObject);
+var
+  //FWashingPanels : TFWashingPanels;
+  UApprovalOfRequest : TUApprovalOfRequest;
+begin
+  //if Assigned(FSettings) then
+  //  FSettings.Free;
+  try
+
+    //Panel8.Visible := False;
+    UApprovalOfRequest := TUApprovalOfRequest.Create(Self);
+    //UResidence.PageControl1.ActivePageIndex := 3;
+    UApprovalOfRequest.ShowModal;
+  finally
+    UApprovalOfRequest.Free;
   end;
 end;
 

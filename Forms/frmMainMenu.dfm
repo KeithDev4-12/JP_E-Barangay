@@ -33,10 +33,6 @@ object UMainMenu: TUMainMenu
       Align = alClient
       Caption = 'Panel17'
       TabOrder = 2
-      ExplicitLeft = 24
-      ExplicitTop = 24
-      ExplicitWidth = 185
-      ExplicitHeight = 71
       object Image12: TImage
         Left = 1
         Top = 1
@@ -40361,9 +40357,7 @@ object UMainMenu: TUMainMenu
         Align = alTop
         BevelOuter = bvNone
         TabOrder = 6
-        OnClick = Panel10Click
-        ExplicitLeft = -3
-        ExplicitTop = 343
+        OnClick = Panel18Click
         object Label33: TLabel
           Left = 54
           Top = 15
@@ -40376,6 +40370,7 @@ object UMainMenu: TUMainMenu
           Font.Name = 'Tahoma'
           Font.Style = [fsBold]
           ParentFont = False
+          OnClick = Panel18Click
         end
         object Label34: TLabel
           Left = 181
@@ -40389,6 +40384,7 @@ object UMainMenu: TUMainMenu
           Font.Name = 'Tahoma'
           Font.Style = [fsBold]
           ParentFont = False
+          OnClick = Panel18Click
         end
       end
       object BitBtn1: TBitBtn
@@ -40495,5 +40491,11 @@ object UMainMenu: TUMainMenu
       ProviderFlags = []
       ReadOnly = True
     end
+  end
+  object DataSource1: TDataSource
+    DataSet = qryApproval
+    OnDataChange = DataSource1DataChange
+    Left = 48
+    Top = 562
   end
 end
