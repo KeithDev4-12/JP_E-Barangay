@@ -14,7 +14,9 @@ uses
   frmBarangayCertificate in 'frmBarangayCertificate.pas' {UBarangayCertificate},
   frmCertificateOfAppearance in 'frmCertificateOfAppearance.pas' {UCertificateOfAppearance},
   frmBarangayClearance in 'frmBarangayClearance.pas' {UBarangayClearance},
-  frmApprovalOfRequest in 'frmApprovalOfRequest.pas' {UApprovalOfRequest};
+  frmApprovalOfRequest in 'frmApprovalOfRequest.pas' {UApprovalOfRequest},
+  frmDeveloper in 'frmDeveloper.pas' {UDeveloper},
+  frmAboutHistory in 'frmAboutHistory.pas' {UAboutHistory};
 
 {$R *.res}
 
@@ -34,5 +36,7 @@ begin
   Application.CreateForm(TUCertificateOfAppearance, UCertificateOfAppearance);
   Application.CreateForm(TUBarangayClearance, UBarangayClearance);
   Application.CreateForm(TUApprovalOfRequest, UApprovalOfRequest);
+  Application.CreateForm(TUDeveloper, UDeveloper);
+  Application.CreateForm(TUAboutHistory, UAboutHistory);
   Application.Run;
 end.

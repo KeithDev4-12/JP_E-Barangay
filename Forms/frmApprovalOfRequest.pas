@@ -9,7 +9,24 @@ uses
   DBGridEh, Vcl.ExtCtrls, Vcl.Buttons, Vcl.ComCtrls, FireDAC.Stan.Intf,
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
-  Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.Mask, Vcl.DBCtrls;
+  Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.Mask, Vcl.DBCtrls,
+  cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters, cxContainer,
+  cxEdit, dxSkinsCore, dxSkinBlack, dxSkinBlue, dxSkinBlueprint, dxSkinCaramel,
+  dxSkinCoffee, dxSkinDarkRoom, dxSkinDarkSide, dxSkinDevExpressDarkStyle,
+  dxSkinDevExpressStyle, dxSkinFoggy, dxSkinGlassOceans, dxSkinHighContrast,
+  dxSkiniMaginary, dxSkinLilian, dxSkinLiquidSky, dxSkinLondonLiquidSky,
+  dxSkinMcSkin, dxSkinMetropolis, dxSkinMetropolisDark, dxSkinMoneyTwins,
+  dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Green,
+  dxSkinOffice2007Pink, dxSkinOffice2007Silver, dxSkinOffice2010Black,
+  dxSkinOffice2010Blue, dxSkinOffice2010Silver, dxSkinOffice2013DarkGray,
+  dxSkinOffice2013LightGray, dxSkinOffice2013White, dxSkinOffice2016Colorful,
+  dxSkinOffice2016Dark, dxSkinPumpkin, dxSkinSeven, dxSkinSevenClassic,
+  dxSkinSharp, dxSkinSharpPlus, dxSkinSilver, dxSkinSpringTime, dxSkinStardust,
+  dxSkinSummer2008, dxSkinTheAsphaltWorld, dxSkinsDefaultPainters,
+  dxSkinValentine, dxSkinVisualStudio2013Blue, dxSkinVisualStudio2013Dark,
+  dxSkinVisualStudio2013Light, dxSkinVS2010, dxSkinWhiteprint,
+  dxSkinXmas2008Blue, cxDBEdit, cxTextEdit, cxMaskEdit, cxDropDownEdit,
+  cxCalendar, cxSpinEdit, DBCtrlsEh;
 
 type
   TUApprovalOfRequest = class(TForm)
@@ -26,13 +43,7 @@ type
     RadioButton7: TRadioButton;
     Panel4: TPanel;
     pnlBarangayID: TPanel;
-    DBGridEh1: TDBGridEh;
     Label1: TLabel;
-    Panel5: TPanel;
-    SpeedButton1: TSpeedButton;
-    SpeedButton2: TSpeedButton;
-    SpeedButton3: TSpeedButton;
-    Shape1: TShape;
     Label2: TLabel;
     Label3: TLabel;
     Edit1: TEdit;
@@ -72,7 +83,6 @@ type
     qryApprovalEmrgncyContactNumber: TStringField;
     qryApprovalPicture: TMemoField;
     tblApproval: TFDTable;
-    DBEdit1: TDBEdit;
     DBEdit2: TDBEdit;
     DBEdit3: TDBEdit;
     DStblApproval: TDataSource;
@@ -81,6 +91,14 @@ type
     tblApprovalDateIssued: TDateField;
     tblApprovalIssuedAt: TStringField;
     tblApprovalAttested: TStringField;
+    DBDateTimeEditEh1: TDBDateTimeEditEh;
+    Panel6: TPanel;
+    DBGridEh1: TDBGridEh;
+    Panel5: TPanel;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    Shape1: TShape;
+    Shape2: TShape;
     procedure OpenApprovalData(SV:String);
     procedure RadioButton1Click(Sender: TObject);
     procedure RadioButton2Click(Sender: TObject);
@@ -90,6 +108,9 @@ type
     procedure FindOtherData(SA:String);
     procedure FormShow(Sender: TObject);
     procedure DBGridEh1DblClick(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
+
   private
     { Private declarations }
   public
@@ -109,6 +130,7 @@ procedure TUApprovalOfRequest.DBGridEh1DblClick(Sender: TObject);
 begin
   FindOtherData(qryApprovalID.AsString);
   tblApproval.Edit;
+
 end;
 
 procedure TUApprovalOfRequest.DSApprovalDataDataChange(Sender: TObject;
@@ -119,6 +141,10 @@ begin
   //FindOtherData(qryApprovalID.AsString);
 
   if qryApproval.State IN [dsBrowse] then begin
+    if qryApproval.IsEmpty then begin
+      exit;
+    end;
+
     tblApproval.Close;
     tblApproval.Open;
     if tblApproval.Locate('ID',qryApprovalID.AsString,[]) then begin
@@ -165,4 +191,20 @@ begin
    OpenApprovalData('tblbarangaycertificate');
 end;
 
+procedure TUApprovalOfRequest.SpeedButton1Click(Sender: TObject);
+begin
+   qryApproval.Edit;
+   qryApprovalStatus.AsString := 'APPROVED';
+   qryApproval.Post;
+end;
+
+procedure TUApprovalOfRequest.SpeedButton2Click(Sender: TObject);
+begin
+   qryApproval.Edit;
+   qryApprovalStatus.AsString := 'REJECTED';
+   qryApproval.Post;
+end;
+
 end.
+
+

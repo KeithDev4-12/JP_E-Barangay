@@ -34295,6 +34295,13 @@ object UMainMenu: TUMainMenu
           Font.Style = [fsBold]
           ParentFont = False
         end
+        object Label36: TLabel
+          Left = 128
+          Top = 6
+          Width = 82
+          Height = 26
+          Caption = 'On Process '#13'Designing Layout'
+        end
       end
       object Panel12: TPanel
         Left = -7
@@ -34382,6 +34389,13 @@ object UMainMenu: TUMainMenu
           Font.Style = [fsBold]
           ParentFont = False
         end
+        object Label37: TLabel
+          Left = 136
+          Top = 6
+          Width = 82
+          Height = 26
+          Caption = 'On Process '#13'Designing Layout'
+        end
       end
       object Panel16: TPanel
         Left = -7
@@ -34403,6 +34417,13 @@ object UMainMenu: TUMainMenu
           Font.Style = [fsBold]
           ParentFont = False
         end
+        object Label38: TLabel
+          Left = 136
+          Top = 5
+          Width = 82
+          Height = 26
+          Caption = 'On Process '#13'Designing Layout'
+        end
       end
       object Panel19: TPanel
         Left = -7
@@ -34423,6 +34444,13 @@ object UMainMenu: TUMainMenu
           Font.Name = 'Tahoma'
           Font.Style = [fsBold]
           ParentFont = False
+        end
+        object Label39: TLabel
+          Left = 136
+          Top = 3
+          Width = 82
+          Height = 26
+          Caption = 'On Process '#13'Designing Layout'
         end
       end
     end
@@ -40456,12 +40484,14 @@ object UMainMenu: TUMainMenu
       Caption = 'About '
       object Developers1: TMenuItem
         Caption = 'Developers'
+        OnClick = Developers1Click
       end
       object N1: TMenuItem
         Caption = '-'
       end
       object JPLaurel1: TMenuItem
         Caption = 'JP-Laurel'
+        OnClick = JPLaurel1Click
       end
     end
   end

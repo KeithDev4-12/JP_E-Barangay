@@ -152,6 +152,14 @@
             <Form>UApprovalOfRequest</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="frmDeveloper.pas">
+            <Form>UDeveloper</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="frmAboutHistory.pas">
+            <Form>UAboutHistory</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

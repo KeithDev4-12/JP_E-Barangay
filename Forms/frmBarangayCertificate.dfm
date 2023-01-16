@@ -993,8 +993,8 @@ object UBarangayCertificate: TUBarangayCertificate
   end
   object Panel6: TPanel
     Left = 97
-    Top = 12
-    Width = 368
+    Top = 8
+    Width = 376
     Height = 249
     BevelKind = bkTile
     BevelOuter = bvNone
@@ -1002,7 +1002,7 @@ object UBarangayCertificate: TUBarangayCertificate
     object Label8: TLabel
       Left = 0
       Top = 0
-      Width = 364
+      Width = 372
       Height = 13
       Align = alTop
       Alignment = taCenter
@@ -1010,7 +1010,7 @@ object UBarangayCertificate: TUBarangayCertificate
       ExplicitWidth = 99
     end
     object SpeedButton5: TSpeedButton
-      Left = 237
+      Left = 245
       Top = 193
       Width = 127
       Height = 52
@@ -1118,7 +1118,7 @@ object UBarangayCertificate: TUBarangayCertificate
     object DBGridEh2: TDBGridEh
       Left = 0
       Top = 13
-      Width = 364
+      Width = 372
       Height = 180
       Align = alTop
       DataSource = DSResidence
@@ -1330,10 +1330,13 @@ object UBarangayCertificate: TUBarangayCertificate
     UpdateOptions.EnableInsert = False
     UpdateOptions.EnableUpdate = False
     SQL.Strings = (
-      
-        'select * from tblResidence r LEFT JOIN tblbarangaycertificate b ' +
-        'on r.BarangayIdNo = b.BrgyID '#10'where r.BarangayIdNo = :ABarangayI' +
-        'D')
+      'select * from tblResidence r '
+      'LEFT JOIN '
+      'tblbarangaycertificate b '
+      'on r.BarangayIdNo = b.BrgyID '
+      'LEFT JOIN tblapproval a ON a.FKID = b.ID and a.STATUS = '
+      #39'FOR APPROVAL'#39' and KindTable = '#39'tblbarangaycertificate'#39
+      #10'where r.BarangayIdNo = :ABarangayID')
     Left = 40
     Top = 128
     ParamData = <
@@ -1341,7 +1344,7 @@ object UBarangayCertificate: TUBarangayCertificate
         Name = 'ABARANGAYID'
         DataType = ftWideString
         ParamType = ptInput
-        Value = 's'
+        Value = 'JP-ID#1'
       end>
     object fdqryHistoryDetailsID: TFDAutoIncField
       FieldName = 'ID'

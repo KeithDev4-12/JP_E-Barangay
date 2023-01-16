@@ -152,6 +152,10 @@ type
     Label35: TLabel;
     Blotter1: TMenuItem;
     DataSource1: TDataSource;
+    Label36: TLabel;
+    Label37: TLabel;
+    Label38: TLabel;
+    Label39: TLabel;
     procedure FormShow(Sender: TObject);
     procedure Panel6Click(Sender: TObject);
     procedure Panel7Click(Sender: TObject);
@@ -176,6 +180,8 @@ type
     procedure Panel14Click(Sender: TObject);
     procedure DataSource1DataChange(Sender: TObject; Field: TField);
     procedure Panel18Click(Sender: TObject);
+    procedure Developers1Click(Sender: TObject);
+    procedure JPLaurel1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -189,7 +195,7 @@ implementation
 
 {$R *.dfm}
 uses frmResidence, frmAccountProfile, frmBarangayOfficials, frmHistoryIssuance, frmPreview,
-frmBarangayCertificate, frmCertificateOfAppearance,frmApprovalOfRequest, frmBarangayClearance, MainDataModule;
+frmBarangayCertificate,frmDeveloper, frmCertificateOfAppearance,frmApprovalOfRequest, frmBarangayClearance, MainDataModule;
 
 procedure TUMainMenu.BaraganyID1Click(Sender: TObject);
 var
@@ -255,7 +261,7 @@ procedure TUMainMenu.BitBtn1Click(Sender: TObject);
 begin
   qryApproval.Close;
   qryApproval.Open;
-  
+
 end;
 
 procedure TUMainMenu.Blotter1Click(Sender: TObject);
@@ -315,11 +321,47 @@ begin
   end;
 end;
 
+procedure TUMainMenu.Developers1Click(Sender: TObject);
+var
+  //FWashingPanels : TFWashingPanels;
+  UDeveloper : TUDeveloper;
+begin
+  //if Assigned(FSettings) then
+  //  FSettings.Free;
+  try
+
+    //Panel8.Visible := False;
+    UDeveloper := TUDeveloper.Create(Self);
+    //UResidence.PageControl1.ActivePageIndex := 3;
+    UDeveloper.ShowModal;
+  finally
+    UDeveloper.Free;
+  end;
+end;
+
 procedure TUMainMenu.FormShow(Sender: TObject);
 begin
     pnlCenter.Left := ((Screen.DesktopWidth - pnlCenter.Width - Panel2.Width) div 2);
     pnlCenter.Top := ((Screen.DesktopHeight - pnlCenter.Height - 50) div 2);
     //ShowMessage(CurrToStr(Screen.DesktopHeight));
+end;
+
+procedure TUMainMenu.JPLaurel1Click(Sender: TObject);
+var
+  //FWashingPanels : TFWashingPanels;
+  UHistoryIssuance : TUHistoryIssuance;
+begin
+  //if Assigned(FSettings) then
+  //  FSettings.Free;
+  try
+
+    //Panel8.Visible := False;
+    UHistoryIssuance := TUHistoryIssuance.Create(Self);
+    //UResidence.PageControl1.ActivePageIndex := 3;
+    UHistoryIssuance.ShowModal;
+  finally
+    UHistoryIssuance.Free;
+  end;
 end;
 
 procedure TUMainMenu.otalNumberOfPopulationReport1Click(Sender: TObject);

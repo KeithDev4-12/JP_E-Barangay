@@ -3,7 +3,7 @@ object UApprovalOfRequest: TUApprovalOfRequest
   Top = 0
   BorderStyle = bsDialog
   Caption = 'UApprovalOfRequest'
-  ClientHeight = 547
+  ClientHeight = 302
   ClientWidth = 688
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
@@ -18,53 +18,41 @@ object UApprovalOfRequest: TUApprovalOfRequest
   object GroupBox1: TGroupBox
     Left = 0
     Top = 0
-    Width = 225
-    Height = 547
+    Width = 209
+    Height = 302
     Align = alLeft
     Caption = 'GroupBox1'
     TabOrder = 0
-    ExplicitLeft = 24
-    ExplicitTop = 32
-    ExplicitHeight = 440
     object Panel1: TPanel
       Left = 2
-      Top = 138
+      Top = 50
       Width = 23
-      Height = 407
+      Height = 250
       Align = alLeft
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitTop = 15
-      ExplicitHeight = 423
     end
     object Panel2: TPanel
-      Left = 200
-      Top = 138
+      Left = 184
+      Top = 50
       Width = 23
-      Height = 407
+      Height = 250
       Align = alRight
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitLeft = 2
-      ExplicitTop = 15
-      ExplicitHeight = 423
     end
     object Panel3: TPanel
       Left = 25
-      Top = 138
-      Width = 175
-      Height = 407
+      Top = 50
+      Width = 159
+      Height = 250
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 2
-      ExplicitLeft = 2
-      ExplicitTop = 15
-      ExplicitWidth = 23
-      ExplicitHeight = 423
       object RadioButton1: TRadioButton
         Left = 0
         Top = 0
-        Width = 175
+        Width = 159
         Height = 17
         Align = alTop
         Caption = 'Barangay ID'
@@ -72,174 +60,78 @@ object UApprovalOfRequest: TUApprovalOfRequest
         TabOrder = 0
         TabStop = True
         OnClick = RadioButton1Click
-        ExplicitLeft = 56
-        ExplicitTop = 128
-        ExplicitWidth = 113
       end
       object RadioButton2: TRadioButton
         Left = 0
         Top = 17
-        Width = 175
+        Width = 159
         Height = 17
         Align = alTop
         Caption = 'Certificate Of Appearance'
         TabOrder = 1
         OnClick = RadioButton2Click
-        ExplicitLeft = -6
-        ExplicitTop = 56
       end
       object RadioButton3: TRadioButton
         Left = 0
         Top = 51
-        Width = 175
+        Width = 159
         Height = 17
         Align = alTop
         Caption = 'Barangay Clearance'
         TabOrder = 2
         OnClick = RadioButton3Click
-        ExplicitLeft = 6
-        ExplicitTop = 57
       end
       object RadioButton4: TRadioButton
         Left = 0
         Top = 34
-        Width = 175
+        Width = 159
         Height = 17
         Align = alTop
         Caption = 'Barangay Certificate'
         TabOrder = 3
         OnClick = RadioButton4Click
-        ExplicitLeft = 6
       end
       object RadioButton5: TRadioButton
         Left = 0
         Top = 68
-        Width = 175
+        Width = 159
         Height = 17
         Align = alTop
         Caption = 'Barangay Business Certificate'
         TabOrder = 4
-        ExplicitLeft = 6
-        ExplicitTop = 91
       end
       object RadioButton6: TRadioButton
         Left = 0
         Top = 85
-        Width = 175
+        Width = 159
         Height = 17
         Align = alTop
         Caption = 'Certificate Of Indigency'
         TabOrder = 5
-        ExplicitLeft = 6
-        ExplicitTop = 121
       end
       object RadioButton7: TRadioButton
         Left = 0
         Top = 102
-        Width = 175
+        Width = 159
         Height = 17
         Align = alTop
         Caption = 'Blotter'
         TabOrder = 6
-        ExplicitLeft = 6
-        ExplicitTop = 125
       end
     end
     object Panel4: TPanel
       Left = 2
       Top = 15
-      Width = 221
-      Height = 123
+      Width = 205
+      Height = 35
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 3
-      object DBGridEh1: TDBGridEh
-        Left = 0
-        Top = 0
-        Width = 221
-        Height = 118
-        Align = alTop
-        DataSource = DSApprovalData
-        DynProps = <>
-        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
-        SearchPanel.Enabled = True
-        SearchPanel.FilterOnTyping = True
-        TabOrder = 0
-        OnDblClick = DBGridEh1DblClick
-        Columns = <
-          item
-            CellButtons = <>
-            DynProps = <>
-            EditButtons = <>
-            FieldName = 'BarangayIdNo'
-            Footers = <>
-            Title.Caption = 'Brgy Id No'
-            Width = 64
-          end
-          item
-            CellButtons = <>
-            DynProps = <>
-            EditButtons = <>
-            FieldName = 'CompleteName'
-            Footers = <>
-            Title.Caption = 'Complete Name'
-            Width = 130
-          end
-          item
-            CellButtons = <>
-            DynProps = <>
-            EditButtons = <>
-            FieldName = 'Status'
-            Footers = <>
-          end
-          item
-            CellButtons = <>
-            DynProps = <>
-            EditButtons = <>
-            FieldName = 'ID'
-            Footers = <>
-            Visible = False
-          end
-          item
-            CellButtons = <>
-            DynProps = <>
-            EditButtons = <>
-            FieldName = 'KindTable'
-            Footers = <>
-            Visible = False
-          end
-          item
-            CellButtons = <>
-            DynProps = <>
-            EditButtons = <>
-            FieldName = 'BrgyID'
-            Footers = <>
-            Visible = False
-          end
-          item
-            CellButtons = <>
-            DynProps = <>
-            EditButtons = <>
-            FieldName = 'FKID'
-            Footers = <>
-            Visible = False
-          end
-          item
-            CellButtons = <>
-            DynProps = <>
-            EditButtons = <>
-            FieldName = 'ID_1'
-            Footers = <>
-            Visible = False
-          end>
-        object RowDetailData: TRowDetailPanelControlEh
-        end
-      end
     end
   end
   object pnlBarangayID: TPanel
-    Left = 231
-    Top = 8
+    Left = 687
+    Top = 269
     Width = 425
     Height = 251
     BevelOuter = bvNone
@@ -252,7 +144,7 @@ object UApprovalOfRequest: TUApprovalOfRequest
       Align = alTop
       Alignment = taCenter
       Caption = 'BARANGAY ID'
-      ExplicitTop = 80
+      ExplicitWidth = 68
     end
     object Label2: TLabel
       Left = 48
@@ -289,23 +181,160 @@ object UApprovalOfRequest: TUApprovalOfRequest
       Height = 13
       Caption = 'Attested By :'
     end
+    object Edit1: TEdit
+      Left = 153
+      Top = 47
+      Width = 204
+      Height = 21
+      Enabled = False
+      TabOrder = 0
+      Text = 'Barangay ID'
+    end
+    object Edit2: TEdit
+      Left = 153
+      Top = 74
+      Width = 204
+      Height = 21
+      Enabled = False
+      TabOrder = 1
+      Text = 'Name'
+    end
+    object DBEdit2: TDBEdit
+      Left = 153
+      Top = 130
+      Width = 204
+      Height = 21
+      DataField = 'IssuedAt'
+      DataSource = DStblApproval
+      TabOrder = 2
+    end
+    object DBEdit3: TDBEdit
+      Left = 153
+      Top = 160
+      Width = 204
+      Height = 21
+      DataField = 'Attested'
+      DataSource = DStblApproval
+      TabOrder = 3
+    end
+    object DBDateTimeEditEh1: TDBDateTimeEditEh
+      Left = 153
+      Top = 102
+      Width = 204
+      Height = 21
+      DataField = 'DateIssued'
+      DataSource = DStblApproval
+      DynProps = <>
+      EditButtons = <>
+      Kind = dtkDateEh
+      TabOrder = 4
+      Visible = True
+    end
+  end
+  object Panel6: TPanel
+    Left = 209
+    Top = 0
+    Width = 479
+    Height = 302
+    Align = alClient
+    Caption = 'Panel6'
+    TabOrder = 2
+    object DBGridEh1: TDBGridEh
+      Left = 1
+      Top = 1
+      Width = 477
+      Height = 239
+      Align = alClient
+      DataSource = DSApprovalData
+      DynProps = <>
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+      SearchPanel.Enabled = True
+      SearchPanel.FilterOnTyping = True
+      TabOrder = 0
+      OnDblClick = DBGridEh1DblClick
+      Columns = <
+        item
+          CellButtons = <>
+          DynProps = <>
+          EditButtons = <>
+          FieldName = 'BarangayIdNo'
+          Footers = <>
+          Title.Caption = 'Brgy Id No'
+          Width = 64
+        end
+        item
+          CellButtons = <>
+          DynProps = <>
+          EditButtons = <>
+          FieldName = 'CompleteName'
+          Footers = <>
+          Title.Caption = 'Complete Name'
+          Width = 130
+        end
+        item
+          CellButtons = <>
+          DynProps = <>
+          EditButtons = <>
+          FieldName = 'Status'
+          Footers = <>
+        end
+        item
+          CellButtons = <>
+          DynProps = <>
+          EditButtons = <>
+          FieldName = 'ID'
+          Footers = <>
+          Visible = False
+        end
+        item
+          CellButtons = <>
+          DynProps = <>
+          EditButtons = <>
+          FieldName = 'KindTable'
+          Footers = <>
+          Visible = False
+        end
+        item
+          CellButtons = <>
+          DynProps = <>
+          EditButtons = <>
+          FieldName = 'BrgyID'
+          Footers = <>
+          Visible = False
+        end
+        item
+          CellButtons = <>
+          DynProps = <>
+          EditButtons = <>
+          FieldName = 'FKID'
+          Footers = <>
+          Visible = False
+        end
+        item
+          CellButtons = <>
+          DynProps = <>
+          EditButtons = <>
+          FieldName = 'ID_1'
+          Footers = <>
+          Visible = False
+        end>
+      object RowDetailData: TRowDetailPanelControlEh
+      end
+    end
     object Panel5: TPanel
-      Left = 0
-      Top = 210
-      Width = 425
-      Height = 41
+      Left = 1
+      Top = 240
+      Width = 477
+      Height = 61
       Align = alBottom
       BevelOuter = bvNone
-      TabOrder = 0
-      ExplicitLeft = 32
-      ExplicitTop = 144
-      ExplicitWidth = 185
+      TabOrder = 1
       object SpeedButton1: TSpeedButton
-        Left = 112
+        Left = 272
         Top = 0
-        Width = 127
-        Height = 41
-        Align = alLeft
+        Width = 205
+        Height = 61
+        Align = alRight
         Caption = 'Approved'
         Flat = True
         Font.Charset = DEFAULT_CHARSET
@@ -349,13 +378,13 @@ object UApprovalOfRequest: TUApprovalOfRequest
           0000000000004FB5EAFF00000000000000000000000000000000000000000000
           0000000000000000000000000000000000000000000000000000}
         ParentFont = False
-        ExplicitLeft = 253
+        OnClick = SpeedButton1Click
       end
       object SpeedButton2: TSpeedButton
         Left = 0
         Top = 0
-        Width = 109
-        Height = 41
+        Width = 185
+        Height = 61
         Align = alLeft
         Caption = 'Reject'
         Flat = True
@@ -400,115 +429,34 @@ object UApprovalOfRequest: TUApprovalOfRequest
           284D3F3F3F7A0000000000000000000000000000000000000000000000000000
           00000000000000000000000000004040407B2828284D00000000}
         ParentFont = False
-        ExplicitLeft = 8
-      end
-      object SpeedButton3: TSpeedButton
-        Left = 264
-        Top = 0
-        Width = 161
-        Height = 41
-        Align = alRight
-        Caption = 'Update Record'
-        Flat = True
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        Glyph.Data = {
-          36040000424D3604000000000000360000002800000010000000100000000100
-          2000000000000004000000000000000000000000000000000000000000000000
-          0000000000000000000000000000000000000000000000000000000000000000
-          000000000000000000000000000000000000000000000000000000000000562D
-          4580AB5989FFAB5989FFAB5989FFAB5989FFAB5989FFAB5989FFAB5989FFAB59
-          89FFAB5989FFAB5989FFAB5989FFAB5989FF562D45800000000000000000AB59
-          89FFAB5989FFAB5989FFFFFFFEFFFFFFFEFFAB5989FFAB5989FFFFFFFEFFFFFF
-          FEFFFFFFFEFFFFFFFEFFAB5989FFAB5989FFAB5989FF0000000000000000AB59
-          89FFAB5989FFAB5989FFFFFFFEFFFFFFFEFFAB5989FFAB5989FFFFFFFEFFFFFF
-          FEFFFFFFFEFFFFFFFEFFAB5989FFAB5989FFAB5989FF0000000000000000AB59
-          89FFAB5989FFAB5989FFFFFFFEFFFFFFFEFFAB5989FFAB5989FFFFFFFEFFFFFF
-          FEFFFFFFFEFFFFFFFEFFAB5989FFAB5989FFAB5989FF0000000000000000AB59
-          89FFAB5989FFAB5989FFFFFFFEFFFFFFFEFFFFFFFEFFFFFFFEFFFFFFFEFFFFFF
-          FEFFFFFFFEFFFFFFFEFFAB5989FFAB5989FFAB5989FF0000000000000000AB59
-          89FFAB5989FFAB5989FFAB5989FFAB5989FFAB5989FFAB5989FFAB5989FFAB59
-          89FFAB5989FFAB5989FFAB5989FFAB5989FFAB5989FF0000000000000000AB59
-          89FFAB5989FFAB5989FFAB5989FFAB5989FFAB5989FFAB5989FFAB5989FFAB59
-          89FFAB5989FFAB5989FFAB5989FFAB5989FFAB5989FF0000000000000000AB59
-          89FFAB5989FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-          FFFFFFFFFFFFFFFFFFFFFFFFFFFFAB5989FFAB5989FF0000000000000000AB59
-          89FFAB5989FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-          FFFFFFFFFFFFFFFFFFFFFFFFFFFFAB5989FFAB5989FF0000000000000000AB59
-          89FFAB5989FFFFFFFFFFFFFFFFFFC1C1C1FFC1C1C1FFC1C1C1FFC1C1C1FFC1C1
-          C1FFC1C1C1FFFFFFFFFFFFFFFFFFAB5989FFAB5989FF0000000000000000AB59
-          89FFAB5989FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-          FFFFFFFFFFFFFFFFFFFFFFFFFFFFAB5989FFAB5989FF0000000000000000AB59
-          89FFAB5989FFFFFFFFFFFFFFFFFFC1C1C1FFC1C1C1FFC1C1C1FFC1C1C1FFC1C1
-          C1FFC1C1C1FFFFFFFFFFFFFFFFFFAB5989FFAB5989FF0000000000000000AB59
-          89FFAB5989FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-          FFFFFFFFFFFFFFFFFFFFFFFFFFFFAB5989FFAB5989FF0000000000000000AB59
-          89FFAB5989FFAB5989FFAB5989FFAB5989FFAB5989FFAB5989FFAB5989FFAB59
-          89FFAB5989FFAB5989FFAB5989FFAB5989FFAB5989FF00000000000000000000
-          0000000000000000000000000000000000000000000000000000000000000000
-          0000000000000000000000000000000000000000000000000000}
-        ParentFont = False
+        OnClick = SpeedButton2Click
       end
       object Shape1: TShape
-        Left = 109
+        Left = 185
         Top = 0
         Width = 3
-        Height = 41
+        Height = 61
         Align = alLeft
         Brush.Color = clMedGray
         Pen.Color = clWhite
         Pen.Mode = pmNotXor
         ExplicitLeft = 115
         ExplicitTop = 8
+        ExplicitHeight = 41
       end
-    end
-    object Edit1: TEdit
-      Left = 153
-      Top = 47
-      Width = 204
-      Height = 21
-      Enabled = False
-      TabOrder = 1
-      Text = 'Barangay ID'
-    end
-    object Edit2: TEdit
-      Left = 153
-      Top = 74
-      Width = 204
-      Height = 21
-      Enabled = False
-      TabOrder = 2
-      Text = 'Name'
-    end
-    object DBEdit1: TDBEdit
-      Left = 153
-      Top = 102
-      Width = 204
-      Height = 21
-      DataField = 'DateIssued'
-      DataSource = DStblApproval
-      TabOrder = 3
-    end
-    object DBEdit2: TDBEdit
-      Left = 153
-      Top = 130
-      Width = 204
-      Height = 21
-      DataField = 'IssuedAt'
-      DataSource = DStblApproval
-      TabOrder = 4
-    end
-    object DBEdit3: TDBEdit
-      Left = 153
-      Top = 160
-      Width = 204
-      Height = 21
-      DataField = 'Attested'
-      DataSource = DStblApproval
-      TabOrder = 5
+      object Shape2: TShape
+        Left = 269
+        Top = 0
+        Width = 3
+        Height = 61
+        Align = alRight
+        Brush.Color = clMedGray
+        Pen.Color = clWhite
+        Pen.Mode = pmNotXor
+        ExplicitLeft = 115
+        ExplicitTop = 8
+        ExplicitHeight = 41
+      end
     end
   end
   object qryApproval: TFDQuery
@@ -516,11 +464,11 @@ object UApprovalOfRequest: TUApprovalOfRequest
     SQL.Strings = (
       'select * from tblApproval a inner join '
       'tblresidence r on a.BrgyID = r.BarangayIdNo'
-      '  where a.Status <> '#39'APPROVED'#39' '
+      '  where a.Status <> '#39'APPROVED'#39' AND a.status <> '#39'REJECTED'#39
       'and '
       '  KindTable = :ATableName')
-    Left = 16
-    Top = 272
+    Left = 160
+    Top = 192
     ParamData = <
       item
         Name = 'ATABLENAME'
@@ -749,10 +697,11 @@ object UApprovalOfRequest: TUApprovalOfRequest
   object DSApprovalData: TDataSource
     DataSet = qryApproval
     OnDataChange = DSApprovalDataDataChange
-    Left = 65
-    Top = 258
+    Left = 89
+    Top = 202
   end
   object tblApproval: TFDTable
+    Active = True
     IndexFieldNames = 'ID'
     Connection = DM.FDConnection1
     UpdateOptions.UpdateTableName = 'jplaureldb.tblbarangayid'
@@ -762,6 +711,7 @@ object UApprovalOfRequest: TUApprovalOfRequest
     object tblApprovalID: TFDAutoIncField
       FieldName = 'ID'
       Origin = 'ID'
+      ReadOnly = True
     end
     object tblApprovalBrgyID: TStringField
       AutoGenerateValue = arDefault

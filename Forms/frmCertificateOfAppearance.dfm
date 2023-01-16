@@ -1625,10 +1625,12 @@ object UCertificateOfAppearance: TUCertificateOfAppearance
     UpdateOptions.EnableInsert = False
     UpdateOptions.EnableUpdate = False
     SQL.Strings = (
-      
-        'select * from tblResidence r Left join tblcertificateofappearanc' +
-        'e b on r.BarangayIdNo = b.BarangayIdNo '#10'where r.BarangayIdNo = :' +
-        'ABarangayID')
+      'select * from tblResidence r Left join '
+      'tblcertificateofappearance b'
+      ' on r.BarangayIdNo = b.BarangayIdNo '#10
+      'LEFT JOIN tblapproval a ON a.FKID = b.ID and a.STATUS = '
+      #39'APPROVED'#39' and KindTable = '#39'tblcertificateofappearance'#39
+      'where r.BarangayIdNo = :ABarangayID')
     Left = 56
     Top = 168
     ParamData = <
