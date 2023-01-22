@@ -1,0 +1,73 @@
+unit frmResidentInformation;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, DBGridEhGrouping,
+  ToolCtrlsEh, DBGridEhToolCtrls, DynVarsEh, EhLibVCL, GridsEh, DBAxisGridsEh,
+  DBGridEh, Vcl.Buttons, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, PrnDbgeh;
+
+type
+  TUResidentInformation = class(TForm)
+    Panel2: TPanel;
+    DBGridEh1: TDBGridEh;
+    Panel1: TPanel;
+    SpeedButton2: TSpeedButton;
+    SpeedButton1: TSpeedButton;
+    Shape2: TShape;
+    DSResidence: TDataSource;
+    fdqryResidence: TFDQuery;
+    fdqryResidenceID: TFDAutoIncField;
+    fdqryResidenceBarangayIdNo: TStringField;
+    fdqryResidenceFName: TStringField;
+    fdqryResidenceMName: TStringField;
+    fdqryResidenceLName: TStringField;
+    fdqryResidenceCompleteName: TStringField;
+    fdqryResidenceDOB: TDateField;
+    fdqryResidenceGender: TStringField;
+    fdqryResidenceAddress: TStringField;
+    fdqryResidencePurok: TStringField;
+    fdqryResidenceHeight: TStringField;
+    fdqryResidenceWeight: TStringField;
+    fdqryResidenceBloodType: TStringField;
+    fdqryResidenceContactNumber: TStringField;
+    fdqryResidenceTinNo: TStringField;
+    fdqryResidenceDateCreated: TDateField;
+    fdqryResidenceDateModified: TDateField;
+    fdqryResidenceEmrgncyName: TStringField;
+    fdqryResidenceEmrgncyAddress: TStringField;
+    fdqryResidenceEmrgncyRelationship: TStringField;
+    fdqryResidenceEmrgncyContactNumber: TStringField;
+    fdqryResidencePicture: TMemoField;
+    PrintDBGridEh1: TPrintDBGridEh;
+    procedure SpeedButton2Click(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  UResidentInformation: TUResidentInformation;
+
+implementation
+
+{$R *.dfm}
+Uses MainDataModule;
+
+procedure TUResidentInformation.SpeedButton1Click(Sender: TObject);
+begin
+  Self.Close;
+end;
+
+procedure TUResidentInformation.SpeedButton2Click(Sender: TObject);
+begin
+  PrintDBGridEh1.Preview
+end;
+
+end.

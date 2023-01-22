@@ -123,9 +123,6 @@ type
     Label27: TLabel;
     Shape27: TShape;
     Shape29: TShape;
-    Panel12: TPanel;
-    Label28: TLabel;
-    Shape28: TShape;
     Panel13: TPanel;
     Label29: TLabel;
     Shape30: TShape;
@@ -134,10 +131,6 @@ type
     Shape31: TShape;
     Panel15: TPanel;
     Label31: TLabel;
-    Shape32: TShape;
-    Panel16: TPanel;
-    Label32: TLabel;
-    Shape33: TShape;
     Panel17: TPanel;
     Image12: TImage;
     Panel18: TPanel;
@@ -152,10 +145,11 @@ type
     Label35: TLabel;
     Blotter1: TMenuItem;
     DataSource1: TDataSource;
-    Label36: TLabel;
     Label37: TLabel;
-    Label38: TLabel;
     Label39: TLabel;
+    Panel12: TPanel;
+    Label28: TLabel;
+    Shape28: TShape;
     procedure FormShow(Sender: TObject);
     procedure Panel6Click(Sender: TObject);
     procedure Panel7Click(Sender: TObject);
@@ -182,6 +176,8 @@ type
     procedure Panel18Click(Sender: TObject);
     procedure Developers1Click(Sender: TObject);
     procedure JPLaurel1Click(Sender: TObject);
+    procedure Panel11Click(Sender: TObject);
+    procedure ClickOrgChart(Sender: TObject);
   private
     { Private declarations }
   public
@@ -195,7 +191,9 @@ implementation
 
 {$R *.dfm}
 uses frmResidence, frmAccountProfile, frmBarangayOfficials, frmHistoryIssuance, frmPreview,
-frmBarangayCertificate,frmDeveloper, frmCertificateOfAppearance,frmApprovalOfRequest, frmBarangayClearance, MainDataModule;
+frmBarangayCertificate,frmDeveloper, frmCertificateOfAppearance, frmResidentInformation,
+frmApprovalOfRequest, frmBarangayClearance, MainDataModule, frmAccountProfileInformation,
+frmBarangayID, frmOrgChart, frmAboutHistory;
 
 procedure TUMainMenu.BaraganyID1Click(Sender: TObject);
 var
@@ -314,6 +312,24 @@ begin
   end;
 end;
 
+procedure TUMainMenu.ClickOrgChart(Sender: TObject);
+var
+  //FWashingPanels : TFWashingPanels;
+  UOrgChart : TUOrgChart;
+begin
+  //if Assigned(FSettings) then
+  //  FSettings.Free;
+  try
+
+    //Panel8.Visible := False;
+    UOrgChart := TUOrgChart.Create(Self);
+    //UResidence.PageControl1.ActivePageIndex := 3;
+    UOrgChart.ShowModal;
+  finally
+    UOrgChart.Free;
+  end;
+end;
+
 procedure TUMainMenu.DataSource1DataChange(Sender: TObject; Field: TField);
 begin
   if not qryApproval.IsEmpty then begin
@@ -349,18 +365,18 @@ end;
 procedure TUMainMenu.JPLaurel1Click(Sender: TObject);
 var
   //FWashingPanels : TFWashingPanels;
-  UHistoryIssuance : TUHistoryIssuance;
+  UAboutHistory : TUAboutHistory;
 begin
   //if Assigned(FSettings) then
   //  FSettings.Free;
   try
 
     //Panel8.Visible := False;
-    UHistoryIssuance := TUHistoryIssuance.Create(Self);
+    UAboutHistory := TUAboutHistory.Create(Self);
     //UResidence.PageControl1.ActivePageIndex := 3;
-    UHistoryIssuance.ShowModal;
+    UAboutHistory.ShowModal;
   finally
-    UHistoryIssuance.Free;
+    UAboutHistory.Free;
   end;
 end;
 
@@ -384,6 +400,22 @@ begin
     UHistoryIssuance.ShowModal;
   finally
     UHistoryIssuance.Free;
+  end;
+end;
+
+procedure TUMainMenu.Panel11Click(Sender: TObject);
+var
+  //FWashingPanels : TFWashingPanels;
+  UBarangayID : TUBarangayID;
+begin
+  //if Assigned(FSettings) then
+  //  FSettings.Free;
+  try
+    UBarangayID := TUBarangayID.Create(Self);
+    //UResidence.PageControl1.ActivePageIndex := 3;
+    UBarangayID.ShowModal;
+  finally
+    UBarangayID.Free;
   end;
 end;
 
@@ -458,45 +490,45 @@ end;
 procedure TUMainMenu.Panel5Click(Sender: TObject);
 begin
 
-  if pnlCenter.Visible then begin
-    pnlCenter.Visible := False;
-  end else begin
-    pnlCenter.Visible := True;
-  end;
+  //if pnlCenter.Visible then begin
+  //  pnlCenter.Visible := False;
+  //end else begin
+  //  pnlCenter.Visible := True;
+  //end;
 
 end;
 
 procedure TUMainMenu.Panel6Click(Sender: TObject);
 var
   //FWashingPanels : TFWashingPanels;
-  UResidence : TUResidence;
+  UResidentInformation : TUResidentInformation;
 begin
   //if Assigned(FSettings) then
   //  FSettings.Free;
   try
 
     //Panel8.Visible := False;
-    UResidence := TUResidence.Create(Self);
+    UResidentInformation := TUResidentInformation.Create(Self);
     //UResidence.PageControl1.ActivePageIndex := 3;
-    UResidence.ShowModal;
+    UResidentInformation.ShowModal;
   finally
-    UResidence.Free;
+    UResidentInformation.Free;
   end;
 end;
 
 procedure TUMainMenu.Panel7Click(Sender: TObject);
 var
   //FWashingPanels : TFWashingPanels;
-  UAccountProfile : TUAccountProfile;
+  UAccountProfileInformation : TUAccountProfileInformation;
 begin
   //if Assigned(FSettings) then
   //  FSettings.Free;
   try
-    UAccountProfile := TUAccountProfile.Create(Self);
+    UAccountProfileInformation := TUAccountProfileInformation.Create(Self);
     //UResidence.PageControl1.ActivePageIndex := 3;
-    UAccountProfile.ShowModal;
+    UAccountProfileInformation.ShowModal;
   finally
-    UAccountProfile.Free;
+    UAccountProfileInformation.Free;
   end;
 end;
 
@@ -527,13 +559,35 @@ begin
 end;
 
 procedure TUMainMenu.Re1Click(Sender: TObject);
+var
+  //FWashingPanels : TFWashingPanels;
+  UResidence : TUResidence;
 begin
-  Panel6Click(Sender);
+  //if Assigned(FSettings) then
+  //  FSettings.Free;
+  try
+    UResidence := TUResidence.Create(Self);
+    //UResidence.PageControl1.ActivePageIndex := 3;
+    UResidence.ShowModal;
+  finally
+    UResidence.Free;
+  end;
 end;
 
 procedure TUMainMenu.User1Click(Sender: TObject);
+var
+  //FWashingPanels : TFWashingPanels;
+  UAccountProfile : TUAccountProfile;
 begin
-  Panel7Click(Sender);
+  //if Assigned(FSettings) then
+  //  FSettings.Free;
+  try
+    UAccountProfile := TUAccountProfile.Create(Self);
+    //UResidence.PageControl1.ActivePageIndex := 3;
+    UAccountProfile.ShowModal;
+  finally
+    UAccountProfile.Free;
+  end;
 end;
 
 end.

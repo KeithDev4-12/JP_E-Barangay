@@ -160,6 +160,26 @@
             <Form>UAboutHistory</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="frmResidentInformation.pas">
+            <Form>UResidentInformation</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="frmAccountProfileInformation.pas">
+            <Form>UAccountProfileInformation</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="frmBarangayID.pas">
+            <Form>UBarangayID</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="frmOrgChart.pas">
+            <Form>UOrgChart</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="frmBlotter.pas">
+            <Form>UBlotter</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

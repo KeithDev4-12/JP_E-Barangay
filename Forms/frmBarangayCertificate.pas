@@ -134,6 +134,7 @@ type
     procedure PrintThisRecord1Click(Sender: TObject);
     procedure SpeedButton3Click(Sender: TObject);
     procedure SpeedButton2Click(Sender: TObject);
+    procedure DSHistoryDetailsDataChange(Sender: TObject; Field: TField);
   private
     { Private declarations }
   public
@@ -148,6 +149,18 @@ implementation
 {$R *.dfm}
 
 uses frmReport;
+
+procedure TUBarangayCertificate.DSHistoryDetailsDataChange(Sender: TObject;
+  Field: TField);
+begin
+  if fdqryResidence.State IN [dsBrowse] then begin
+    fdtblHistoryDetails.Close;
+    fdtblHistoryDetails.Open;
+    if fdtblHistoryDetails.Locate('ID',fdqryHistoryDetailsID_1.AsInteger,[]) then begin
+      //Edit3.Text := fdtblHistoryDetailsPurpose.AsString;
+    end;
+  end;
+end;
 
 procedure TUBarangayCertificate.FormShow(Sender: TObject);
 begin

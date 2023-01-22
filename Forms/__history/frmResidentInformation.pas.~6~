@@ -1,0 +1,32 @@
+unit frmResidentInformation;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, DBGridEhGrouping,
+  ToolCtrlsEh, DBGridEhToolCtrls, DynVarsEh, EhLibVCL, GridsEh, DBAxisGridsEh,
+  DBGridEh, Vcl.Buttons;
+
+type
+  TUResidentInformation = class(TForm)
+    Panel2: TPanel;
+    DBGridEh1: TDBGridEh;
+    Panel1: TPanel;
+    SpeedButton2: TSpeedButton;
+    SpeedButton1: TSpeedButton;
+    Shape2: TShape;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  UResidentInformation: TUResidentInformation;
+
+implementation
+
+{$R *.dfm}
+
+end.

@@ -1,0 +1,218 @@
+unit frmBarangayID;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, DBGridEhGrouping, ToolCtrlsEh,
+  DBGridEhToolCtrls, DynVarsEh, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Vcl.Buttons,
+  FireDAC.Comp.Client, Data.DB, Vcl.Menus, FireDAC.Comp.DataSet, Vcl.StdCtrls,
+  dxGDIPlusClasses, Vcl.ExtCtrls, EhLibVCL, GridsEh, DBAxisGridsEh, DBGridEh,
+  Vcl.Mask, Vcl.DBCtrls;
+
+type
+  TUBarangayID = class(TForm)
+    GroupBox1: TGroupBox;
+    Shape1: TShape;
+    Panel1: TPanel;
+    DBGridEh1: TDBGridEh;
+    Panel2: TPanel;
+    Image1: TImage;
+    Label1: TLabel;
+    fdqryResidence: TFDQuery;
+    fdqryResidenceID: TFDAutoIncField;
+    fdqryResidenceBarangayIdNo: TStringField;
+    fdqryResidenceFName: TStringField;
+    fdqryResidenceMName: TStringField;
+    fdqryResidenceLName: TStringField;
+    fdqryResidenceCompleteName: TStringField;
+    fdqryResidenceFather: TStringField;
+    fdqryResidenceMother: TStringField;
+    fdqryResidenceDOB: TDateField;
+    fdqryResidenceGender: TStringField;
+    fdqryResidenceAddress: TStringField;
+    fdqryResidencePurok: TStringField;
+    fdqryResidenceHeight: TStringField;
+    fdqryResidenceWeight: TStringField;
+    fdqryResidenceBloodType: TStringField;
+    fdqryResidenceContactNumber: TStringField;
+    fdqryResidenceTinNo: TStringField;
+    fdqryResidenceDateCreated: TDateField;
+    fdqryResidenceDateModified: TDateField;
+    fdqryResidenceEmrgncyName: TStringField;
+    fdqryResidenceEmrgncyAddress: TStringField;
+    fdqryResidenceEmrgncyRelationship: TStringField;
+    fdqryResidenceEmrgncyContactNumber: TStringField;
+    fdqryResidencePicture: TMemoField;
+    PopupMenu1: TPopupMenu;
+    PrintThisRecord1: TMenuItem;
+    N1: TMenuItem;
+    DeleteThisRecord1: TMenuItem;
+    fdqryHistoryDetails: TFDQuery;
+    fdqryHistoryDetailsID: TFDAutoIncField;
+    fdqryHistoryDetailsBarangayIdNo: TStringField;
+    fdqryHistoryDetailsFName: TStringField;
+    fdqryHistoryDetailsMName: TStringField;
+    fdqryHistoryDetailsLName: TStringField;
+    fdqryHistoryDetailsCompleteName: TStringField;
+    fdqryHistoryDetailsFather: TStringField;
+    fdqryHistoryDetailsMother: TStringField;
+    fdqryHistoryDetailsDOB: TDateField;
+    fdqryHistoryDetailsGender: TStringField;
+    fdqryHistoryDetailsAddress: TStringField;
+    fdqryHistoryDetailsPurok: TStringField;
+    fdqryHistoryDetailsHeight: TStringField;
+    fdqryHistoryDetailsWeight: TStringField;
+    fdqryHistoryDetailsBloodType: TStringField;
+    fdqryHistoryDetailsContactNumber: TStringField;
+    fdqryHistoryDetailsTinNo: TStringField;
+    fdqryHistoryDetailsDateCreated: TDateField;
+    fdqryHistoryDetailsDateModified: TDateField;
+    fdqryHistoryDetailsEmrgncyName: TStringField;
+    fdqryHistoryDetailsEmrgncyAddress: TStringField;
+    fdqryHistoryDetailsEmrgncyRelationship: TStringField;
+    fdqryHistoryDetailsEmrgncyContactNumber: TStringField;
+    fdqryHistoryDetailsPicture: TMemoField;
+    fdqryHistoryDetailsID_1: TIntegerField;
+    fdqryHistoryDetailsBrgyID: TStringField;
+    fdqryHistoryDetailsDateIssued: TDateField;
+    fdqryHistoryDetailsDateCreated_1: TDateField;
+    fdqryHistoryDetailsDateModified_1: TDateField;
+    fdqryHistoryDetailsOrNumber: TStringField;
+    fdqryHistoryDetailsIssuedAt: TStringField;
+    fdqryHistoryDetailsApproved: TStringField;
+    fdqryHistoryDetailsAttested: TStringField;
+    fdqryHistoryDetailsAnnualIncome: TBCDField;
+    DSHistoryDetails: TDataSource;
+    DSResidence: TDataSource;
+    fdtblHistoryDetails: TFDTable;
+    fdtblHistoryDetailsID: TFDAutoIncField;
+    fdtblHistoryDetailsBrgyID: TStringField;
+    fdtblHistoryDetailsDateIssued: TDateField;
+    fdtblHistoryDetailsDateCreated: TDateField;
+    fdtblHistoryDetailsDateModified: TDateField;
+    fdtblHistoryDetailsOrNumber: TStringField;
+    fdtblHistoryDetailsIssuedAt: TStringField;
+    fdtblHistoryDetailsApproved: TStringField;
+    fdtblHistoryDetailsAttested: TStringField;
+    fdtblHistoryDetailsAnnualIncome: TBCDField;
+    DSTableInsert: TDataSource;
+    Panel3: TPanel;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    Shape2: TShape;
+    SpeedButton3: TSpeedButton;
+    Shape3: TShape;
+    SpeedButton4: TSpeedButton;
+    Shape4: TShape;
+    Panel4: TPanel;
+    Label2: TLabel;
+    Label5: TLabel;
+    Shape5: TShape;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label3: TLabel;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Panel5: TPanel;
+    Label4: TLabel;
+    SpeedButton5: TSpeedButton;
+    SpeedButton6: TSpeedButton;
+    DBGridEh2: TDBGridEh;
+    procedure SpeedButton5Click(Sender: TObject);
+    procedure SpeedButton6Click(Sender: TObject);
+    procedure PrintThisRecord1Click(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
+    procedure SpeedButton3Click(Sender: TObject);
+    procedure SpeedButton4Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  UBarangayID: TUBarangayID;
+
+implementation
+
+{$R *.dfm}
+
+procedure TUBarangayID.PrintThisRecord1Click(Sender: TObject);
+begin
+  if Label2.Caption = 'Barangay ID' then begin
+     frmReport.UReport.QRBrgyCertificate.Preview;
+   end;
+end;
+
+procedure TUBarangayID.SpeedButton1Click(Sender: TObject);
+begin
+  fdtblHistoryDetails.Close;
+  fdtblHistoryDetails.Open;
+  fdtblHistoryDetails.Append;
+end;
+
+procedure TUBarangayID.SpeedButton2Click(Sender: TObject);
+begin
+  fdtblHistoryDetails.Close;
+  fdtblHistoryDetails.Open;
+  fdtblHistoryDetails.Edit;
+end;
+
+procedure TUBarangayID.SpeedButton3Click(Sender: TObject);
+begin
+  fdtblHistoryDetails.Cancel;
+end;
+
+procedure TUBarangayID.SpeedButton4Click(Sender: TObject);
+begin
+  if fdtblHistoryDetails.State in [dsInsert] then begin
+
+    fdtblHistoryDetailsBrgyID.AsString := Edit1.Text;
+    fdtblHistoryDetailsIssuedAt.AsString := Edit2.Text;
+    fdtblHistoryDetailsDateIssued.AsDateTime :=  Now();
+    fdtblHistoryDetailsDateCreated.AsDateTime :=  Now();
+    fdtblHistoryDetailsDateModified.AsDateTime := Now();
+    fdtblHistoryDetailsOrNumber.AsString := '';
+    fdtblHistoryDetails.Post;
+  end else begin
+    fdtblHistoryDetailsBrgyID.AsString := Edit1.Text;
+    fdtblHistoryDetailsIssuedAt.AsString := Edit2.Text;
+    fdtblHistoryDetailsDateModified.AsDateTime := Now();
+    fdtblHistoryDetailsOrNumber.AsString := '';
+    fdtblHistoryDetails.Post;
+  end;
+    MessageDlg('Succesfully Inserted Data!',mtInformation,[mbYes],0);
+end;
+
+procedure TUBarangayID.SpeedButton5Click(Sender: TObject);
+begin
+  fdqryHistoryDetails.Close;
+  fdqryHistoryDetails.ParamByName('ABarangayID').AsString := fdqryResidenceBarangayIdNo.AsString;
+  fdqryHistoryDetails.Open();
+  if fdqryHistoryDetails.IsEmpty then begin
+    MessageDlg('No Record Found Please Search Again!!!',mtInformation,[mbYes],0);
+  end else begin
+    Panel5.Visible := False;
+    GroupBox1.Enabled := True;
+    Panel4.Enabled := True;
+    Panel3.Enabled := True;
+    Edit1.Text := fdqryResidenceBarangayIdNo.AsString;
+    Edit2.Text := fdqryResidenceCompleteName.AsString;
+  end;
+
+
+end;
+
+
+procedure TUBarangayID.SpeedButton6Click(Sender: TObject);
+begin
+ Self.Close;
+end;
+
+end.

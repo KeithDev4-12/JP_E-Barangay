@@ -16,7 +16,12 @@ uses
   frmBarangayClearance in 'frmBarangayClearance.pas' {UBarangayClearance},
   frmApprovalOfRequest in 'frmApprovalOfRequest.pas' {UApprovalOfRequest},
   frmDeveloper in 'frmDeveloper.pas' {UDeveloper},
-  frmAboutHistory in 'frmAboutHistory.pas' {UAboutHistory};
+  frmAboutHistory in 'frmAboutHistory.pas' {UAboutHistory},
+  frmResidentInformation in 'frmResidentInformation.pas' {UResidentInformation},
+  frmAccountProfileInformation in 'frmAccountProfileInformation.pas' {UAccountProfileInformation},
+  frmBarangayID in 'frmBarangayID.pas' {UBarangayID},
+  frmOrgChart in 'frmOrgChart.pas' {UOrgChart},
+  frmBlotter in 'frmBlotter.pas' {UBlotter};
 
 {$R *.res}
 
@@ -38,5 +43,10 @@ begin
   Application.CreateForm(TUApprovalOfRequest, UApprovalOfRequest);
   Application.CreateForm(TUDeveloper, UDeveloper);
   Application.CreateForm(TUAboutHistory, UAboutHistory);
+  Application.CreateForm(TUResidentInformation, UResidentInformation);
+  Application.CreateForm(TUAccountProfileInformation, UAccountProfileInformation);
+  Application.CreateForm(TUBarangayID, UBarangayID);
+  Application.CreateForm(TUOrgChart, UOrgChart);
+  Application.CreateForm(TUBlotter, UBlotter);
   Application.Run;
 end.

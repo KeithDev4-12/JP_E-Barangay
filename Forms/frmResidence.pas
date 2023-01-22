@@ -116,6 +116,12 @@ type
     fdqryCountIDC: TLargeintField;
     PopupMenu1: TPopupMenu;
     DeleteThis1: TMenuItem;
+    Label25: TLabel;
+    Label26: TLabel;
+    DBEdit7: TDBEdit;
+    DBEdit8: TDBEdit;
+    fdqryResidenceFather: TStringField;
+    fdqryResidenceMother: TStringField;
     procedure SpeedButton5Click(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure SpeedButton3Click(Sender: TObject);
@@ -128,6 +134,7 @@ type
     procedure DSResidenceDataChange(Sender: TObject; Field: TField);
     procedure SearchBox1Change(Sender: TObject);
     procedure DeleteThis1Click(Sender: TObject);
+    procedure DBEdit7Change(Sender: TObject);
   private
     { Private declarations }
   public
@@ -180,6 +187,13 @@ begin
   Label7.Caption := DBEdit4.Text + ', ' + DBEdit2.Text + ' ' + DBEdit3.Text;
 end;
 
+procedure TUResidence.DBEdit7Change(Sender: TObject);
+begin
+  Combobox2.Items.Clear;
+  Combobox2.Items.Add(DBEdit7.Text);
+  Combobox2.Items.Add(DBEdit8.Text);
+end;
+
 procedure TUResidence.DeleteThis1Click(Sender: TObject);
 begin
   fdqryResidence.Delete;
@@ -217,6 +231,7 @@ begin
       Combobox2.ItemIndex := Combobox2.Items.IndexOf(fdqryResidenceEmrgncyName.AsString);
       Combobox3.ItemIndex := Combobox3.Items.IndexOf(fdqryResidenceEmrgncyRelationship.AsString);
       Image2.Picture.LoadFromFile(ImagePath);
+
      except
       // IO error
        On E : EInvalidGraphic do begin
@@ -231,14 +246,14 @@ begin
   fdqryResidence.Close;
   fdqryResidence.Open;
 
-  Combobox2.Items.Clear;
-  fdqryEmrContact.Close;
-  fdqryEmrContact.Open();
-  fdqryEmrContact.First;
-  while not fdqryEmrContact.EOF do begin
-    Combobox2.Items.Add(fdqryEmrContactCompleteName.AsString);
-    fdqryEmrContact.Next;
-  end;
+  //Combobox2.Items.Clear;
+  //fdqryEmrContact.Close;
+  //fdqryEmrContact.Open();
+  //fdqryEmrContact.First;
+  //while not fdqryEmrContact.EOF do begin
+  //  Combobox2.Items.Add(fdqryEmrContactCompleteName.AsString);
+  //  fdqryEmrContact.Next;
+  //end;
 
 
 end;

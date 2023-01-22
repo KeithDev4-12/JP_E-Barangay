@@ -34205,7 +34205,7 @@ object UMainMenu: TUMainMenu
       Left = -1
       Top = 330
       Width = 218
-      Height = 259
+      Height = 157
       ParentCustomHint = False
       Color = clBtnFace
       DoubleBuffered = False
@@ -34233,44 +34233,23 @@ object UMainMenu: TUMainMenu
         Height = 1
         Pen.Color = clMedGray
       end
-      object Shape28: TShape
+      object Shape30: TShape
         Left = -7
         Top = 71
         Width = 225
         Height = 1
         Pen.Color = clMedGray
       end
-      object Shape30: TShape
+      object Shape31: TShape
         Left = -7
         Top = 106
         Width = 225
         Height = 1
         Pen.Color = clMedGray
       end
-      object Shape31: TShape
-        Left = -7
-        Top = 141
-        Width = 225
-        Height = 1
-        Pen.Color = clMedGray
-      end
-      object Shape32: TShape
-        Left = -7
-        Top = 176
-        Width = 225
-        Height = 1
-        Pen.Color = clMedGray
-      end
-      object Shape33: TShape
-        Left = -7
-        Top = 211
-        Width = 225
-        Height = 1
-        Pen.Color = clMedGray
-      end
       object Shape36: TShape
-        Left = -7
-        Top = 247
+        Left = -16
+        Top = 138
         Width = 225
         Height = 1
         Pen.Color = clMedGray
@@ -34282,6 +34261,7 @@ object UMainMenu: TUMainMenu
         Height = 35
         BevelOuter = bvNone
         TabOrder = 0
+        OnClick = Panel11Click
         object Label27: TLabel
           Left = 25
           Top = 10
@@ -34295,47 +34275,18 @@ object UMainMenu: TUMainMenu
           Font.Style = [fsBold]
           ParentFont = False
         end
-        object Label36: TLabel
-          Left = 128
-          Top = 6
-          Width = 82
-          Height = 26
-          Caption = 'On Process '#13'Designing Layout'
-        end
       end
-      object Panel12: TPanel
+      object Panel13: TPanel
         Left = -7
-        Top = 36
+        Top = 40
         Width = 225
         Height = 35
         BevelOuter = bvNone
         TabOrder = 1
-        OnClick = Panel12Click
-        object Label28: TLabel
-          Left = 29
-          Top = 10
-          Width = 150
-          Height = 14
-          Caption = 'Certificate Of Apperance'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -12
-          Font.Name = 'Tahoma'
-          Font.Style = [fsBold]
-          ParentFont = False
-        end
-      end
-      object Panel13: TPanel
-        Left = -7
-        Top = 71
-        Width = 225
-        Height = 35
-        BevelOuter = bvNone
-        TabOrder = 2
         OnClick = Panel13Click
         object Label29: TLabel
           Left = 29
-          Top = 10
+          Top = 7
           Width = 124
           Height = 14
           Caption = 'Barangay Certificate'
@@ -34349,11 +34300,11 @@ object UMainMenu: TUMainMenu
       end
       object Panel14: TPanel
         Left = -7
-        Top = 106
+        Top = 71
         Width = 225
         Height = 35
         BevelOuter = bvNone
-        TabOrder = 3
+        TabOrder = 2
         OnClick = Panel14Click
         object Label30: TLabel
           Left = 29
@@ -34370,12 +34321,13 @@ object UMainMenu: TUMainMenu
         end
       end
       object Panel15: TPanel
-        Left = -7
-        Top = 141
+        Left = -8
+        Top = 138
         Width = 225
         Height = 35
         BevelOuter = bvNone
-        TabOrder = 4
+        TabOrder = 3
+        Visible = False
         object Label31: TLabel
           Left = 29
           Top = 10
@@ -34397,41 +34349,13 @@ object UMainMenu: TUMainMenu
           Caption = 'On Process '#13'Designing Layout'
         end
       end
-      object Panel16: TPanel
-        Left = -7
-        Top = 176
-        Width = 225
-        Height = 35
-        BevelOuter = bvNone
-        TabOrder = 5
-        object Label32: TLabel
-          Left = 29
-          Top = 10
-          Width = 145
-          Height = 14
-          Caption = 'Certificate Of Indigency'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -12
-          Font.Name = 'Tahoma'
-          Font.Style = [fsBold]
-          ParentFont = False
-        end
-        object Label38: TLabel
-          Left = 136
-          Top = 5
-          Width = 82
-          Height = 26
-          Caption = 'On Process '#13'Designing Layout'
-        end
-      end
       object Panel19: TPanel
         Left = -7
-        Top = 212
+        Top = 106
         Width = 225
         Height = 35
         BevelOuter = bvNone
-        TabOrder = 6
+        TabOrder = 4
         object Label35: TLabel
           Left = 29
           Top = 10
@@ -40221,7 +40145,7 @@ object UMainMenu: TUMainMenu
       end
       object Shape25: TShape
         Left = 0
-        Top = 322
+        Top = 368
         Width = 225
         Height = 1
         Align = alTop
@@ -40239,6 +40163,16 @@ object UMainMenu: TUMainMenu
         ExplicitLeft = -6
         ExplicitTop = 353
       end
+      object Shape28: TShape
+        Left = 0
+        Top = 322
+        Width = 225
+        Height = 1
+        Align = alTop
+        Pen.Color = clMedGray
+        ExplicitLeft = -3
+        ExplicitTop = 323
+      end
       object Panel5: TPanel
         Left = 0
         Top = 1
@@ -40251,9 +40185,9 @@ object UMainMenu: TUMainMenu
         object Label19: TLabel
           Left = 54
           Top = 15
-          Width = 128
+          Width = 36
           Height = 14
-          Caption = 'Detailed Information'
+          Caption = 'HOME'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
@@ -40283,6 +40217,7 @@ object UMainMenu: TUMainMenu
           Font.Name = 'Tahoma'
           Font.Style = [fsBold]
           ParentFont = False
+          OnClick = Panel6Click
         end
       end
       object Panel7: TPanel
@@ -40306,6 +40241,7 @@ object UMainMenu: TUMainMenu
           Font.Name = 'Tahoma'
           Font.Style = [fsBold]
           ParentFont = False
+          OnClick = Panel7Click
         end
       end
       object Panel8: TPanel
@@ -40417,13 +40353,40 @@ object UMainMenu: TUMainMenu
       end
       object BitBtn1: TBitBtn
         Left = 0
-        Top = 323
+        Top = 369
         Width = 225
         Height = 30
         Align = alTop
         Caption = 'REFRESH APPROVAL DATA'
         TabOrder = 7
         OnClick = BitBtn1Click
+        ExplicitTop = 323
+      end
+      object Panel12: TPanel
+        Left = 0
+        Top = 323
+        Width = 225
+        Height = 45
+        Align = alTop
+        BevelOuter = bvNone
+        TabOrder = 8
+        OnClick = ClickOrgChart
+        ExplicitLeft = -6
+        ExplicitTop = 341
+        object Label28: TLabel
+          Left = 54
+          Top = 15
+          Width = 126
+          Height = 14
+          Caption = 'Organizational Chart'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
+          OnClick = ClickOrgChart
+        end
       end
     end
   end
@@ -40453,6 +40416,7 @@ object UMainMenu: TUMainMenu
       end
       object Certi1: TMenuItem
         Caption = 'Certificate Of Apperance'
+        Visible = False
         OnClick = Certi1Click
       end
       object BarangayCertificate1: TMenuItem
@@ -40465,10 +40429,12 @@ object UMainMenu: TUMainMenu
       end
       object BarangayBusinessClearance1: TMenuItem
         Caption = 'Barangay Business Clearance'
+        Visible = False
         OnClick = BarangayBusinessClearance1Click
       end
       object CertificateOfIn1: TMenuItem
         Caption = 'Certificate Of Indigency'
+        Visible = False
         OnClick = CertificateOfIn1Click
       end
       object Blotter1: TMenuItem
@@ -40477,6 +40443,7 @@ object UMainMenu: TUMainMenu
       end
       object otalNumberOfPopulationReport1: TMenuItem
         Caption = 'Total Number Of Population (Report)'
+        Visible = False
         OnClick = otalNumberOfPopulationReport1Click
       end
     end

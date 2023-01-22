@@ -11,6 +11,7 @@ object UAboutHistory: TUAboutHistory
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  WindowState = wsMaximized
   DesignSize = (
     347
     376)

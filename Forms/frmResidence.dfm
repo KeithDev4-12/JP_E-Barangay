@@ -4,7 +4,7 @@ object UResidence: TUResidence
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Residences Form'
-  ClientHeight = 474
+  ClientHeight = 511
   ClientWidth = 721
   Color = clBtnHighlight
   Font.Charset = DEFAULT_CHARSET
@@ -21,13 +21,14 @@ object UResidence: TUResidence
     Left = 0
     Top = 0
     Width = 220
-    Height = 474
+    Height = 511
     Align = alLeft
     Caption = 'MENUS'
     TabOrder = 0
+    ExplicitHeight = 474
     object Shape2: TShape
       Left = 2
-      Top = 324
+      Top = 361
       Width = 216
       Height = 3
       Align = alTop
@@ -42,16 +43,17 @@ object UResidence: TUResidence
       Left = 2
       Top = 15
       Width = 216
-      Height = 309
+      Height = 346
       Align = alTop
       Anchors = [akLeft, akTop, akRight, akBottom]
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitHeight = 309
       object DBGridEh1: TDBGridEh
         Left = 0
         Top = 73
         Width = 216
-        Height = 236
+        Height = 273
         Align = alClient
         DataSource = DSResidence
         DynProps = <>
@@ -716,12 +718,13 @@ object UResidence: TUResidence
     end
     object Panel4: TPanel
       Left = 2
-      Top = 327
+      Top = 364
       Width = 216
       Height = 145
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 1
+      ExplicitTop = 327
       object SpeedButton2: TSpeedButton
         Left = 129
         Top = 0
@@ -1075,12 +1078,13 @@ object UResidence: TUResidence
     Left = 220
     Top = 0
     Width = 501
-    Height = 474
+    Height = 511
     Align = alClient
     BevelOuter = bvNone
     Color = clBtnHighlight
     ParentBackground = False
     TabOrder = 1
+    ExplicitHeight = 474
     object Label2: TLabel
       Left = 16
       Top = 31
@@ -1220,28 +1224,28 @@ object UResidence: TUResidence
     end
     object Label19: TLabel
       Left = 16
-      Top = 382
+      Top = 434
       Width = 70
       Height = 13
       Caption = 'Person Name :'
     end
     object Label20: TLabel
       Left = 16
-      Top = 408
+      Top = 460
       Width = 46
       Height = 13
       Caption = 'Address :'
     end
     object Label21: TLabel
       Left = 5
-      Top = 361
+      Top = 413
       Width = 147
       Height = 13
       Caption = 'Contact In Case of Emergency'
     end
     object Shape6: TShape
       Left = 157
-      Top = 368
+      Top = 420
       Width = 481
       Height = 3
       Brush.Color = clMedGray
@@ -1250,14 +1254,14 @@ object UResidence: TUResidence
     end
     object Label22: TLabel
       Left = 260
-      Top = 408
+      Top = 460
       Width = 65
       Height = 13
       Caption = 'Relationship :'
     end
     object Label23: TLabel
       Left = 261
-      Top = 438
+      Top = 490
       Width = 65
       Height = 13
       Caption = 'Contact No. :'
@@ -1277,6 +1281,20 @@ object UResidence: TUResidence
       Brush.Color = clMedGray
       Pen.Color = clWhite
       Pen.Mode = pmNotXor
+    end
+    object Label25: TLabel
+      Left = 16
+      Top = 364
+      Width = 69
+      Height = 13
+      Caption = 'Father Name :'
+    end
+    object Label26: TLabel
+      Left = 16
+      Top = 390
+      Width = 71
+      Height = 13
+      Caption = 'Mother Name :'
     end
     object DBEdit1: TDBEdit
       Left = 89
@@ -1432,7 +1450,7 @@ object UResidence: TUResidence
     end
     object ComboBox2: TComboBox
       Left = 88
-      Top = 379
+      Top = 431
       Width = 386
       Height = 21
       TabOrder = 15
@@ -1440,7 +1458,7 @@ object UResidence: TUResidence
     end
     object ComboBox3: TComboBox
       Left = 328
-      Top = 405
+      Top = 457
       Width = 146
       Height = 21
       TabOrder = 16
@@ -1479,7 +1497,7 @@ object UResidence: TUResidence
     end
     object MaskEdit3: TMaskEdit
       Left = 328
-      Top = 431
+      Top = 483
       Width = 146
       Height = 21
       EditMask = '09##-###-####'
@@ -1518,7 +1536,7 @@ object UResidence: TUResidence
     end
     object RichEdit1: TRichEdit
       Left = 88
-      Top = 405
+      Top = 457
       Width = 164
       Height = 47
       Font.Charset = ANSI_CHARSET
@@ -1531,6 +1549,26 @@ object UResidence: TUResidence
       ParentFont = False
       TabOrder = 20
       Zoom = 100
+    end
+    object DBEdit7: TDBEdit
+      Left = 89
+      Top = 361
+      Width = 384
+      Height = 21
+      DataField = 'Father'
+      DataSource = DSResidence
+      TabOrder = 21
+      OnChange = DBEdit7Change
+    end
+    object DBEdit8: TDBEdit
+      Left = 89
+      Top = 387
+      Width = 384
+      Height = 21
+      DataField = 'Mother'
+      DataSource = DSResidence
+      TabOrder = 22
+      OnChange = DBEdit7Change
     end
   end
   object DSResidence: TDataSource
@@ -1676,6 +1714,18 @@ object UResidence: TUResidence
       FieldName = 'Picture'
       Origin = 'Picture'
       BlobType = ftMemo
+    end
+    object fdqryResidenceFather: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'Father'
+      Origin = 'Father'
+      Size = 99
+    end
+    object fdqryResidenceMother: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'Mother'
+      Origin = 'Mother'
+      Size = 99
     end
   end
   object OpenPictureDialog1: TOpenPictureDialog

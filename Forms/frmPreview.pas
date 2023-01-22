@@ -67,6 +67,22 @@ uses frmReport ;
 
 Procedure TUPreviewData.BitBtn2Click(Sender: TObject);
 begin
+   if Label2.Caption = 'Barangay Identification' then begin
+     with frmReport.UReport do begin
+       qryReportBarangayID.Close;
+       qryReportBarangayID.ParamByName('ABarangayIdNo').AsString := fdqryResidenceBarangayIdNo.AsString;
+       qryReportBarangayID.Open();
+       qryReportBarangayID.First;
+       if qryReportBarangayID.IsEmpty then begin
+         MessageDlg('No Record Found!',mtInformation,[mbOK],0);
+         Exit;
+       end else begin
+         QRImage13.Picture.LoadFromFile(qryReportBarangayIDPicture.AsString);
+         qrBarangayID.Preview;
+       end;
+     end;
+   end;
+// barangay certificate
    if Label2.Caption = 'Barangay Certificate' then begin
      with frmReport.UReport do begin
        qryReportCertificate.Close;
