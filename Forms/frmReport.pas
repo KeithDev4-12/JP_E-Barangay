@@ -583,7 +583,7 @@ type
     QRDBText76: TQRDBText;
     QRImage14: TQRImage;
     QRImage15: TQRImage;
-    QuickRep1: TQuickRep;
+    QRBlotterReport: TQuickRep;
     QRBand12: TQRBand;
     QRLabel128: TQRLabel;
     QRLabel129: TQRLabel;
