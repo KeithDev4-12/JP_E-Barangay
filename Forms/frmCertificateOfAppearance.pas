@@ -180,8 +180,6 @@ end;
 
 procedure TUCertificateOfAppearance.SpeedButton2Click(Sender: TObject);
 begin
-  fdtblHistoryDetails.Close;
-  fdtblHistoryDetails.Open;
   fdtblHistoryDetails.Edit;
   //DateTimePicker1.DateTime := fdtblHistoryDetailsDateIssued.AsDateTime;
   //Edit3.Text := fdtblHistoryDetailsPurpose.AsString;

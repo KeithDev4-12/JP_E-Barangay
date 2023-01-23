@@ -1,0 +1,191 @@
+unit frmBlotter;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, DBGridEhGrouping, ToolCtrlsEh,
+  DBGridEhToolCtrls, DynVarsEh, Vcl.Buttons, Vcl.StdCtrls, dxGDIPlusClasses,
+  Vcl.ExtCtrls, EhLibVCL, GridsEh, DBAxisGridsEh, DBGridEh, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+  Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.ComCtrls, Vcl.DBCtrls,
+  Vcl.Mask;
+
+type
+  TUBlotter = class(TForm)
+    GroupBox1: TGroupBox;
+    Shape1: TShape;
+    Panel1: TPanel;
+    DBGridEh1: TDBGridEh;
+    Panel2: TPanel;
+    Image1: TImage;
+    Label1: TLabel;
+    Panel3: TPanel;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    Shape2: TShape;
+    SpeedButton3: TSpeedButton;
+    Shape3: TShape;
+    SpeedButton4: TSpeedButton;
+    Shape4: TShape;
+    qryBlotter: TFDQuery;
+    DSBlotter: TDataSource;
+    qryBlotterid: TFDAutoIncField;
+    qryBlotterBrgyCaseNo: TStringField;
+    qryBlotterAccussation: TStringField;
+    qryBlotterComplainantBrgyID: TStringField;
+    qryBlotterAccusedBrgyID: TStringField;
+    qryBlotterRemarks: TStringField;
+    qryBlotterComplainantName: TStringField;
+    qryBlotterAccusedname: TStringField;
+    fdtblBlotter: TFDTable;
+    DSTableInsert: TDataSource;
+    fdtblBlotterid: TFDAutoIncField;
+    fdtblBlotterBrgyCaseNo: TStringField;
+    fdtblBlotterAccussation: TStringField;
+    fdtblBlotterComplainantBrgyID: TStringField;
+    fdtblBlotterAccusedBrgyID: TStringField;
+    fdtblBlotterRemarks: TStringField;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBEdit4: TDBEdit;
+    DBEdit5: TDBEdit;
+    DBEdit6: TDBEdit;
+    DBRichEdit1: TDBRichEdit;
+    ComboBox1: TComboBox;
+    ComboBox2: TComboBox;
+    qryName: TFDQuery;
+    qryNameID: TFDAutoIncField;
+    qryNameBarangayIdNo: TStringField;
+    qryNameCompleteName: TStringField;
+    Button1: TButton;
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
+    procedure SpeedButton3Click(Sender: TObject);
+    procedure SpeedButton4Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure ComboBox1Change(Sender: TObject);
+    procedure ComboBox2Change(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure DSBlotterDataChange(Sender: TObject; Field: TField);
+    procedure DBGridEh1DblClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  UBlotter: TUBlotter;
+
+implementation
+
+{$R *.dfm}
+
+uses MainDataModule;
+
+procedure TUBlotter.Button1Click(Sender: TObject);
+begin
+  if fdtblBlotter.State in [dsInsert] then begin
+    DBEdit2.Text := 'CaseNo.:' + DateTimeToStr(Now());
+  end;
+end;
+
+procedure TUBlotter.ComboBox1Change(Sender: TObject);
+begin
+  if fdtblBlotter.State in [dsInsert,dsEdit] then begin
+     if qryName.Locate('CompleteName',ComboBox1.Text,[]) = true then begin
+       DBEdit4.Text := qryNameBarangayIdNo.AsString;
+     end;
+  end;
+
+end;
+
+procedure TUBlotter.ComboBox2Change(Sender: TObject);
+begin
+  if fdtblBlotter.State in [dsInsert,dsEdit] then begin
+     if qryName.Locate('CompleteName',ComboBox2.Text,[])  = true then begin
+       DBEdit5.Text := qryNameBarangayIdNo.AsString;
+     end;
+  end;
+end;
+
+procedure TUBlotter.DBGridEh1DblClick(Sender: TObject);
+begin
+  if qryBlotter.State IN [dsBrowse] then begin
+    fdtblBlotter.Close;
+    fdtblBlotter.Open;
+    if fdtblBlotter.Locate('ID',qryBlotterid.AsInteger,[]) then begin
+      Combobox1.Text := fdtblBlotterComplainantBrgyID.AsString;
+      Combobox2.Text := fdtblBlotterComplainantBrgyID.AsString;
+    end;
+  end;
+end;
+
+procedure TUBlotter.DSBlotterDataChange(Sender: TObject; Field: TField);
+begin
+  if qryBlotter.State IN [dsBrowse] then begin
+    fdtblBlotter.Close;
+    fdtblBlotter.Open;
+    if fdtblBlotter.Locate('ID',qryBlotterid.AsInteger,[]) then begin
+      Combobox1.Text := fdtblBlotterComplainantBrgyID.AsString;
+      Combobox2.Text := fdtblBlotterComplainantBrgyID.AsString;
+    end;
+  end;
+end;
+
+procedure TUBlotter.FormShow(Sender: TObject);
+begin
+  Combobox1.Items.Clear;
+  Combobox2.Items.Clear;
+
+  qryName.Close;
+  qryName.Open;
+  qryName.First;
+  while not qryName.EOF do begin
+    Combobox1.Items.Add(qryNameCompleteName.AsString);
+    Combobox2.Items.Add(qryNameCompleteName.AsString);
+    qryName.Next;
+  end;
+end;
+
+procedure TUBlotter.SpeedButton1Click(Sender: TObject);
+begin
+  fdtblBlotter.Close;
+  fdtblBlotter.Open;
+  fdtblBlotter.Append;
+end;
+
+procedure TUBlotter.SpeedButton2Click(Sender: TObject);
+begin
+      qryBlotter.Close;
+      qryBlotter.Open;
+      qryBlotter.Edit;
+      //fdtblBlotter.Close;
+      //fdtblBlotter.Open;
+      //fdtblBlotter.Edit;
+end;
+
+procedure TUBlotter.SpeedButton3Click(Sender: TObject);
+begin
+  fdtblBlotter.Cancel;
+end;
+
+procedure TUBlotter.SpeedButton4Click(Sender: TObject);
+begin
+  if fdtblBlotter.State in [dsInsert] then begin
+    fdtblBlotter.Post;
+  end else begin
+    fdtblBlotter.Post;
+  end;
+    MessageDlg('Succesfully Inserted Data!',mtInformation,[mbYes],0);
+end;
+
+end.

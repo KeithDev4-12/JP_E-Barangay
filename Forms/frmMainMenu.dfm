@@ -34356,6 +34356,7 @@ object UMainMenu: TUMainMenu
         Height = 35
         BevelOuter = bvNone
         TabOrder = 4
+        OnClick = Panel19Click
         object Label35: TLabel
           Left = 29
           Top = 10
@@ -40360,7 +40361,6 @@ object UMainMenu: TUMainMenu
         Caption = 'REFRESH APPROVAL DATA'
         TabOrder = 7
         OnClick = BitBtn1Click
-        ExplicitTop = 323
       end
       object Panel12: TPanel
         Left = 0
@@ -40371,8 +40371,6 @@ object UMainMenu: TUMainMenu
         BevelOuter = bvNone
         TabOrder = 8
         OnClick = ClickOrgChart
-        ExplicitLeft = -6
-        ExplicitTop = 341
         object Label28: TLabel
           Left = 54
           Top = 15

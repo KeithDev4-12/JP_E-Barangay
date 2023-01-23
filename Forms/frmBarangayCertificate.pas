@@ -185,8 +185,6 @@ end;
 
 procedure TUBarangayCertificate.SpeedButton2Click(Sender: TObject);
 begin
-  fdtblHistoryDetails.Close;
-  fdtblHistoryDetails.Open;
   fdtblHistoryDetails.Edit;
 end;
 

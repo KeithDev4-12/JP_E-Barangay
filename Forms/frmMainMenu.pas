@@ -178,6 +178,7 @@ type
     procedure JPLaurel1Click(Sender: TObject);
     procedure Panel11Click(Sender: TObject);
     procedure ClickOrgChart(Sender: TObject);
+    procedure Panel19Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -193,7 +194,7 @@ implementation
 uses frmResidence, frmAccountProfile, frmBarangayOfficials, frmHistoryIssuance, frmPreview,
 frmBarangayCertificate,frmDeveloper, frmCertificateOfAppearance, frmResidentInformation,
 frmApprovalOfRequest, frmBarangayClearance, MainDataModule, frmAccountProfileInformation,
-frmBarangayID, frmOrgChart, frmAboutHistory;
+frmBarangayID, frmOrgChart, frmAboutHistory, frmBlotter;
 
 procedure TUMainMenu.BaraganyID1Click(Sender: TObject);
 var
@@ -484,6 +485,24 @@ begin
     UApprovalOfRequest.ShowModal;
   finally
     UApprovalOfRequest.Free;
+  end;
+end;
+
+procedure TUMainMenu.Panel19Click(Sender: TObject);
+var
+  //FWashingPanels : TFWashingPanels;
+  UBlotter : TUBlotter;
+begin
+  //if Assigned(FSettings) then
+  //  FSettings.Free;
+  try
+
+    //Panel8.Visible := False;
+    UBlotter := TUBlotter.Create(Self);
+    //UResidence.PageControl1.ActivePageIndex := 3;
+    UBlotter.ShowModal;
+  finally
+    UBlotter.Free;
   end;
 end;
 

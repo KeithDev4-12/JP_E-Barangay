@@ -24,9 +24,6 @@ object UBarangayID: TUBarangayID
     Caption = 'MENUS'
     Enabled = False
     TabOrder = 0
-    ExplicitLeft = 8
-    ExplicitTop = 8
-    ExplicitHeight = 228
     object Shape1: TShape
       Left = 2
       Top = 227
@@ -49,7 +46,6 @@ object UBarangayID: TUBarangayID
       Anchors = [akLeft, akTop, akRight, akBottom]
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitHeight = 211
       object DBGridEh1: TDBGridEh
         Left = 0
         Top = 25
@@ -634,9 +630,6 @@ object UBarangayID: TUBarangayID
     BevelOuter = bvNone
     Enabled = False
     TabOrder = 1
-    ExplicitLeft = 1
-    ExplicitTop = 0
-    ExplicitWidth = 561
     object SpeedButton1: TSpeedButton
       Left = 0
       Top = 0
@@ -892,7 +885,6 @@ object UBarangayID: TUBarangayID
     Enabled = False
     ParentBackground = False
     TabOrder = 2
-    ExplicitHeight = 228
     object Label2: TLabel
       Left = 16
       Top = 72
@@ -1499,6 +1491,7 @@ object UBarangayID: TUBarangayID
       FieldName = 'ID'
       Origin = 'ID'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object fdqryHistoryDetailsBarangayIdNo: TStringField
       AutoGenerateValue = arDefault
@@ -1733,6 +1726,7 @@ object UBarangayID: TUBarangayID
       FieldName = 'ID'
       Origin = 'ID'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object fdtblHistoryDetailsBrgyID: TStringField
       AutoGenerateValue = arDefault
